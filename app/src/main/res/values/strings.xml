@@ -4,4 +4,12 @@
     <string name="tab_text_2">ÜYE OL</string>
 
     <string name="welcome_text">GitBete Hoşgeldin!</string>
+    <string name="kullanici_adi_e_posta">Kullanıcı Adı / E-Posta</string>
+    <string name="parola">Parola</string>
+    <string name="remember">Beni Hatırla</string>
+    <string name="sifremi_unuttum">Şifremi Unuttum!</string>
+    <string name="sozlesme_okudum">Son Kullanıcı Lisans Sözleşmesini Okudum Onaylıyorum.</string>
+    <string name="son_kullanici_sozlesmesi">Son kullanıcı sözleşmesi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
