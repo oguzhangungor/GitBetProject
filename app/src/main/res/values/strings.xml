@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TabProjectTest</string>
+    <string name="tab_text_1">GİRİŞ YAP</string>
+    <string name="tab_text_2">ÜYE OL</string>
+
+    <string name="welcome_text">GitBete Hoşgeldin!</string>
+</resources>
