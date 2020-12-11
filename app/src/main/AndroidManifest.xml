@@ -8,11 +8,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TabProjectTest">
+        android:theme="@style/Theme.TabProjectTest.Fullscreen">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.TabProjectTest.NoActionBar">
+            >
+
+        </activity>
+        <activity android:name=".splash.SplashActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
