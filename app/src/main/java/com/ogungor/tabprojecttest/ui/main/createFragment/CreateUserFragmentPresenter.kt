@@ -1,20 +1,76 @@
 package com.ogungor.tabprojecttest.ui.main.createFragment
 
-class CreateUserFragmentPresenter : CreateUserFragmentContract.Presenter{
-private var view: CreateUserFragmentContract.View?=null
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import java.lang.Exception
 
-    override fun create() {
-        view?.apply {
+class CreateUserFragmentPresenter : CreateUserFragmentContract.Presenter {
+
+    private var auth: FirebaseAuth? = null
+    private var view: CreateUserFragmentContract.View? = null
+
+
+    override fun setView(view: CreateUserFragmentContract.View) {
+        this.view = view
+    }
+
+    override fun destroy() {
+        auth = null
+        view = null
+    }
+
+    override fun createView() {
+        auth = FirebaseAuth.getInstance()
+        view?.run {
             initUi()
         }
     }
 
-    override fun setView(view: CreateUserFragmentContract.View) {
-        this.view=view
+    override fun createUserClicked(email: String, password: String, passwordRepaat: String) {
+        view?.let { view ->
+            if (email.isNotEmpty() && password.isNotEmpty() && passwordRepaat.isNotEmpty()) {
+                if (password == passwordRepaat) {
+                    createUser(email, password)
+                } else {
+                    view.showPasswordNotEqualMessage()
+                }
+            } else {
+                view.showEmptyAreaMessage()
+            }
+        }
     }
 
-    override fun destroy() {
+    override fun createUser(email: String, password: String) {
+        view?.run {
+            auth?.createUserWithEmailAndPassword(email, password)
+                ?.addOnSuccessListener { result ->
+                    showCreateUserSuccessfullMessage()
+                    intentToFeedsActivity()
+                }
+                ?.addOnFailureListener { exp ->
+                    handleError(exp)
+                }
+        }
     }
 
+    override fun handleError(exp: Exception) {
+        view?.run {
+            when (exp) {
+                is FirebaseAuthInvalidCredentialsException -> {
+                    when (exp.errorCode) {
+                       "ERROR_INVALID_EMAIL" -> {
+                            showInvalidEmailMessage()
+                        }
+                        "ERROR_WEAK_PASSWORD" -> {
+                            showInvalidPasswordMessage()
+                        }
+                    }
+                }
+                else -> {
+                    showCreateUserFailureMessage(exp.message)
+                }
+            }
+        }
 
+    }
 }

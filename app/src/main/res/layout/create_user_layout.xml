@@ -29,18 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/create_user_name_editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/usernameeditbox"
-        android:textSize="14sp"
-        android:hint="@string/kullanici_adi"
-        android:paddingLeft="40sp"
-        app:layout_constraintBottom_toTopOf="@id/create_mail_address_editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
 
     <EditText
         android:id="@+id/create_mail_address_editText"
@@ -73,7 +62,7 @@
         android:id="@+id/checkBox1"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginBottom="64dp"
         android:buttonTint="@color/checkbox"
         android:text="@string/sozlesme_okudum"
         android:textSize="10sp"

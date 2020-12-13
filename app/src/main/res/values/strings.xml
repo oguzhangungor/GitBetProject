@@ -4,8 +4,7 @@
     <string name="tab_text_2">ÜYE OL</string>
 
     <string name="welcome_text">GitBete Hoşgeldin!</string>
-    <string name="kullanici_adi_e_posta">Kullanıcı Adı / E-Posta</string>
-    <string name="kullanici_adi">Kullanıcı Adı</string>
+    <string name="kullanici_adi_e_posta">E-Posta</string>
     <string name="parola">Parola</string>
     <string name="parola_tekrarla">Parola Tekrarla</string>
     <string name="remember">Beni Hatırla</string>
