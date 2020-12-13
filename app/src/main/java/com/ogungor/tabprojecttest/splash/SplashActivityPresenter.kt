@@ -16,7 +16,6 @@ class SplashActivityPresenter :SplashActivityContract.Presenter {
     }
 
     override fun destroy() {
-        TODO("Not yet implemented")
     }
 
     override fun stopHandler() {

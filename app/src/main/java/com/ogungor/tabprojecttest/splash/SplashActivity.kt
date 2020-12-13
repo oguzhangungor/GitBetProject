@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.os.Handler
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.ogungor.tabprojecttest.MainActivity
+import com.ogungor.tabprojecttest.ui.main.MainActivity
 import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.activity.BaseActivity
 
 class SplashActivity :BaseActivity(), SplashActivityContract.View {
 
-    private val DELAY_HANDLER_TIME=4000L
+    private val DELAY_HANDLER_TIME=2000L
 
     private lateinit var splashActivityPresenter: SplashActivityContract.Presenter
     private lateinit var splashGif: ImageView

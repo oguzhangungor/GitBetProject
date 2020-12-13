@@ -1,14 +1,10 @@
-package com.ogungor.tabprojecttest
+package com.ogungor.tabprojecttest.ui.main
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-import com.ogungor.tabprojecttest.ui.main.SectionsPagerAdapter
+import com.ogungor.tabprojecttest.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = findViewById(R.id.tabs)
         tabs.setupWithViewPager(viewPager)
+
 
     }
 }

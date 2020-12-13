@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "155654137098",
+    "project_id": "gitbet-29664",
+    "storage_bucket": "gitbet-29664.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155654137098:android:78396e087541133a8d46f3",
+        "android_client_info": {
+          "package_name": "com.ogungor.tabprojecttest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "155654137098-lit9078072uu4i4o0olanbgoba0o22t6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPD1Olp-NFweat82Lp8Rdmn8gZKmIAXKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "155654137098-lit9078072uu4i4o0olanbgoba0o22t6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

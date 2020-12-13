@@ -34,11 +34,7 @@
             android:src="@drawable/gitbet" />
 
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:elevation="5dp">
+
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"
@@ -48,7 +44,6 @@
                 android:layout_marginRight="8dp"
                 android:background="@drawable/login_custom_bg"
                 android:elevation="5dp" />
-        </com.google.android.material.appbar.AppBarLayout>
 
 
     </LinearLayout>
@@ -56,24 +51,23 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity"
-        >
+        tools:context=".ui.main.MainActivity">
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-
+            android:layout_height="320dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:background="@drawable/view_custom_bg"
             android:elevation="5dp" />
+
         <TextView
+            android:id="@+id/sozlesme_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/sozlesme_text"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="16dp"
             android:gravity="center"
             android:text="@string/son_kullanici_sozlesmesi"
             android:textColor="@color/black"

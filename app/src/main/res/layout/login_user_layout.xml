@@ -7,23 +7,23 @@
 
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/login_button"
+        android:id="@+id/login_user_button"
         android:layout_width="329dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="70dp"
-        android:src="@drawable/loginbutton"
+        android:layout_marginBottom="72dp"
+        android:src="@drawable/loginbutton2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/login_password_editText"
-        android:layout_width="329dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:paddingLeft="40dp"
         android:background="@drawable/passwordeditbox"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:hint="@string/parola"
         app:layout_constraintBottom_toTopOf="@+id/checkBox1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,11 +31,11 @@
 
     <EditText
         android:id="@+id/login_user_name_editText"
-        android:layout_width="329dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:background="@drawable/usernameeditbox"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:hint="@string/kullanici_adi_e_posta"
         android:paddingLeft="40dp"
         app:layout_constraintBottom_toTopOf="@id/login_password_editText"
@@ -50,7 +50,7 @@
         android:layout_marginBottom="64dp"
         android:textSize="12sp"
         android:text="@string/remember"
-        app:layout_constraintBottom_toTopOf="@id/login_button"
+        app:layout_constraintBottom_toTopOf="@id/login_user_button"
         app:layout_constraintLeft_toLeftOf="@+id/login_password_editText"
         android:buttonTint="@color/checkbox"/>
 
