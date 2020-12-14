@@ -2,12 +2,14 @@ package com.ogungor.tabprojecttest.ui.main.createFragment
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.ogungor.tabprojecttest.enum.FirebaseErrorType
 import java.lang.Exception
 
 class CreateUserFragmentPresenter : CreateUserFragmentContract.Presenter {
 
     private var auth: FirebaseAuth? = null
     private var view: CreateUserFragmentContract.View? = null
+    private var errorType: FirebaseErrorType? = null
 
 
     override fun setView(view: CreateUserFragmentContract.View) {
@@ -54,16 +56,21 @@ class CreateUserFragmentPresenter : CreateUserFragmentContract.Presenter {
     }
 
     override fun handleError(exp: Exception) {
+
         view?.run {
             when (exp) {
                 is FirebaseAuthInvalidCredentialsException -> {
+
                     when (exp.errorCode) {
-                       "ERROR_INVALID_EMAIL" -> {
+                        FirebaseErrorType.ERROR_INVALID_EMAIL.toString() ->{
                             showInvalidEmailMessage()
                         }
-                        "ERROR_WEAK_PASSWORD" -> {
-                            showInvalidPasswordMessage()
+                        FirebaseErrorType.ERROR_WEAK_PASSWORD.toString()
+                        -> {
+                            showInvalidPasswordMessage().toString()
                         }
+                        else -> showCreateUserFailureMessage(exp.message).toString()
+
                     }
                 }
                 else -> {
