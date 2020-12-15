@@ -79,7 +79,18 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
         }
     }
 
+    override fun showInvalidPasswordMessage() {
+      activity?.showLongToast("Parola Hatalı")
+    }
+
+    override fun showInvalidEmailMessage() {
+        activity?.showLongToast("Girdiğiniz mail Hatalı")
+
+    }
+
+    override fun showLoginUserFailureMessage() {
+        activity?.showLongToast("Girmiş Olduğunuz Mail Kayıtlı Değildir.")
 
 
-
+    }
 }

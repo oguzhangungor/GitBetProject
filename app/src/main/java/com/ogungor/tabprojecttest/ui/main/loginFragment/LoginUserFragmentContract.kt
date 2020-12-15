@@ -3,6 +3,7 @@ package com.ogungor.tabprojecttest.ui.main.loginFragment
 interface LoginUserFragmentContract {
 
     interface Presenter {
+
         fun createView()
 
         fun setView(view: LoginUserFragmentContract.View)
@@ -16,12 +17,11 @@ interface LoginUserFragmentContract {
         fun handlerError(exp: Exception)
 
 
-
-
     }
 
 
     interface View {
+
         fun initUi()
 
         fun initClickListener()
@@ -32,9 +32,11 @@ interface LoginUserFragmentContract {
 
         fun showCreateUserSuccessfulMessage()
 
+        fun showInvalidEmailMessage()
 
+        fun showInvalidPasswordMessage()
 
-
+        fun showLoginUserFailureMessage()
 
 
 

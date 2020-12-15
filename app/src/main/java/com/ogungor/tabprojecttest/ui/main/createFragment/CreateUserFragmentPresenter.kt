@@ -9,7 +9,6 @@ class CreateUserFragmentPresenter : CreateUserFragmentContract.Presenter {
 
     private var auth: FirebaseAuth? = null
     private var view: CreateUserFragmentContract.View? = null
-    private var errorType: FirebaseErrorType? = null
 
 
     override fun setView(view: CreateUserFragmentContract.View) {
@@ -62,15 +61,13 @@ class CreateUserFragmentPresenter : CreateUserFragmentContract.Presenter {
                 is FirebaseAuthInvalidCredentialsException -> {
 
                     when (exp.errorCode) {
-                        FirebaseErrorType.ERROR_INVALID_EMAIL.toString() ->{
+                        FirebaseErrorType.ERROR_INVALID_EMAIL.toString() -> {
                             showInvalidEmailMessage()
                         }
                         FirebaseErrorType.ERROR_WEAK_PASSWORD.toString()
                         -> {
-                            showInvalidPasswordMessage().toString()
+                            showInvalidPasswordMessage()
                         }
-                        else -> showCreateUserFailureMessage(exp.message).toString()
-
                     }
                 }
                 else -> {
