@@ -52,6 +52,7 @@ class CreateUserFragment : Fragment(), CreateUserFragmentContract.View {
     }
 
     override fun initClickListeners() {
+
         createUserButton?.setOnClickListener {
             createUserFragmentPresenter.createUserClicked(
                 email.text.toString(),
