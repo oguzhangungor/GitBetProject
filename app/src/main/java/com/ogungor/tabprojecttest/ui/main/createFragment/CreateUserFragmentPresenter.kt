@@ -59,7 +59,6 @@ class CreateUserFragmentPresenter : CreateUserFragmentContract.Presenter {
         view?.run {
             when (exp) {
                 is FirebaseAuthInvalidCredentialsException -> {
-
                     when (exp.errorCode) {
                         FirebaseErrorType.ERROR_INVALID_EMAIL.toString() -> {
                             showInvalidEmailMessage()

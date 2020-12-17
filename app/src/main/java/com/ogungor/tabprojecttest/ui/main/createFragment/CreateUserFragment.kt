@@ -19,11 +19,9 @@ import com.ogungor.tabprojecttest.util.extentions.showLongToast
 class CreateUserFragment : Fragment(), CreateUserFragmentContract.View {
 
     private lateinit var createUserFragmentPresenter: CreateUserFragmentContract.Presenter
-
     private lateinit var email: EditText
     private lateinit var password: EditText
     private lateinit var passwordRepeat: EditText
-
     private var createUserButton: ImageButton? = null
 
     override fun onAttach(context: Context) {
@@ -42,7 +40,6 @@ class CreateUserFragment : Fragment(), CreateUserFragmentContract.View {
         passwordRepeat = view.findViewById(R.id.password_repeat_editText)!!
         password = view.findViewById(R.id.create_password_editText)!!
         createUserButton = view.findViewById(R.id.create_user_button)
-
         createUserFragmentPresenter.createView()
         return view
     }
@@ -52,7 +49,6 @@ class CreateUserFragment : Fragment(), CreateUserFragmentContract.View {
     }
 
     override fun initClickListeners() {
-
         createUserButton?.setOnClickListener {
             createUserFragmentPresenter.createUserClicked(
                 email.text.toString(),
@@ -99,5 +95,4 @@ class CreateUserFragment : Fragment(), CreateUserFragmentContract.View {
         super.onDestroyView()
         createUserFragmentPresenter.destroy()
     }
-
 }

@@ -6,6 +6,7 @@ class FeedActivityPresenter: FeedActivityContract.Presenter {
     override fun create() {
         view?.apply {
             initUi()
+
         }
     }
 

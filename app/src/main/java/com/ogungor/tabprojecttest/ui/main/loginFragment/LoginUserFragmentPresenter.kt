@@ -9,7 +9,6 @@ class LoginUserFragmentPresenter : LoginUserFragmentContract.Presenter {
     private var auth: FirebaseAuth? = null
     private var view: LoginUserFragmentContract.View? = null
 
-
     override fun createView() {
         auth = FirebaseAuth.getInstance()
         view?.run {

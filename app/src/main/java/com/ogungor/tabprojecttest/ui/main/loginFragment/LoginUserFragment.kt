@@ -19,8 +19,6 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
 
 
     private lateinit var loginUserFragmentPresenter: LoginUserFragmentContract.Presenter
-
-
     private lateinit var email: EditText
     private lateinit var password: EditText
     private var loginUserButton: ImageButton? = null
@@ -37,36 +35,29 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.login_user_layout, container, false)
-
         email = view.findViewById(R.id.login_email_editText)!!
         password = view.findViewById(R.id.login_password_editText)
         loginUserButton = view.findViewById(R.id.login_user_button)
-
         loginUserFragmentPresenter.createView()
         return view
     }
 
     override fun initUi() {
         initClickListener()
-
     }
 
     override fun initClickListener() {
-
         loginUserButton?.setOnClickListener {
             loginUserFragmentPresenter.loginUserListener(
                 email.text.toString(),
                 password.text.toString()
             )
         }
-
     }
 
     override fun showCreateUserSuccessfulMessage() {
         activity?.showLongToast("Giriş Başarılı")
     }
-
-
 
     override fun showEmptyAreaMessage() {
         activity?.showLongToast("Boş Alan Bırakmayınız")
@@ -85,12 +76,9 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
 
     override fun showInvalidEmailMessage() {
         activity?.showLongToast("Girdiğiniz mail Hatalı")
-
     }
 
     override fun showLoginUserFailureMessage() {
         activity?.showLongToast("Girmiş Olduğunuz Mail Kayıtlı Değildir.")
-
-
     }
 }

@@ -3,7 +3,6 @@
     <style name="Theme.TabProjectTest" parent="Theme.AppCompat.Light.NoActionBar">
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
 
@@ -12,6 +11,8 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
     </style>
+
+
 
 
 </resources>

@@ -16,7 +16,6 @@ interface LoginUserFragmentContract {
 
         fun handlerError(exp: Exception)
 
-
     }
 
 
@@ -37,8 +36,5 @@ interface LoginUserFragmentContract {
         fun showInvalidPasswordMessage()
 
         fun showLoginUserFailureMessage()
-
-
-
     }
 }
