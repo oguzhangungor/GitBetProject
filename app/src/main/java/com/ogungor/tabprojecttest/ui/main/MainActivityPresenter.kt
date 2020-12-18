@@ -1,10 +1,10 @@
 package com.ogungor.tabprojecttest.ui.main
 
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
-class MainActivityPresenter : MainActivityContract.Presenter{
-    private var view: MainActivityContract.View?=null
-
+class MainActivityPresenter : MainActivityContract.Presenter {
+    private var view: MainActivityContract.View? = null
 
     override fun create() {
         view?.apply {
@@ -13,22 +13,18 @@ class MainActivityPresenter : MainActivityContract.Presenter{
     }
 
     override fun setView(view: MainActivityContract.View) {
-        this.view=view
+        this.view = view
     }
 
     override fun destroy() {
-        view=null
+        view = null
     }
 
-    override fun loginUserControl(currentUser: FirebaseAuth?) {
+    override fun loginUserControl(currentUser: FirebaseUser?) {
         view?.run {
-           showLoginMessage()
-        }
-        if (currentUser != null){
-            view?.run {
+            if (currentUser != null) {
                 intentToFeedsActivity()
-
-
+                showLoginMessage()
             }
         }
     }

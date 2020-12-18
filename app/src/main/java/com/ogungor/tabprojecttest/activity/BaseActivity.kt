@@ -11,5 +11,4 @@ abstract class BaseActivity: AppCompatActivity() {
     }
 
     abstract fun getLayout(): Int
-
 }

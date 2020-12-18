@@ -63,15 +63,7 @@
             android:background="@drawable/view_custom_bg"
             android:elevation="5dp" />
 
-        <TextView
-            android:id="@+id/sozlesme_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:gravity="center"
-            android:text="@string/son_kullanici_sozlesmesi"
-            android:textColor="@color/black"
-            android:textSize="12sp" />
+
 
     </FrameLayout>
 

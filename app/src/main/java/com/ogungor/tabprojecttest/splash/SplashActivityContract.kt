@@ -9,10 +9,7 @@ interface SplashActivityContract {
 
         fun destroy()
 
-
         fun stopHandler()
-
-
     }
 
 
@@ -25,6 +22,5 @@ interface SplashActivityContract {
        fun startHandler()
 
         fun finApp()
-
     }
 }

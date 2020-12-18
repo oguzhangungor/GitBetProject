@@ -25,7 +25,7 @@
         android:paddingLeft="40dp"
         android:background="@drawable/passwordeditbox"
         android:textSize="14sp"
-        android:hint="@string/parola"
+        android:hint="@string/password"
         app:layout_constraintBottom_toTopOf="@+id/checkBox1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -37,7 +37,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/usernameeditbox"
         android:textSize="14sp"
-        android:hint="@string/kullanici_adi_e_posta"
+        android:hint="@string/email_address"
         android:paddingLeft="40dp"
         app:layout_constraintBottom_toTopOf="@id/login_password_editText"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +58,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sifremi_unuttum"
+        android:text="@string/password_forget"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

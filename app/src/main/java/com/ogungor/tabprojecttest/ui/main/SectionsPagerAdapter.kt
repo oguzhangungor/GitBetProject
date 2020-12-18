@@ -9,22 +9,21 @@ import com.ogungor.tabprojecttest.ui.main.createFragment.CreateUserFragment
 import com.ogungor.tabprojecttest.ui.main.loginFragment.LoginUserFragment
 
 private val TAB_TITLES = arrayOf(
-        R.string.tab_text_1,
-        R.string.tab_text_2,
-        R.string.tab_text_2
+    R.string.tab_login_user,
+    R.string.tab_create_user,
 )
 
-class SectionsPagerAdapter(private val context: Context, fm: FragmentManager)
-    : FragmentPagerAdapter(fm) {
+class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
+    FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
-        var fragment: Fragment?=null
-        when (position){
+        var fragment: Fragment? = null
+        when (position) {
             0 -> {
-                fragment=LoginUserFragment()
+                fragment = LoginUserFragment()
             }
-            1->{
-                fragment= CreateUserFragment()
+            1 -> {
+                fragment = CreateUserFragment()
             }
         }
         return fragment!!
@@ -35,7 +34,6 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager)
     }
 
     override fun getCount(): Int {
-
         return 2
     }
 }

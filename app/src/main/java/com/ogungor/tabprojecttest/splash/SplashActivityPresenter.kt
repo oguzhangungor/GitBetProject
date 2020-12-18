@@ -21,5 +21,4 @@ class SplashActivityPresenter :SplashActivityContract.Presenter {
     override fun stopHandler() {
         view?.finApp()
     }
-
 }

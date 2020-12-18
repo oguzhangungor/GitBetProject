@@ -17,7 +17,6 @@ interface CreateUserFragmentContract {
         fun createUser(email: String, password: String)
 
         fun handleError(exp: Exception)
-
     }
 
     interface View {
@@ -39,7 +38,5 @@ interface CreateUserFragmentContract {
         fun showInvalidEmailMessage()
 
         fun showInvalidPasswordMessage()
-
     }
-
 }

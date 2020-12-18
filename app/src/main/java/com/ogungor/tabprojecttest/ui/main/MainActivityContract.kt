@@ -1,6 +1,7 @@
 package com.ogungor.tabprojecttest.ui.main
 
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 interface MainActivityContract {
 
@@ -12,11 +13,12 @@ interface MainActivityContract {
 
         fun destroy()
 
-        fun loginUserControl(currentUser: FirebaseAuth?)
+        fun loginUserControl(currentUser: FirebaseUser?)
     }
 
 
     interface View {
+
         fun initUi()
 
         fun intentToFeedsActivity()

@@ -1,15 +1,27 @@
 <resources>
-    <string name="app_name">TabProjectTest</string>
-    <string name="tab_text_1">GİRİŞ YAP</string>
-    <string name="tab_text_2">ÜYE OL</string>
+    
+    <string name="app_name">GitBet</string>
+    <string name="tab_login_user">GİRİŞ YAP</string>
+    <string name="tab_create_user">ÜYE OL</string>
+    <string name="welcome_app_text">GitBete Hoşgeldiniz!</string>
 
-    <string name="welcome_text">GitBete Hoşgeldin!</string>
-    <string name="kullanici_adi_e_posta">E-Posta</string>
-    <string name="parola">Parola</string>
-    <string name="parola_tekrarla">Parola Tekrarla</string>
+    <string name="email_address">E-Mail Adresi</string>
+    <string name="password">Parola</string>
+    <string name="password_repeat">Parola Tekrarla</string>
     <string name="remember">Beni Hatırla</string>
-    <string name="sifremi_unuttum">Şifremi Unuttum!</string>
-    <string name="sozlesme_okudum">Son Kullanıcı Lisans Sözleşmesini Okudum Onaylıyorum.</string>
-    <string name="son_kullanici_sozlesmesi">Son kullanıcı sözleşmesi</string>
-    <string name="eposta_adresi">E-Posta Adresi</string>
+    <string name="password_forget">Şifremi Unuttum!</string>
+    <string name="contract_read">Son Kullanıcı Lisans Sözleşmesini Okudum Onaylıyorum.</string>
+
+    <string name="empty_area">Boş Alan Bırakmayınız</string>
+    <string name="login_password_error_message">Girdiğiniz Parola Hatalı</string>
+    <string name="email_not_registered">Girmiş Olduğunuz E-Mail Adresi Sisteme Kayıtlı Değildir</string>
+    <string name="email_error_message">Lütfen geçerli bir email giriniz</string>
+    <string name="create_password_error_message">Lütfen Daha Güçlü Bir Parola Giriniz</string>
+    <string name="create_password_repeat_error_message">Lütfen Parolaları Aynı Giriniz</string>
+
+    <string name="welcome">Hoşgeldiniz</string>
+    <string name="create_complete">Kayıt Başarılı</string>
+    <string name="login_complete">Giriş Başarılı</string>
+    <string name="sign_out">Çıkış Yapıldı</string>
+    
 </resources>

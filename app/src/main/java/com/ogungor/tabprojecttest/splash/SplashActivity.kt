@@ -12,7 +12,6 @@ import com.ogungor.tabprojecttest.activity.BaseActivity
 class SplashActivity :BaseActivity(), SplashActivityContract.View {
 
     private val DELAY_HANDLER_TIME=3000L
-
     private lateinit var splashActivityPresenter: SplashActivityContract.Presenter
     private lateinit var splashGif: ImageView
 
@@ -24,7 +23,6 @@ class SplashActivity :BaseActivity(), SplashActivityContract.View {
         }
     }
 
-
     override fun getLayout(): Int = R.layout.activity_splash
 
     override fun initUi() {
@@ -33,12 +31,10 @@ class SplashActivity :BaseActivity(), SplashActivityContract.View {
 
     override fun startGif() {
         Glide.with(this).load(R.drawable.splahgif).into(splashGif)
-
     }
 
     override fun startHandler() {
         Handler().postDelayed({splashActivityPresenter.stopHandler()},DELAY_HANDLER_TIME)
-
     }
 
     override fun finApp() {
@@ -46,6 +42,4 @@ class SplashActivity :BaseActivity(), SplashActivityContract.View {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
-
-
 }

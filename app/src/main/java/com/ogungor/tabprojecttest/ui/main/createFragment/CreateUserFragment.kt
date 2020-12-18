@@ -1,7 +1,6 @@
 package com.ogungor.tabprojecttest.ui.main.createFragment
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,12 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
 import com.ogungor.tabprojecttest.R
-import com.ogungor.tabprojecttest.feed.FeedActivity
 import com.ogungor.tabprojecttest.util.extentions.launchFeedsActivity
-import com.ogungor.tabprojecttest.util.extentions.showLongToast
+import com.ogungor.tabprojecttest.util.extentions.showShortToast
 
 class CreateUserFragment : Fragment(), CreateUserFragmentContract.View {
 
@@ -34,7 +30,7 @@ class CreateUserFragment : Fragment(), CreateUserFragmentContract.View {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val view = inflater.inflate(R.layout.create_user_layout, container, false)
         email = view?.findViewById(R.id.create_mail_address_editText)!!
         passwordRepeat = view.findViewById(R.id.password_repeat_editText)!!
@@ -59,29 +55,29 @@ class CreateUserFragment : Fragment(), CreateUserFragmentContract.View {
     }
 
     override fun showPasswordNotEqualMessage() {
-        activity?.showLongToast("Parolaları Aynı girin")
+        activity?.showShortToast(getString(R.string.create_password_repeat_error_message))
     }
 
     override fun showEmptyAreaMessage() {
-        activity?.showLongToast("Boş Bırakmayınız.")
+        activity?.showShortToast(getString(R.string.empty_area))
     }
 
     override fun showCreateUserFailureMessage(message: String?) {
         message?.let {
-            activity?.showLongToast(it)
+            activity?.showShortToast(it)
         }
     }
 
     override fun showCreateUserSuccessfullMessage() {
-        activity?.showLongToast("Kayıt Başarılı")
+        activity?.showShortToast(getString(R.string.create_complete))
     }
 
     override fun showInvalidEmailMessage() {
-        activity?.showLongToast("Lütfen geçerli bir email giriniz.")
+        activity?.showShortToast(getString(R.string.email_error_message))
     }
 
     override fun showInvalidPasswordMessage() {
-        activity?.showLongToast("Lütfen gdaha güçlü bir parola giriniz.")
+        activity?.showShortToast(getString(R.string.create_password_error_message))
     }
 
     override fun intentToFeedsActivity() {

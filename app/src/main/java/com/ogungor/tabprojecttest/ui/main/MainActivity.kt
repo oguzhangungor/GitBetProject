@@ -5,10 +5,11 @@ import android.os.Bundle
 import com.google.android.material.tabs.TabLayout
 import androidx.viewpager.widget.ViewPager
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.activity.BaseActivity
 import com.ogungor.tabprojecttest.util.extentions.launchFeedsActivity
-import com.ogungor.tabprojecttest.util.extentions.showLongToast
+import com.ogungor.tabprojecttest.util.extentions.showShortToast
 
 class MainActivity : BaseActivity(), MainActivityContract.View {
 
@@ -17,17 +18,16 @@ class MainActivity : BaseActivity(), MainActivityContract.View {
     private lateinit var tabs: TabLayout
     private lateinit var mainActivityPresenter: MainActivityContract.Presenter
     private lateinit var auth:FirebaseAuth
-    private lateinit var currentUser:FirebaseAuth
+    private var currentUser:FirebaseUser?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         mainActivityPresenter = MainActivityPresenter()
             .apply {
                 setView(this@MainActivity)
                 create()
                 loginUserControl(currentUser)
-
-
             }
     }
 
@@ -35,13 +35,12 @@ class MainActivity : BaseActivity(), MainActivityContract.View {
 
     override fun initUi() {
         auth= FirebaseAuth.getInstance()
-        this.currentUser=auth
+        currentUser= auth.currentUser
         sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
         viewPager = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter
         tabs = findViewById(R.id.tabs)
         tabs.setupWithViewPager(viewPager)
-
     }
 
     override fun intentToFeedsActivity() {
@@ -50,7 +49,6 @@ class MainActivity : BaseActivity(), MainActivityContract.View {
     }
 
     override fun showLoginMessage() {
-        showLongToast("Hoşgeldiniz  ${auth.currentUser?.email.toString()}")
-
+        showShortToast(getString(R.string.welcome)+" ${auth.currentUser?.email.toString()}")
     }
 }

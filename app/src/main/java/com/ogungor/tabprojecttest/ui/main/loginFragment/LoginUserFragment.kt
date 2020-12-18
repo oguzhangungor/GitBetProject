@@ -1,7 +1,6 @@
 package com.ogungor.tabprojecttest.ui.main.loginFragment
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,14 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
-import com.google.firebase.auth.FirebaseAuth
 import com.ogungor.tabprojecttest.R
-import com.ogungor.tabprojecttest.splash.SplashActivity
 import com.ogungor.tabprojecttest.util.extentions.launchFeedsActivity
-import com.ogungor.tabprojecttest.util.extentions.showLongToast
+import com.ogungor.tabprojecttest.util.extentions.showShortToast
 
 class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
-
 
     private lateinit var loginUserFragmentPresenter: LoginUserFragmentContract.Presenter
     private lateinit var email: EditText
@@ -56,11 +52,11 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
     }
 
     override fun showCreateUserSuccessfulMessage() {
-        activity?.showLongToast("Giriş Başarılı")
+        activity?.showShortToast(getString(R.string.login_complete))
     }
 
     override fun showEmptyAreaMessage() {
-        activity?.showLongToast("Boş Alan Bırakmayınız")
+        activity?.showShortToast(getString(R.string.empty_area))
     }
 
     override fun intentToFeedsActivity() {
@@ -71,14 +67,14 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
     }
 
     override fun showInvalidPasswordMessage() {
-      activity?.showLongToast("Parola Hatalı")
+        activity?.showShortToast(getString(R.string.login_password_error_message))
     }
 
     override fun showInvalidEmailMessage() {
-        activity?.showLongToast("Girdiğiniz mail Hatalı")
+        activity?.showShortToast(getString(R.string.email_error_message))
     }
 
     override fun showLoginUserFailureMessage() {
-        activity?.showLongToast("Girmiş Olduğunuz Mail Kayıtlı Değildir.")
+        activity?.showShortToast(getString(R.string.email_not_registered))
     }
 }

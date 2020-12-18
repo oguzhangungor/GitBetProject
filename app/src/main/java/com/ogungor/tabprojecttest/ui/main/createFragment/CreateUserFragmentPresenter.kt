@@ -10,7 +10,6 @@ class CreateUserFragmentPresenter : CreateUserFragmentContract.Presenter {
     private var auth: FirebaseAuth? = null
     private var view: CreateUserFragmentContract.View? = null
 
-
     override fun setView(view: CreateUserFragmentContract.View) {
         this.view = view
     }
@@ -44,7 +43,7 @@ class CreateUserFragmentPresenter : CreateUserFragmentContract.Presenter {
     override fun createUser(email: String, password: String) {
         view?.run {
             auth?.createUserWithEmailAndPassword(email, password)
-                ?.addOnSuccessListener { result ->
+                ?.addOnSuccessListener {
                     showCreateUserSuccessfullMessage()
                     intentToFeedsActivity()
                 }
@@ -74,6 +73,5 @@ class CreateUserFragmentPresenter : CreateUserFragmentContract.Presenter {
                 }
             }
         }
-
     }
 }
