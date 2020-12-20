@@ -7,38 +7,46 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ogungor.tabprojecttest.R
+import com.ogungor.tabprojecttest.network.model.MatchModel
 
-class FeedRecyclerAdapter(private val matchFromFB: ArrayList<String>,private val betFromFB: ArrayList<String>,private val rateFromFB: ArrayList<String> ) : RecyclerView.Adapter<FeedRecyclerAdapter.BetHolder>() {
+class FeedRecyclerAdapter(private var matchList: ArrayList<MatchModel> ) : RecyclerView.Adapter<FeedRecyclerAdapter.BetHolder>() {
 
-    class BetHolder(view :View) : RecyclerView.ViewHolder(view) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BetHolder {
+        val inflater= LayoutInflater.from(parent.context)
+        val view=inflater.inflate(R.layout.recycler_view_row,parent,false)
+        return BetHolder(view)
+    }
 
-        var match_text: TextView?=null
-        var bet_text: TextView?=null
-        var rate_text: TextView?=null
-        init {
-            match_text=view.findViewById(R.id.match_text)
-            bet_text=view.findViewById(R.id.bet_text)
-            rate_text=view.findViewById(R.id.rate_text)
+    override fun onBindViewHolder(holder: BetHolder, position: Int) {
+        val currentMatch = matchList[position]
+        holder.run {
+            currentMatch.homeTeam?.let {
+                textViewMatch.text= "$it - ${currentMatch.awayTeam}"
+            }
+            currentMatch.bet?.let {
+                textViewBet.text=it
+            }
+            currentMatch.rate?.let {
+                textViewRate.text=it
+            }
+            currentMatch.oldRate?.let {
+            }
         }
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BetHolder {
-        var inflater= LayoutInflater.from(parent.context)
-        var view_bet=inflater.inflate(R.layout.recycler_view_row,parent,false)
-        return BetHolder(view_bet)
-    }
-
-    override fun onBindViewHolder(holder: BetHolder, position: Int) {
-        holder.match_text?.text= matchFromFB[position]
-        holder.bet_text?.text= betFromFB[position]
-        holder.rate_text?.text= rateFromFB[position]
-
-    }
-
     override fun getItemCount(): Int {
-        return matchFromFB.size
+        return matchList.size
     }
 
+    fun setList(list: ArrayList<MatchModel>){
+        matchList = list
+        notifyDataSetChanged()
+    }
 
+    class BetHolder(view :View) : RecyclerView.ViewHolder(view) {
+        var textViewMatch: TextView = view.findViewById(R.id.match_text)
+        var textViewBet: TextView = view.findViewById(R.id.bet_text)
+        var textViewRate: TextView = view.findViewById(R.id.rate_text)
+    }
 }

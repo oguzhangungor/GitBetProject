@@ -7,26 +7,25 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.ogungor.tabprojecttest.R
+import com.ogungor.tabprojecttest.network.ApiResponseListener
+import com.ogungor.tabprojecttest.network.NetworkService
+import com.ogungor.tabprojecttest.network.model.MatchModel
+import com.ogungor.tabprojecttest.util.repo.FirebaseApi
 
 class FeedActivityPresenter : FeedActivityContract.Presenter {
 
-    private lateinit var view: FeedActivityContract.View
+    private var view: FeedActivityContract.View? = null
     private var auth: FirebaseAuth? = null
-    private lateinit var firebaseDB:FirebaseFirestore
+    private var networkService: NetworkService? = null
 
-    /*private lateinit var adapter: FeedRecyclerAdapter
-
-    var matchFromFB: ArrayList<String> =ArrayList()
-    var betFromFB: ArrayList<String> =ArrayList()
-    var rateFromFB: ArrayList<String> =ArrayList()
-    var oldRateFromFB: ArrayList<String> =ArrayList()
-
-     */
+    override fun setView(view: FeedActivityContract.View) {
+        this.view = view
+    }
 
     override fun create() {
         auth = FirebaseAuth.getInstance()
-        //adapter= FeedRecyclerAdapter(matchFromFB,betFromFB,rateFromFB)
-        view.apply {
+        networkService = FirebaseApi()
+        view?.apply {
             initUi()
         }
     }
@@ -34,58 +33,25 @@ class FeedActivityPresenter : FeedActivityContract.Presenter {
     override fun menuItemSelected(item: MenuItem) {
         if (item.itemId == R.id.logout) {
             auth?.signOut()
-            view.run {
+            view?.run {
                 showSignOutMessage()
                 intentToMainActivity()
             }
         }
     }
 
-    override fun setView(view: FeedActivityContract.View) {
-        this.view = view
-    }
-
     override fun getDataFromFirestore() {
-
-        firebaseDB= FirebaseFirestore.getInstance()
-
-        firebaseDB.collection("MatchBets").addSnapshotListener { snaphot, exception ->
-                if (exception !=null)
-                {
-                    view.showSignOutMessage()
-                }else {
-
-                    if(snaphot!=null)
-                    {
-                        if (!snaphot.isEmpty)
-                        {
-                            val documents= snaphot.documents
-                            var i =1
-                            for (document in documents)
-                            {
-                                view.run {
-                                    getDB(document)
-                                    showAllDocumentMessage(i)
-                                }
-                                i++
-                            }
-                        }
-                    }
+        networkService?.getDashboardList(object : ApiResponseListener<ArrayList<MatchModel>> {
+            override fun onSuccess(model: ArrayList<MatchModel>) {
+                if (model.isNotEmpty()) {
+                    view?.showAllMatches(model)
                 }
+            }
 
-        }
-    }
+            override fun onFail() {
+            }
 
-    override fun documentControl(m: String, b: String) {
-        if (m==null)
-        {
-            view.showDocumentMessage()
-        }
-        else if (b==null){
-            view.showNoDocumentMessage()
-         }
-        else {
+        })
 
-        }
     }
 }

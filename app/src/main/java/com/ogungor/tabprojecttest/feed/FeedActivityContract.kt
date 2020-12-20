@@ -3,6 +3,7 @@ package com.ogungor.tabprojecttest.feed
 import android.view.MenuItem
 import android.widget.TextView
 import com.google.firebase.firestore.DocumentSnapshot
+import com.ogungor.tabprojecttest.network.model.MatchModel
 
 interface FeedActivityContract {
 
@@ -17,7 +18,6 @@ interface FeedActivityContract {
 
         fun getDataFromFirestore()
 
-        fun documentControl(m: String,b:String)
     }
 
 
@@ -29,13 +29,7 @@ interface FeedActivityContract {
 
         fun intentToMainActivity()
 
-        fun getDB(document : DocumentSnapshot)
-
-        fun showDocumentMessage()
-
-        fun showNoDocumentMessage()
-
-       fun showAllDocumentMessage(i : Int)
+        fun showAllMatches(model: ArrayList<MatchModel>)
 
     }
 }

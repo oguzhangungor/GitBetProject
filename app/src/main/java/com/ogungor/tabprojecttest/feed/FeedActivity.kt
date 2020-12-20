@@ -5,9 +5,9 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.firestore.DocumentSnapshot
 import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.activity.BaseActivity
+import com.ogungor.tabprojecttest.network.model.MatchModel
 import com.ogungor.tabprojecttest.util.extentions.launchMainActivity
 import com.ogungor.tabprojecttest.util.extentions.showShortToast
 
@@ -19,19 +19,12 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View {
     private lateinit var adapter: FeedRecyclerAdapter
 
 
-    var matchFromFB: ArrayList<String> =ArrayList()
-    var betFromFB: ArrayList<String> =ArrayList()
-    var rateFromFB: ArrayList<String> =ArrayList()
-    var oldRateFromFB: ArrayList<String> =ArrayList()
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         feedActivityPresenter = FeedActivityPresenter().apply {
             setView(this@FeedActivity)
             create()
             getDataFromFirestore()
-
         }
     }
 
@@ -55,13 +48,11 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View {
 
     override fun initUi() {
 
-        recyclerView= RecyclerView(applicationContext)
+        recyclerView= findViewById(R.id.feed_recycler_view)
 
         layoutManager= LinearLayoutManager(this)
         recyclerView.layoutManager= layoutManager
-
-        adapter= FeedRecyclerAdapter(matchFromFB,betFromFB,rateFromFB)
-
+        adapter= FeedRecyclerAdapter(ArrayList<MatchModel>())
         recyclerView.adapter=adapter
 
 
@@ -72,35 +63,10 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View {
         finish()
     }
 
-    override fun getDB(document : DocumentSnapshot) {
-
-        val match_name=document.get("match") as String
-        val bet_name=document.get("bet") as String
-        val rate_name=document.get("rate") as String
-        val old_rate_name=document.get("old_rate") as String
-
-        feedActivityPresenter.run { documentControl(match_name,bet_name) }
 
 
-        matchFromFB.add(match_name)
-        betFromFB.add(bet_name)
-        rateFromFB.add(rate_name)
-        oldRateFromFB.add(old_rate_name)
-
-        adapter!!.notifyDataSetChanged()
+    override fun showAllMatches(model: java.util.ArrayList<MatchModel>) {
+        adapter.setList(model)
     }
 
-    override fun showDocumentMessage() {
-        showShortToast("M boş ")
-    }
-
-    override fun showNoDocumentMessage() {
-        showShortToast("b boş")
-
-    }
-
-    override fun showAllDocumentMessage(i :Int) {
-        showShortToast(i.toString())
-
-    }
 }
