@@ -1,5 +1,7 @@
 package com.ogungor.tabprojecttest.ui.main.loginFragment
 
+import android.content.SharedPreferences
+
 interface LoginUserFragmentContract {
 
     interface Presenter {
@@ -10,7 +12,12 @@ interface LoginUserFragmentContract {
 
         fun destroy()
 
-        fun loginUserListener(toString: String, toString1: String)
+        fun loginUserListener(
+            toString: String,
+            toString1: String,
+            boolean: Boolean,
+            sharedPref: SharedPreferences?
+        )
 
         fun loginUser(email: String, password: String)
 

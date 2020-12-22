@@ -23,5 +23,6 @@
     <string name="create_complete">Kayıt Başarılı</string>
     <string name="login_complete">Giriş Başarılı</string>
     <string name="sign_out">Çıkış Yapıldı</string>
-    
+    <string name="preference_file_key">com.oguzhangungor.gitbet</string>
+
 </resources>

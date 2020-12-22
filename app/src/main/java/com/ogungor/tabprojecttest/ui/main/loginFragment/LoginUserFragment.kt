@@ -1,11 +1,13 @@
 package com.ogungor.tabprojecttest.ui.main.loginFragment
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
 import com.ogungor.tabprojecttest.R
@@ -17,7 +19,10 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
     private lateinit var loginUserFragmentPresenter: LoginUserFragmentContract.Presenter
     private lateinit var email: EditText
     private lateinit var password: EditText
+    private lateinit var rememberCheckBox: CheckBox
+    private  var sharedPref:SharedPreferences?=null
     private var loginUserButton: ImageButton? = null
+    private lateinit var  sharedPrefEdit:SharedPreferences.Editor
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -31,9 +36,11 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.login_user_layout, container, false)
+        sharedPref=activity?.getSharedPreferences(R.string.preference_file_key.toString(),Context.MODE_PRIVATE)
         email = view.findViewById(R.id.login_email_editText)!!
         password = view.findViewById(R.id.login_password_editText)
         loginUserButton = view.findViewById(R.id.login_user_button)
+        rememberCheckBox=view.findViewById(R.id.rememberCheckBox)
         loginUserFragmentPresenter.createView()
         return view
     }
@@ -43,10 +50,14 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
     }
 
     override fun initClickListener() {
+        val boolean=rememberCheckBox.isChecked
         loginUserButton?.setOnClickListener {
             loginUserFragmentPresenter.loginUserListener(
                 email.text.toString(),
-                password.text.toString()
+                password.text.toString(),
+                boolean,
+                sharedPref
+
             )
         }
     }

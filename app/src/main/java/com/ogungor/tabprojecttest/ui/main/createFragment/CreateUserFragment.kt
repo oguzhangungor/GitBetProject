@@ -1,5 +1,6 @@
 package com.ogungor.tabprojecttest.ui.main.createFragment
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import com.ogungor.tabprojecttest.R
+import com.ogungor.tabprojecttest.R.layout
 import com.ogungor.tabprojecttest.util.extentions.launchFeedsActivity
 import com.ogungor.tabprojecttest.util.extentions.showShortToast
 
@@ -20,6 +23,7 @@ class CreateUserFragment : Fragment(), CreateUserFragmentContract.View {
     private lateinit var passwordRepeat: EditText
     private var createUserButton: ImageButton? = null
 
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         createUserFragmentPresenter = CreateUserFragmentPresenter().apply {
@@ -27,12 +31,13 @@ class CreateUserFragment : Fragment(), CreateUserFragmentContract.View {
         }
     }
 
+    @SuppressLint("ResourceType")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val view = inflater.inflate(R.layout.create_user_layout, container, false)
-        email = view?.findViewById(R.id.create_mail_address_editText)!!
+        val view = inflater.inflate(layout.create_user_layout, container, false)
+        email = view.findViewById(R.id.create_mail_address_editText)!!
         passwordRepeat = view.findViewById(R.id.password_repeat_editText)!!
         password = view.findViewById(R.id.create_password_editText)!!
         createUserButton = view.findViewById(R.id.create_user_button)

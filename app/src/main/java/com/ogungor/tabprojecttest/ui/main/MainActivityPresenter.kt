@@ -1,6 +1,5 @@
 package com.ogungor.tabprojecttest.ui.main
 
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
 class MainActivityPresenter : MainActivityContract.Presenter {
@@ -20,12 +19,18 @@ class MainActivityPresenter : MainActivityContract.Presenter {
         view = null
     }
 
-    override fun loginUserControl(currentUser: FirebaseUser?) {
+    override fun loginUserControl(
+        currentUser: FirebaseUser?,
+        booleen: Boolean
+    ) {
         view?.run {
-            if (currentUser != null) {
-                intentToFeedsActivity()
-                showLoginMessage()
+            if(booleen){
+                if (currentUser != null) {
+                    intentToFeedsActivity()
+                    showLoginMessage()
+                }
             }
+
         }
     }
 }

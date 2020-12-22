@@ -1,6 +1,8 @@
 package com.ogungor.tabprojecttest.ui.main
 
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import com.google.android.material.tabs.TabLayout
 import androidx.viewpager.widget.ViewPager
@@ -19,6 +21,10 @@ class MainActivity : BaseActivity(), MainActivityContract.View {
     private lateinit var mainActivityPresenter: MainActivityContract.Presenter
     private lateinit var auth:FirebaseAuth
     private var currentUser:FirebaseUser?=null
+    private lateinit var sharedPrefGet:SharedPreferences
+    private var booleen:Boolean=true
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +33,7 @@ class MainActivity : BaseActivity(), MainActivityContract.View {
             .apply {
                 setView(this@MainActivity)
                 create()
-                loginUserControl(currentUser)
+                loginUserControl(currentUser,booleen)
             }
     }
 
@@ -36,6 +42,8 @@ class MainActivity : BaseActivity(), MainActivityContract.View {
     override fun initUi() {
         auth= FirebaseAuth.getInstance()
         currentUser= auth.currentUser
+        sharedPrefGet=getSharedPreferences(R.string.preference_file_key.toString(),0)
+        booleen=sharedPrefGet.getBoolean("checked",false)
         sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
         viewPager = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter

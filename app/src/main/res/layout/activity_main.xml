@@ -8,9 +8,10 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/tabBg"
         android:layout_width="match_parent"
         android:layout_height="282dp"
-        android:background="@drawable/bgimg"
+        android:background="@drawable/createfragmentbg"
         android:orientation="vertical">
 
         <FrameLayout
@@ -22,7 +23,7 @@
                 android:layout_height="129dp"
                 android:layout_gravity="center_vertical"
                 android:foregroundGravity="center_horizontal"
-                android:src="@drawable/logobg" />
+                android:src="@drawable/mainlogo" />
         </FrameLayout>
 
         <ImageView
@@ -31,19 +32,16 @@
             android:layout_gravity="bottom"
             android:layout_marginLeft="8dp"
             android:layout_marginBottom="16dp"
-            android:src="@drawable/gitbet" />
+            android:src="@drawable/gitbethosgeldiniz" />
 
-
-
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/login_custom_bg"
-                android:elevation="5dp" />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/login_custom_bg"
+            android:elevation="5dp" />
 
 
     </LinearLayout>
@@ -62,12 +60,6 @@
             android:layout_marginRight="8dp"
             android:background="@drawable/view_custom_bg"
             android:elevation="5dp" />
-
-
-
     </FrameLayout>
-
-
-
 
 </LinearLayout>

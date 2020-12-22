@@ -1,14 +1,15 @@
 package com.ogungor.tabprojecttest.ui.main.loginFragment
 
+import android.content.SharedPreferences
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.ktx.Firebase
 import com.ogungor.tabprojecttest.enum.FirebaseErrorType
 
 class LoginUserFragmentPresenter : LoginUserFragmentContract.Presenter {
 
     private var auth: FirebaseAuth? = null
     private var view: LoginUserFragmentContract.View? = null
+
 
 
     override fun createView() {
@@ -27,10 +28,22 @@ class LoginUserFragmentPresenter : LoginUserFragmentContract.Presenter {
         view = null
     }
 
-    override fun loginUserListener(email: String, password: String) {
+    override fun loginUserListener(
+        email: String,
+        password: String,
+        boolean: Boolean,
+        sharedPrefEdit: SharedPreferences?
+    ) {
+        var sharefEdit=sharedPrefEdit?.edit()
         view?.run {
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 loginUser(email, password)
+                if(boolean){
+                    var checked=boolean
+                    sharefEdit?.putBoolean("checked",checked)?.apply()
+
+                }
+
             } else {
                 showEmptyAreaMessage()
             }

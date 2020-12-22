@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splashbg2"
+    android:background="@drawable/welcomebg"
 
     >
 
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 android:id="@+id/gitbetlogo"
-        android:src="@drawable/gitbetsplash"
+        android:src="@drawable/textgitbetsplash"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintTop_toBottomOf="@+id/logobg"
         app:layout_constraintStart_toStartOf="parent"
