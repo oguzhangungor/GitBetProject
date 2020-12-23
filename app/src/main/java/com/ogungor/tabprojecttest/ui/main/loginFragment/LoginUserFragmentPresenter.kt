@@ -1,6 +1,7 @@
 package com.ogungor.tabprojecttest.ui.main.loginFragment
 
 import android.content.SharedPreferences
+import android.widget.CheckBox
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.ogungor.tabprojecttest.enum.FirebaseErrorType
@@ -32,22 +33,24 @@ class LoginUserFragmentPresenter : LoginUserFragmentContract.Presenter {
         email: String,
         password: String,
         boolean: Boolean,
-        sharedPrefEdit: SharedPreferences?
+        sharedPref: SharedPreferences?
     ) {
-        var sharefEdit=sharedPrefEdit?.edit()
+        var sharefEdit=sharedPref?.edit()
         view?.run {
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 loginUser(email, password)
-                if(boolean){
                     var checked=boolean
                     sharefEdit?.putBoolean("checked",checked)?.apply()
 
-                }
 
             } else {
                 showEmptyAreaMessage()
             }
         }
+    }
+
+    override fun checkBoxControl(rememberCheckBox: CheckBox): Boolean {
+        return rememberCheckBox.isChecked
     }
 
     override fun loginUser(email: String, password: String) {

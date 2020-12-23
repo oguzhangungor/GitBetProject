@@ -1,5 +1,7 @@
 package com.ogungor.tabprojecttest.feed
 
+import android.content.SharedPreferences
+import android.util.Log.e
 import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
@@ -17,6 +19,8 @@ class FeedActivityPresenter : FeedActivityContract.Presenter {
     private var view: FeedActivityContract.View? = null
     private var auth: FirebaseAuth? = null
     private var networkService: NetworkService? = null
+
+
 
     override fun setView(view: FeedActivityContract.View) {
         this.view = view

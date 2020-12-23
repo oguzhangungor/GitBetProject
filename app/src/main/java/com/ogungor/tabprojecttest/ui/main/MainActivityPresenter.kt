@@ -21,10 +21,10 @@ class MainActivityPresenter : MainActivityContract.Presenter {
 
     override fun loginUserControl(
         currentUser: FirebaseUser?,
-        booleen: Boolean
+        boolean: Boolean
     ) {
         view?.run {
-            if(booleen){
+            if(boolean){
                 if (currentUser != null) {
                     intentToFeedsActivity()
                     showLoginMessage()

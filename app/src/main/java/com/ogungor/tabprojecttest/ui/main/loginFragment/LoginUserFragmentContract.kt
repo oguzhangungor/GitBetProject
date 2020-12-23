@@ -1,6 +1,7 @@
 package com.ogungor.tabprojecttest.ui.main.loginFragment
 
 import android.content.SharedPreferences
+import android.widget.CheckBox
 
 interface LoginUserFragmentContract {
 
@@ -23,6 +24,9 @@ interface LoginUserFragmentContract {
 
         fun handlerError(exp: Exception)
 
+        fun checkBoxControl(rememberCheckBox: CheckBox): Boolean
+
+
     }
 
 
@@ -43,5 +47,6 @@ interface LoginUserFragmentContract {
         fun showInvalidPasswordMessage()
 
         fun showLoginUserFailureMessage()
+
     }
 }

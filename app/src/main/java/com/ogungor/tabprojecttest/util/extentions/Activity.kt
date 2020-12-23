@@ -7,7 +7,7 @@ import com.ogungor.tabprojecttest.feed.FeedActivity
 import com.ogungor.tabprojecttest.ui.main.MainActivity
 
 fun Activity.showShortToast(message: String) {
-    Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
 
 fun Activity.launchFeedsActivity() {

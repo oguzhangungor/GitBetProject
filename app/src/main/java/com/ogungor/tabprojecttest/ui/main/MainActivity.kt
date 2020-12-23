@@ -42,7 +42,7 @@ class MainActivity : BaseActivity(), MainActivityContract.View {
     override fun initUi() {
         auth= FirebaseAuth.getInstance()
         currentUser= auth.currentUser
-        sharedPrefGet=getSharedPreferences(R.string.preference_file_key.toString(),0)
+        sharedPrefGet=getSharedPreferences(R.string.preference_file_key.toString(), 0)
         booleen=sharedPrefGet.getBoolean("checked",false)
         sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
         viewPager = findViewById(R.id.view_pager)
@@ -59,4 +59,6 @@ class MainActivity : BaseActivity(), MainActivityContract.View {
     override fun showLoginMessage() {
         showShortToast(getString(R.string.welcome)+" ${auth.currentUser?.email.toString()}")
     }
+
+
 }

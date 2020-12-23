@@ -2,8 +2,6 @@
     <!-- Base application theme. -->
     <style name="Theme.TabProjectTest" parent="Theme.AppCompat.Light.NoActionBar">
 
-        <!-- Status bar color. -->
-        <!-- Customize your theme here. -->
     </style>
 
     <style name="Theme.TabProjectTest.Fullscreen">

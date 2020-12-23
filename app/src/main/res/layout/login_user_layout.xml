@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:paddingLeft="40dp"
-        android:background="@drawable/passwordeditbox"
+        android:background="@drawable/passwordtextbackground"
         android:textSize="14sp"
         android:hint="@string/password"
         app:layout_constraintBottom_toTopOf="@+id/rememberCheckBox"
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/usernameeditbox"
+        android:background="@drawable/emailtextbackground"
         android:textSize="14sp"
         android:hint="@string/email_address"
         android:paddingLeft="40dp"
@@ -62,6 +62,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="24dp"
+        android:textColor="@color/checkbox"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,7 +30,6 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         var menuInflater = getMenuInflater()
-
         menuInflater.inflate(R.menu.feed_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }

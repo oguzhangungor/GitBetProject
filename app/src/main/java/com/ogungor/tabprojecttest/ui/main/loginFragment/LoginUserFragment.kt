@@ -50,16 +50,19 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
     }
 
     override fun initClickListener() {
-        val boolean=rememberCheckBox.isChecked
+
         loginUserButton?.setOnClickListener {
-            loginUserFragmentPresenter.loginUserListener(
+            loginUserFragmentPresenter.apply {
+                var boolean=checkBoxControl(rememberCheckBox)
+            loginUserListener(
                 email.text.toString(),
                 password.text.toString(),
                 boolean,
                 sharedPref
 
             )
-        }
+        }}
+
     }
 
     override fun showCreateUserSuccessfulMessage() {

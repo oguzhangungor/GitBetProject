@@ -14,7 +14,7 @@ interface MainActivityContract {
 
         fun loginUserControl(
             currentUser: FirebaseUser?,
-            booleen: Boolean
+            boolean: Boolean
         )
     }
 
