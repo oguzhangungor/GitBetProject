@@ -9,9 +9,8 @@
         android:id="@+id/create_user_button"
         android:layout_width="329dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="@dimen/large_size"
         android:src="@drawable/loginbutton"
-        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -20,26 +19,31 @@
         android:id="@+id/create_password_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/small_size"
         android:background="@drawable/passwordtextbackground"
-        android:textSize="14sp"
         android:hint="@string/password"
-        android:paddingLeft="40sp"
+        android:inputType="textPassword"
+        android:maxLines="1"
+
+        android:paddingLeft="@dimen/textbox_padding_left"
+        android:textSize="@dimen/textbox_text_size"
         app:layout_constraintBottom_toTopOf="@+id/password_repeat_editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 
     <EditText
         android:id="@+id/create_mail_address_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/small_size"
         android:background="@drawable/emailtextbackground"
-        android:textSize="14sp"
         android:hint="@string/email_address"
-        android:paddingLeft="40sp"
+        android:inputType="text"
+        android:maxLines="1"
+
+        android:paddingLeft="@dimen/textbox_padding_left"
+        android:textSize="@dimen/textbox_text_size"
         app:layout_constraintBottom_toTopOf="@id/create_password_editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -48,11 +52,14 @@
         android:id="@+id/password_repeat_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/small_size"
         android:background="@drawable/passwordtextbackground"
-        android:paddingLeft="40sp"
-        android:textSize="14sp"
         android:hint="@string/password_repeat"
+        android:inputType="textPassword"
+        android:maxLines="1"
+
+        android:paddingLeft="@dimen/textbox_padding_left"
+        android:textSize="@dimen/textbox_text_size"
         app:layout_constraintBottom_toTopOf="@+id/rememberCheckBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -61,13 +68,12 @@
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/rememberCheckBox"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
         android:buttonTint="@color/checkbox"
         android:text="@string/contract_read"
-        android:textSize="10sp"
-        app:layout_constraintLeft_toLeftOf="@id/password_repeat_editText"
+        android:textSize="@dimen/checkbox_text_size"
         app:layout_constraintBottom_toTopOf="@id/create_user_button"
-        app:layout_constraintHorizontal_chainStyle="packed"/>
+        app:layout_constraintLeft_toLeftOf="@id/password_repeat_editText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,65 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/tabBg"
         android:layout_width="match_parent"
-        android:layout_height="282dp"
-        android:background="@drawable/createfragmentbg"
-        android:orientation="vertical">
+        android:layout_height="64dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/checkbox">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="194dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="129dp"
-                android:layout_gravity="center_vertical"
-                android:foregroundGravity="center_horizontal"
-                android:src="@drawable/mainlogo" />
-        </FrameLayout>
-
-        <ImageView
-            android:layout_width="204dp"
-            android:layout_height="22dp"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="8dp"
-            android:layout_marginBottom="17dp"
-            android:src="@drawable/gitbethosgeldiniz" />
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/login_custom_bg"
-            android:elevation="5dp" />
-
-
+            android:layout_marginTop="@dimen/large_size"
+            android:src="@drawable/gitbethosgeldiniz" />
     </LinearLayout>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.main.MainActivity">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/view_pager"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="320dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/view_custom_bg"
-            android:elevation="5dp" />
-    </FrameLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:padding="@dimen/medium_size">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/medium_size"
+                android:src="@drawable/bundesliga" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/medium_size"
+                android:src="@drawable/superlig" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:padding="@dimen/medium_size">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/medium_size"
+                android:src="@drawable/premierlig" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/medium_size"
+
+                android:src="@drawable/laliga" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

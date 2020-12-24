@@ -1,4 +1,4 @@
-package com.ogungor.tabprojecttest.ui.main.loginFragment
+package com.ogungor.tabprojecttest.loginsignup.loginFragment
 
 import android.content.SharedPreferences
 import android.widget.CheckBox
@@ -38,7 +38,7 @@ interface LoginUserFragmentContract {
 
         fun showEmptyAreaMessage()
 
-        fun intentToFeedsActivity()
+        fun intentToMainsActivity()
 
         fun showCreateUserSuccessfulMessage()
 

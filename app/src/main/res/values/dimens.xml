@@ -5,4 +5,17 @@
     <dimen name="appbar_padding">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
+
+
+    <dimen name="checkbox_text_size">11sp</dimen>
+    <dimen name="textbox_text_size">14sp</dimen>
+
+
+    <dimen name="small_size">8dp</dimen>
+    <dimen name="medium_size">16dp</dimen>
+    <dimen name="large_size">24dp</dimen>
+
+    <dimen name="textbox_padding_left">40dp</dimen>
+
+    <dimen name="elevation_size">5dp</dimen>
 </resources>

@@ -1,4 +1,4 @@
-package com.ogungor.tabprojecttest.ui.main.loginFragment
+package com.ogungor.tabprojecttest.loginsignup.loginFragment
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -11,7 +11,8 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
 import com.ogungor.tabprojecttest.R
-import com.ogungor.tabprojecttest.util.extentions.launchFeedsActivity
+import com.ogungor.tabprojecttest.util.extentions.launchLoginSignUpToMainActivity
+import com.ogungor.tabprojecttest.util.extentions.launchMainToFeedsActivity
 import com.ogungor.tabprojecttest.util.extentions.showShortToast
 
 class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
@@ -73,9 +74,9 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
         activity?.showShortToast(getString(R.string.empty_area))
     }
 
-    override fun intentToFeedsActivity() {
+    override fun intentToMainsActivity() {
         activity?.run {
-            launchFeedsActivity()
+            launchLoginSignUpToMainActivity()
             finish()
         }
     }

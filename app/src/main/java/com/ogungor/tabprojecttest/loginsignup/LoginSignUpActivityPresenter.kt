@@ -1,9 +1,9 @@
-package com.ogungor.tabprojecttest.ui.main
+package com.ogungor.tabprojecttest.loginsignup
 
 import com.google.firebase.auth.FirebaseUser
 
-class MainActivityPresenter : MainActivityContract.Presenter {
-    private var view: MainActivityContract.View? = null
+class LoginSignUpActivityPresenter : LoginSignUpActivityContract.Presenter {
+    private var view: LoginSignUpActivityContract.View? = null
 
     override fun create() {
         view?.apply {
@@ -11,7 +11,7 @@ class MainActivityPresenter : MainActivityContract.Presenter {
         }
     }
 
-    override fun setView(view: MainActivityContract.View) {
+    override fun setView(view: LoginSignUpActivityContract.View) {
         this.view = view
     }
 
@@ -26,7 +26,7 @@ class MainActivityPresenter : MainActivityContract.Presenter {
         view?.run {
             if(boolean){
                 if (currentUser != null) {
-                    intentToFeedsActivity()
+                    intentToaMainActivity()
                     showLoginMessage()
                 }
             }

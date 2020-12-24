@@ -17,7 +17,6 @@ import com.ogungor.tabprojecttest.util.repo.FirebaseApi
 class FeedActivityPresenter : FeedActivityContract.Presenter {
 
     private var view: FeedActivityContract.View? = null
-    private var auth: FirebaseAuth? = null
     private var networkService: NetworkService? = null
 
 
@@ -27,24 +26,15 @@ class FeedActivityPresenter : FeedActivityContract.Presenter {
     }
 
     override fun create() {
-        auth = FirebaseAuth.getInstance()
         networkService = FirebaseApi()
         view?.apply {
             initUi()
         }
     }
 
-    override fun menuItemSelected(item: MenuItem) {
-        if (item.itemId == R.id.logout) {
-            auth?.signOut()
-            view?.run {
-                showSignOutMessage()
-                intentToMainActivity()
-            }
-        }
-    }
 
-    override fun getDataFromFirestore() {
+
+    override fun getDataFromFireStore() {
         networkService?.getDashboardList(object : ApiResponseListener<ArrayList<MatchModel>> {
             override fun onSuccess(model: ArrayList<MatchModel>) {
                 if (model.isNotEmpty()) {

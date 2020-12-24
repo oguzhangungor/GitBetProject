@@ -1,4 +1,4 @@
-package com.ogungor.tabprojecttest.ui.main.createFragment
+package com.ogungor.tabprojecttest.loginsignup.signUpFragment
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,15 +9,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.LinearLayout
 import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.R.layout
-import com.ogungor.tabprojecttest.util.extentions.launchFeedsActivity
+import com.ogungor.tabprojecttest.util.extentions.launchLoginSignUpToMainActivity
+import com.ogungor.tabprojecttest.util.extentions.launchMainToFeedsActivity
 import com.ogungor.tabprojecttest.util.extentions.showShortToast
 
-class CreateUserFragment : Fragment(), CreateUserFragmentContract.View {
+class SignUpUserFragment : Fragment(), SignUpUserFragmentContract.View {
 
-    private lateinit var createUserFragmentPresenter: CreateUserFragmentContract.Presenter
+    private lateinit var createUserFragmentPresenter: SignUpUserFragmentContract.Presenter
     private lateinit var email: EditText
     private lateinit var password: EditText
     private lateinit var passwordRepeat: EditText
@@ -26,8 +26,8 @@ class CreateUserFragment : Fragment(), CreateUserFragmentContract.View {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        createUserFragmentPresenter = CreateUserFragmentPresenter().apply {
-            setView(this@CreateUserFragment)
+        createUserFragmentPresenter = SignUpUserFragmentPresenter().apply {
+            setView(this@SignUpUserFragment)
         }
     }
 
@@ -36,7 +36,7 @@ class CreateUserFragment : Fragment(), CreateUserFragmentContract.View {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val view = inflater.inflate(layout.create_user_layout, container, false)
+        val view = inflater.inflate(layout.signup_user_layout, container, false)
         email = view.findViewById(R.id.create_mail_address_editText)!!
         passwordRepeat = view.findViewById(R.id.password_repeat_editText)!!
         password = view.findViewById(R.id.create_password_editText)!!
@@ -85,9 +85,9 @@ class CreateUserFragment : Fragment(), CreateUserFragmentContract.View {
         activity?.showShortToast(getString(R.string.create_password_error_message))
     }
 
-    override fun intentToFeedsActivity() {
+    override fun intentToMainActivity() {
         activity?.run {
-            launchFeedsActivity()
+            launchLoginSignUpToMainActivity()
             finish()
         }
     }

@@ -1,16 +1,16 @@
-package com.ogungor.tabprojecttest.ui.main.createFragment
+package com.ogungor.tabprojecttest.loginsignup.signUpFragment
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.ogungor.tabprojecttest.enum.FirebaseErrorType
 import java.lang.Exception
 
-class CreateUserFragmentPresenter : CreateUserFragmentContract.Presenter {
+class SignUpUserFragmentPresenter : SignUpUserFragmentContract.Presenter {
 
     private var auth: FirebaseAuth? = null
-    private var view: CreateUserFragmentContract.View? = null
+    private var view: SignUpUserFragmentContract.View? = null
 
-    override fun setView(view: CreateUserFragmentContract.View) {
+    override fun setView(view: SignUpUserFragmentContract.View) {
         this.view = view
     }
 
@@ -45,7 +45,7 @@ class CreateUserFragmentPresenter : CreateUserFragmentContract.Presenter {
             auth?.createUserWithEmailAndPassword(email, password)
                 ?.addOnSuccessListener {
                     showCreateUserSuccessfullMessage()
-                    intentToFeedsActivity()
+                    intentToMainActivity()
                 }
                 ?.addOnFailureListener { exp ->
                     handleError(exp)

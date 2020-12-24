@@ -1,14 +1,14 @@
-package com.ogungor.tabprojecttest.ui.main
+package com.ogungor.tabprojecttest.loginsignup
 
 import com.google.firebase.auth.FirebaseUser
 
-interface MainActivityContract {
+interface LoginSignUpActivityContract {
 
     interface Presenter {
 
         fun create ( )
 
-        fun setView(view: MainActivityContract.View)
+        fun setView(view: LoginSignUpActivityContract.View)
 
         fun destroy()
 
@@ -23,7 +23,7 @@ interface MainActivityContract {
 
         fun initUi()
 
-        fun intentToFeedsActivity()
+        fun intentToaMainActivity()
 
         fun showLoginMessage()
     }

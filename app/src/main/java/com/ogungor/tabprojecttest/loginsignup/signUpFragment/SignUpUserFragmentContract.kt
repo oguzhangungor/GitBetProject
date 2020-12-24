@@ -1,12 +1,12 @@
-package com.ogungor.tabprojecttest.ui.main.createFragment
+package com.ogungor.tabprojecttest.loginsignup.signUpFragment
 
 import java.lang.Exception
 
-interface CreateUserFragmentContract {
+interface SignUpUserFragmentContract {
 
     interface Presenter {
 
-        fun setView(view: CreateUserFragmentContract.View)
+        fun setView(view: SignUpUserFragmentContract.View)
 
         fun destroy()
 
@@ -33,7 +33,7 @@ interface CreateUserFragmentContract {
 
         fun showCreateUserSuccessfullMessage()
 
-        fun intentToFeedsActivity()
+        fun intentToMainActivity()
 
         fun showInvalidEmailMessage()
 

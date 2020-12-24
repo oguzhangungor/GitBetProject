@@ -14,9 +14,7 @@ interface FeedActivityContract {
 
         fun setView(view:View)
 
-        fun menuItemSelected(item: MenuItem)
-
-        fun getDataFromFirestore()
+        fun getDataFromFireStore()
 
     }
 
@@ -24,10 +22,6 @@ interface FeedActivityContract {
     interface  View{
 
         fun initUi()
-
-        fun showSignOutMessage()
-
-        fun intentToMainActivity()
 
         fun showAllMatches(model: ArrayList<MatchModel>)
 

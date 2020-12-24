@@ -1,4 +1,4 @@
-package com.ogungor.tabprojecttest.ui.main.loginFragment
+package com.ogungor.tabprojecttest.loginsignup.loginFragment
 
 import android.content.SharedPreferences
 import android.widget.CheckBox
@@ -59,7 +59,7 @@ class LoginUserFragmentPresenter : LoginUserFragmentContract.Presenter {
             auth!!.signInWithEmailAndPassword(email, password)
                 .addOnSuccessListener {
                     showCreateUserSuccessfulMessage()
-                    intentToFeedsActivity()
+                    intentToMainsActivity()
                 }
                 .addOnFailureListener { exp ->
                     handlerError(exp)

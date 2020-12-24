@@ -10,25 +10,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TabProjectTest">
-        <activity
-            android:name=".ui.main.MainActivity"
-            >
 
+
+        <activity android:name=".loginsignup.LoginSignUpActivity">
         </activity>
         <activity android:name=".splash.SplashActivity"
             android:theme="@style/Theme.TabProjectTest.Fullscreen">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity android:name=".feed.FeedActivity"
             android:theme="@style/Theme.AppCompat">
-
-
+       </activity>
+        <activity android:name=".main.MainActivity"
+            android:theme="@style/Theme.AppCompat.Light">
         </activity>
     </application>
 

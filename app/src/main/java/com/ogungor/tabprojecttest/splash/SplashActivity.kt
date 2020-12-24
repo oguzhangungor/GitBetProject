@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.ogungor.tabprojecttest.ui.main.MainActivity
+import com.ogungor.tabprojecttest.loginsignup.LoginSignUpActivity
 import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.activity.BaseActivity
 
@@ -39,7 +39,7 @@ class SplashActivity :BaseActivity(), SplashActivityContract.View {
 
     override fun finApp() {
         this.finish()
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, LoginSignUpActivity::class.java)
         startActivity(intent)
     }
 }

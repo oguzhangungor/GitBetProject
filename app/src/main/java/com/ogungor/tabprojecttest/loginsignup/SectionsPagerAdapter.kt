@@ -1,16 +1,16 @@
-package com.ogungor.tabprojecttest.ui.main
+package com.ogungor.tabprojecttest.loginsignup
 
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.ogungor.tabprojecttest.R
-import com.ogungor.tabprojecttest.ui.main.createFragment.CreateUserFragment
-import com.ogungor.tabprojecttest.ui.main.loginFragment.LoginUserFragment
+import com.ogungor.tabprojecttest.loginsignup.signUpFragment.SignUpUserFragment
+import com.ogungor.tabprojecttest.loginsignup.loginFragment.LoginUserFragment
 
 private val TAB_TITLES = arrayOf(
     R.string.tab_login_user,
-    R.string.tab_create_user,
+    R.string.tab_signup_user,
 )
 
 class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
@@ -23,7 +23,7 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
                 fragment = LoginUserFragment()
             }
             1 -> {
-                fragment = CreateUserFragment()
+                fragment = SignUpUserFragment()
             }
         }
         return fragment!!

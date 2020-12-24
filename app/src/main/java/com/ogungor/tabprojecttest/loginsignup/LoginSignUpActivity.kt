@@ -1,7 +1,6 @@
-package com.ogungor.tabprojecttest.ui.main
+package com.ogungor.tabprojecttest.loginsignup
 
 
-import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import com.google.android.material.tabs.TabLayout
@@ -10,15 +9,16 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.activity.BaseActivity
-import com.ogungor.tabprojecttest.util.extentions.launchFeedsActivity
+import com.ogungor.tabprojecttest.util.extentions.launchLoginSignUpToMainActivity
+
 import com.ogungor.tabprojecttest.util.extentions.showShortToast
 
-class MainActivity : BaseActivity(), MainActivityContract.View {
+class LoginSignUpActivity : BaseActivity(), LoginSignUpActivityContract.View {
 
     private lateinit var sectionsPagerAdapter: SectionsPagerAdapter
     private lateinit var viewPager: ViewPager
     private lateinit var tabs: TabLayout
-    private lateinit var mainActivityPresenter: MainActivityContract.Presenter
+    private lateinit var mainActivityPresenter: LoginSignUpActivityContract.Presenter
     private lateinit var auth:FirebaseAuth
     private var currentUser:FirebaseUser?=null
     private lateinit var sharedPrefGet:SharedPreferences
@@ -29,15 +29,15 @@ class MainActivity : BaseActivity(), MainActivityContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        mainActivityPresenter = MainActivityPresenter()
+        mainActivityPresenter = LoginSignUpActivityPresenter()
             .apply {
-                setView(this@MainActivity)
+                setView(this@LoginSignUpActivity)
                 create()
                 loginUserControl(currentUser,booleen)
             }
     }
 
-    override fun getLayout(): Int = R.layout.activity_main
+    override fun getLayout(): Int = R.layout.activity_login_signup
 
     override fun initUi() {
         auth= FirebaseAuth.getInstance()
@@ -51,8 +51,8 @@ class MainActivity : BaseActivity(), MainActivityContract.View {
         tabs.setupWithViewPager(viewPager)
     }
 
-    override fun intentToFeedsActivity() {
-        launchFeedsActivity()
+    override fun intentToaMainActivity() {
+        launchLoginSignUpToMainActivity()
         finish()
     }
 
