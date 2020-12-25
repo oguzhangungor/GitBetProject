@@ -26,13 +26,11 @@ class MainActivityPresenter : MainActivityContract.Presenter {
     }
 
 
-    override fun menuItemSelected(item: MenuItem) {
-        if (item.itemId == R.id.logout) {
-            auth?.signOut()
-            view?.run {
-                showSignOutMessage()
-                intentToLoginSignUpActivity()
-            }
+    override fun logOutUser(){
+        auth?.signOut()
+        view?.run {
+            showSignOutMessage()
+            intentToLoginSignUpActivity()
         }
     }
 }

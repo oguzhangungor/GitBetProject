@@ -12,8 +12,7 @@ interface MainActivityContract {
 
         fun destroy()
 
-        fun menuItemSelected(item: MenuItem)
-
+        fun logOutUser()
 
     }
 

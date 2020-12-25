@@ -30,7 +30,6 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View {
     override fun initUi() {
 
         recyclerView= findViewById(R.id.feed_recycler_view)
-
         layoutManager= LinearLayoutManager(this)
         recyclerView.layoutManager= layoutManager
         adapter= FeedRecyclerAdapter(ArrayList<MatchModel>())

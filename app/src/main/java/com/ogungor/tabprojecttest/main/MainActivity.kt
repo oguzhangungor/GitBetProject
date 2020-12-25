@@ -3,13 +3,17 @@ package com.ogungor.tabprojecttest.main
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.ImageButton
 import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.activity.BaseActivity
+import com.ogungor.tabprojecttest.util.extentions.launchMainToFeedsActivity
 import com.ogungor.tabprojecttest.util.extentions.launchMainToLoginSignUpActivity
 import com.ogungor.tabprojecttest.util.extentions.showShortToast
 
 class MainActivity : BaseActivity(), MainActivityContract.View {
     private lateinit var mainActivityPresenter: MainActivityContract.Presenter
+    private lateinit var ImageButtonFeed:ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,24 +24,11 @@ class MainActivity : BaseActivity(), MainActivityContract.View {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        var menuInflater = getMenuInflater()
-        menuInflater.inflate(R.menu.feed_menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        mainActivityPresenter.menuItemSelected(item)
-        return super.onOptionsItemSelected(item)
-    }
-
-
     override fun getLayout(): Int = R.layout.activity_main
 
 
     override fun initUi() {
-
-
+        ImageButtonFeed=findViewById(R.id.feed_button)
     }
 
     override fun showSignOutMessage() {
@@ -47,5 +38,13 @@ class MainActivity : BaseActivity(), MainActivityContract.View {
     override fun intentToLoginSignUpActivity() {
         launchMainToLoginSignUpActivity()
         finish()
+    }
+
+    fun feedActivity(view: View){
+        launchMainToFeedsActivity()
+    }
+
+    fun logOutUser(view: View){
+        mainActivityPresenter.logOutUser()
     }
 }

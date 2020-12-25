@@ -4,6 +4,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.ogungor.tabprojecttest.network.ApiResponseListener
 import com.ogungor.tabprojecttest.network.NetworkService
 import com.ogungor.tabprojecttest.network.model.MatchModel
+import java.util.*
+import kotlin.collections.ArrayList
 
 class FirebaseApi : NetworkService {
 
@@ -14,6 +16,8 @@ class FirebaseApi : NetworkService {
         const val BET = "bet"
         const val RATE = "rate"
         const val OLD_RATE = "old_rate"
+        const val DATE = "date"
+        const val LEAGUE="league"
 
     }
 
@@ -34,7 +38,9 @@ class FirebaseApi : NetworkService {
                                 awayTeam = document.getString(AWAY_TEAM),
                                 bet = document.getString(BET),
                                 rate = document.getString(RATE),
-                                oldRate = document.getString(OLD_RATE)
+                                oldRate = document.getString(OLD_RATE),
+                                date = document.getString(DATE),
+                                leauge = document.getString(LEAGUE)
                             )
                         )
                     }

@@ -24,12 +24,16 @@ class FeedRecyclerAdapter(private var matchList: ArrayList<MatchModel> ) : Recyc
                 textViewMatch.text= "$it - ${currentMatch.awayTeam}"
             }
             currentMatch.bet?.let {
-                textViewBet.text=it
-            }
-            currentMatch.rate?.let {
-                textViewRate.text=it
+                textViewBet.text=it + "  ${currentMatch.rate}"
             }
             currentMatch.oldRate?.let {
+            }
+            currentMatch.leauge.let {
+                textViewLeague.text=it
+
+            }
+            currentMatch.date.let{
+                textViewDate.text=it
             }
         }
 
@@ -46,7 +50,8 @@ class FeedRecyclerAdapter(private var matchList: ArrayList<MatchModel> ) : Recyc
 
     class BetHolder(view :View) : RecyclerView.ViewHolder(view) {
         var textViewMatch: TextView = view.findViewById(R.id.match_text)
-        var textViewBet: TextView = view.findViewById(R.id.bet_text)
-        var textViewRate: TextView = view.findViewById(R.id.rate_text)
+        var textViewBet: TextView = view.findViewById(R.id.bet_rate_text)
+        var textViewLeague:TextView=view.findViewById(R.id.league_text)
+        var textViewDate:TextView=view.findViewById(R.id.date_text)
     }
 }

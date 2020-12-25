@@ -9,5 +9,7 @@ data class MatchModel(
     var awayTeam: String?,
     var bet: String?,
     var rate: String?,
-    var oldRate: String?
+    var oldRate: String?,
+    var leauge: String?,
+    var date:String?
 ) : Parcelable

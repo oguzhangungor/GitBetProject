@@ -11,7 +11,7 @@ import com.ogungor.tabprojecttest.activity.BaseActivity
 
 class SplashActivity :BaseActivity(), SplashActivityContract.View {
 
-    private val DELAY_HANDLER_TIME=3000L
+    private val DELAY_HANDLER_TIME=2000L
     private lateinit var splashActivityPresenter: SplashActivityContract.Presenter
     private lateinit var splashGif: ImageView
 

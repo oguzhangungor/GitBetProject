@@ -1,64 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:paddingTop="10dp"
+    android:background="@drawable/feed_row_stroke"
+    android:layout_marginBottom="5dp"
+    android:layout_margin="4dp"
+
     >
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="3dp"
+        android:paddingStart="@dimen/small_size">
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/match_text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:hint="Match Name"
-        android:textSize="16dp"
-        android:text="maclarr"
-        android:paddingLeft="10dp"
-        android:layout_margin="2dp"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/match_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/medium_size"
+            android:hint="Match Name"
+            android:paddingLeft="10dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"/>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/bet_text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:hint="Match Name"
-        android:textSize="14dp"
-        android:paddingLeft="10dp"
-        android:layout_margin="2dp"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/league_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:background="@color/checkbox"
+            android:padding="5dp"
+            android:paddingStart="@dimen/medium_size"
+            android:paddingEnd="@dimen/medium_size"
+            android:text="League"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium_size" />
 
-</LinearLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_gravity="center_vertical"
-        android:gravity="right"
-        >
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="3dp"
+        android:paddingEnd="@dimen/medium_size">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/rate_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:layout_marginRight="10dp"
-            android:textSize="25dp" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/rate_text"
+            android:id="@+id/date_text"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium_size"
+            android:hint="Date"
+            android:layout_gravity="right"
+            android:textSize="@dimen/medium_size"
+            android:textColor="@color/black"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bet_rate_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
             android:hint="1.80"
-            android:textSize="18dp"
-            android:tooltipText="Oran değişti" />
+            android:background="@drawable/feed_custom_bg"
+            android:padding="5dp"
+            android:textSize="12dp"
+            android:textColor="@color/black"/>
 
     </LinearLayout>
-
 </LinearLayout>
