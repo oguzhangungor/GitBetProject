@@ -9,6 +9,11 @@
 
     <dimen name="checkbox_text_size">11sp</dimen>
     <dimen name="textbox_text_size">14sp</dimen>
+    <dimen name="small_text_size">8sp</dimen>
+    <dimen name="medium_text_size">12sp</dimen>
+    <dimen name="large_text_size">16sp</dimen>
+
+
 
 
     <dimen name="small_size">8dp</dimen>

@@ -10,6 +10,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.activity.BaseActivity
 import com.ogungor.tabprojecttest.util.extentions.launchLoginSignUpToMainActivity
+import com.ogungor.tabprojecttest.util.extentions.launchMainToFeedsActivity
 
 import com.ogungor.tabprojecttest.util.extentions.showShortToast
 
@@ -23,7 +24,6 @@ class LoginSignUpActivity : BaseActivity(), LoginSignUpActivityContract.View {
     private var currentUser:FirebaseUser?=null
     private lateinit var sharedPrefGet:SharedPreferences
     private var booleen:Boolean=true
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,7 +52,7 @@ class LoginSignUpActivity : BaseActivity(), LoginSignUpActivityContract.View {
     }
 
     override fun intentToaMainActivity() {
-        launchLoginSignUpToMainActivity()
+        launchMainToFeedsActivity()
         finish()
     }
 

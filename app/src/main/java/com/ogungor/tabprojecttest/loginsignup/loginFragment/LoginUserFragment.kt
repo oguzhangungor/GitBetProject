@@ -76,7 +76,7 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
 
     override fun intentToMainsActivity() {
         activity?.run {
-            launchLoginSignUpToMainActivity()
+            launchMainToFeedsActivity()
             finish()
         }
     }
