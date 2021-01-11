@@ -1,6 +1,7 @@
 package com.ogungor.tabprojecttest.feed
 
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ogungor.tabprojecttest.R
@@ -35,7 +36,18 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View {
         adapter= FeedRecyclerAdapter(ArrayList<MatchModel>())
         recyclerView.adapter=adapter
 
+        recyclerView.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(v: View?) {
+                setItemClickRecycler()
+            }
 
+        })
+
+
+    }
+
+    private fun setItemClickRecycler() {
+        feedActivityPresenter.itemSelect()
     }
 
     override fun showAllMatches(model: java.util.ArrayList<MatchModel>) {

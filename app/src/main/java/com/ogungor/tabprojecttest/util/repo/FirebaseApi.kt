@@ -18,6 +18,7 @@ class FirebaseApi : NetworkService {
         const val OLD_RATE = "old_rate"
         const val DATE = "date"
         const val LEAGUE="league"
+        const val START_TIME="start_time"
 
     }
 
@@ -40,7 +41,9 @@ class FirebaseApi : NetworkService {
                                 rate = document.getString(RATE),
                                 oldRate = document.getString(OLD_RATE),
                                 date = document.getString(DATE),
-                                leauge = document.getString(LEAGUE)
+                                leauge = document.getString(LEAGUE),
+                                start_time = document.getString(START_TIME)
+
                             )
                         )
                     }

@@ -16,6 +16,8 @@ interface FeedActivityContract {
 
         fun getDataFromFireStore()
 
+        fun itemSelect()
+
     }
 
 

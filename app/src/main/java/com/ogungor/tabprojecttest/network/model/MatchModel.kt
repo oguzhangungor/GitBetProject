@@ -11,5 +11,6 @@ data class MatchModel(
     var rate: String?,
     var oldRate: String?,
     var leauge: String?,
-    var date:String?
+    var date:String?,
+    var start_time:String?
 ) : Parcelable

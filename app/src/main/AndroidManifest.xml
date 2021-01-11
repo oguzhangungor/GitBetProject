@@ -22,8 +22,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".feed.FeedActivity"
-            android:theme="@style/Theme.AppCompat">
+        <activity android:name=".feed.FeedActivity">
        </activity>
         <activity android:name=".main.MainActivity">
         </activity>

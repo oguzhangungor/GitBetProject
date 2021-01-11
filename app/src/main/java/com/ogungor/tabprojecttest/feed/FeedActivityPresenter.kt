@@ -48,4 +48,8 @@ class FeedActivityPresenter : FeedActivityContract.Presenter {
         })
 
     }
+
+    override fun itemSelect() {
+        TODO("Not yet implemented")
+    }
 }
