@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:id="@+id/home" android:title="Home"
+        android:icon="@drawable/home">Anasayfa</item>
+
+    <item android:id="@+id/topten" android:title="Top 10"
+        android:icon="@drawable/topten">Top 10</item>
+
     <item android:id="@+id/before" android:title="Before"
         android:icon="@drawable/before">Geçmiş</item>
 
-    <item android:id="@+id/home" android:title="Home"
-        android:icon="@drawable/home">Anasayfa</item>
 
     <item android:id="@+id/profile" android:title="Profil"
         android:icon="@drawable/profile">Profil</item>
