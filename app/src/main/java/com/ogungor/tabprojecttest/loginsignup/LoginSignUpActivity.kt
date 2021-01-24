@@ -9,7 +9,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.activity.BaseActivity
-import com.ogungor.tabprojecttest.util.extentions.launchLoginSignUpToMainActivity
 import com.ogungor.tabprojecttest.util.extentions.launchMainToFeedsActivity
 
 import com.ogungor.tabprojecttest.util.extentions.showShortToast
@@ -45,7 +44,7 @@ class LoginSignUpActivity : BaseActivity(), LoginSignUpActivityContract.View {
         sharedPrefGet=getSharedPreferences(R.string.preference_file_key.toString(), 0)
         booleen=sharedPrefGet.getBoolean("checked",false)
         sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
-        viewPager = findViewById(R.id.view_pager)
+        viewPager = findViewById(R.id.view_pager_login)
         viewPager.adapter = sectionsPagerAdapter
         tabs = findViewById(R.id.tabs)
         tabs.setupWithViewPager(viewPager)

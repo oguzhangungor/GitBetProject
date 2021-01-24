@@ -17,7 +17,6 @@ import com.ogungor.tabprojecttest.util.repo.FirebaseApi
 class FeedActivityPresenter : FeedActivityContract.Presenter {
 
     private var view: FeedActivityContract.View? = null
-    private var networkService: NetworkService? = null
 
 
 
@@ -26,7 +25,6 @@ class FeedActivityPresenter : FeedActivityContract.Presenter {
     }
 
     override fun create() {
-        networkService = FirebaseApi()
         view?.apply {
             initUi()
         }
@@ -34,22 +32,13 @@ class FeedActivityPresenter : FeedActivityContract.Presenter {
 
 
 
-    override fun getDataFromFireStore() {
-        networkService?.getDashboardList(object : ApiResponseListener<ArrayList<MatchModel>> {
-            override fun onSuccess(model: ArrayList<MatchModel>) {
-                if (model.isNotEmpty()) {
-                    view?.showAllMatches(model)
-                }
-            }
 
-            override fun onFail() {
-            }
-
-        })
-
-    }
 
     override fun itemSelect() {
         TODO("Not yet implemented")
+    }
+
+    override fun destroy() {
+        view = null
     }
 }

@@ -1,22 +1,22 @@
-package com.ogungor.tabprojecttest.feed
+package com.ogungor.tabprojecttest.topten
 
 import android.view.MenuItem
 import android.widget.TextView
 import com.google.firebase.firestore.DocumentSnapshot
 import com.ogungor.tabprojecttest.network.model.MatchModel
 
-interface FeedActivityContract {
+interface TopTenActivityContract {
 
 
     interface  Presenter{
 
         fun create()
 
-        fun setView(view:FeedActivityContract.View)
+        fun setView(view:View)
+
+        fun getDataFromFireStore()
 
         fun itemSelect()
-
-        fun destroy ()
 
     }
 
@@ -25,6 +25,7 @@ interface FeedActivityContract {
 
         fun initUi()
 
+        fun showAllMatches(model: ArrayList<MatchModel>)
 
     }
 }

@@ -1,19 +1,20 @@
 package com.ogungor.tabprojecttest.feed
 
 import android.os.Bundle
-import android.view.View
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import android.view.MenuItem
+import androidx.annotation.IdRes
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.activity.BaseActivity
-import com.ogungor.tabprojecttest.network.model.MatchModel
 
-class FeedActivity : BaseActivity(), FeedActivityContract.View {
+class FeedActivity : BaseActivity(), FeedActivityContract.View,
+    BottomNavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var feedActivityPresenter: FeedActivityContract.Presenter
-    private  lateinit var layoutManager: LinearLayoutManager
-    private lateinit var recyclerView:RecyclerView
-    private lateinit var adapter: FeedRecyclerAdapter
+    private lateinit var sectionsPagerFeedAdapter: SectionsPagerFeedAdapter
+    private lateinit var viewPager: ViewPager
+    private lateinit var tabs: BottomNavigationView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +22,7 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View {
         feedActivityPresenter = FeedActivityPresenter().apply {
             setView(this@FeedActivity)
             create()
-            getDataFromFireStore()
+
         }
     }
 
@@ -30,28 +31,58 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View {
 
     override fun initUi() {
 
-        recyclerView= findViewById(R.id.feed_recycler_view)
-        layoutManager= LinearLayoutManager(this)
-        recyclerView.layoutManager= layoutManager
-        adapter= FeedRecyclerAdapter(ArrayList<MatchModel>())
-        recyclerView.adapter=adapter
+        sectionsPagerFeedAdapter = SectionsPagerFeedAdapter(supportFragmentManager)
+        viewPager = findViewById(R.id.view_pager_feed)
+        viewPager.adapter = sectionsPagerFeedAdapter
+        tabs = findViewById(R.id.bottom_navigation_bar)
+        tabs.setOnNavigationItemSelectedListener(this)
+        sectionsPagerFeedAdapter.setItems(
+            arrayListOf(
+                FeedScreen.HOME,
+                FeedScreen.TOPTEN,
+                FeedScreen.RESULT
+            )
+        )
 
-        recyclerView.setOnClickListener(object : View.OnClickListener{
-            override fun onClick(v: View?) {
-                setItemClickRecycler()
+        val defaultScreen = FeedScreen.HOME
+        scrollToFragment(defaultScreen)
+        selectBottomNavigationViewMenuItem(defaultScreen.menuItemId)
+        supportActionBar?.setTitle(defaultScreen.titleStringId)
+
+        viewPager.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
+            override fun onPageSelected(position: Int) {
+                val selectedFragment = sectionsPagerFeedAdapter.getItems()[position]
+                selectBottomNavigationViewMenuItem(selectedFragment.menuItemId)
+                supportActionBar?.setTitle(selectedFragment.titleStringId)
+
             }
-
         })
-
-
     }
 
     private fun setItemClickRecycler() {
         feedActivityPresenter.itemSelect()
     }
 
-    override fun showAllMatches(model: java.util.ArrayList<MatchModel>) {
-        adapter.setList(model)
+    private fun scrollToFragment(mainScreen: FeedScreen) {
+        val fragmentPosition = sectionsPagerFeedAdapter.getItems().indexOf(mainScreen)
+        if (fragmentPosition != viewPager.currentItem) {
+            viewPager.currentItem = fragmentPosition
+        }
+    }
+
+    private fun selectBottomNavigationViewMenuItem(@IdRes menuItemId: Int) {
+        tabs.setOnNavigationItemSelectedListener(null)
+        tabs.selectedItemId = menuItemId
+        tabs.setOnNavigationItemSelectedListener(this)
+    }
+
+    override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
+        getMainScreenForMenuItem(menuItem.itemId)?.let {
+            scrollToFragment(it)
+            supportActionBar?.setTitle(it.titleStringId)
+            return true
+        }
+        return false
     }
 
 }

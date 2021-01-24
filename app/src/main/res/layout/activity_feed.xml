@@ -71,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/tahmin_textView"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginLeft="12dp"
                     android:gravity="center"
                     android:text="Oran"
                     android:textColor="@color/white"
@@ -81,21 +81,19 @@
                     android:id="@+id/tahmin_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="86dp"
+                    android:layout_marginLeft="84dp"
                     android:layout_toEndOf="@id/karsilasma_text"
-
                     android:gravity="center"
                     android:text="Tahmin"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
             </RelativeLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/feed_recycler_view"
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/view_pager_feed"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="match_parent"/>
+
         </LinearLayout>
     </LinearLayout>
 

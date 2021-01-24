@@ -24,9 +24,9 @@ class FirebaseApi : NetworkService {
 
     private val firebaseDB: FirebaseFirestore = FirebaseFirestore.getInstance()
 
-    override fun getDashboardList(apiResponseListener: ApiResponseListener<ArrayList<MatchModel>>) {
-        firebaseDB.collection(MATCH_BETS).addSnapshotListener { snaphot, exception ->
-
+    override fun getDashboardList(apiResponseListener: ApiResponseListener<ArrayList<MatchModel>>,tableName:String) {
+        var FirebaseApiTable=tableName
+        firebaseDB.collection(FirebaseApiTable).addSnapshotListener { snaphot, exception ->
             if (exception != null) {
                 apiResponseListener.onFail()
             } else {

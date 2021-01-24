@@ -11,7 +11,6 @@ import android.widget.EditText
 import android.widget.ImageButton
 import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.R.layout
-import com.ogungor.tabprojecttest.util.extentions.launchLoginSignUpToMainActivity
 import com.ogungor.tabprojecttest.util.extentions.launchMainToFeedsActivity
 import com.ogungor.tabprojecttest.util.extentions.showShortToast
 

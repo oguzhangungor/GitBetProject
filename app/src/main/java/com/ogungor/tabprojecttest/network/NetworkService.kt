@@ -4,6 +4,6 @@ import com.ogungor.tabprojecttest.network.model.MatchModel
 
 interface NetworkService {
 
-    fun getDashboardList(apiResponseListener: ApiResponseListener<ArrayList<MatchModel>>)
+    fun getDashboardList(apiResponseListener: ApiResponseListener<ArrayList<MatchModel>>, tableName:String)
 
 }

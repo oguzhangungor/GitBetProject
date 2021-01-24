@@ -52,7 +52,7 @@
         tools:context=".loginsignup.LoginSignUpActivity">
 
         <androidx.viewpager.widget.ViewPager
-            android:id="@+id/view_pager"
+            android:id="@+id/view_pager_login"
             android:layout_width="match_parent"
             android:layout_height="320dp"
             android:layout_gravity="center_horizontal"

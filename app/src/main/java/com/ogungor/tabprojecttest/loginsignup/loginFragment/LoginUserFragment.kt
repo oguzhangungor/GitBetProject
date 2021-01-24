@@ -11,7 +11,6 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
 import com.ogungor.tabprojecttest.R
-import com.ogungor.tabprojecttest.util.extentions.launchLoginSignUpToMainActivity
 import com.ogungor.tabprojecttest.util.extentions.launchMainToFeedsActivity
 import com.ogungor.tabprojecttest.util.extentions.showShortToast
 
@@ -23,7 +22,6 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
     private lateinit var rememberCheckBox: CheckBox
     private  var sharedPref:SharedPreferences?=null
     private var loginUserButton: ImageButton? = null
-    private lateinit var  sharedPrefEdit:SharedPreferences.Editor
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

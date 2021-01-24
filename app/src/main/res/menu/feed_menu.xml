@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/home" android:title="Home"
-        android:icon="@drawable/home">Anasayfa</item>
+    <item
+        android:id="@+id/navigator_home"
+        android:title="@string/navigator_menu_home"
+        android:icon="@drawable/home" />
 
-    <item android:id="@+id/topten" android:title="Top 10"
-        android:icon="@drawable/topten">Top 10</item>
+    <item
+        android:id="@+id/navigator_topten"
+        android:title="@string/navigator_menu_topten"
+        android:icon="@drawable/toptenicon" />
 
-    <item android:id="@+id/before" android:title="Before"
-        android:icon="@drawable/before">Geçmiş</item>
+    <item
+        android:id="@+id/navigator_before"
+        android:title="@string/navigator_menu_results"
+        android:icon="@drawable/resulticon" />
 
 
-    <item android:id="@+id/profile" android:title="Profil"
-        android:icon="@drawable/profile">Profil</item>
+    <item
+        android:id="@+id/navigator_profile"
+        android:title="@string/navigator_menu_profile"
+        android:icon="@drawable/profile" />
 
 </menu>
