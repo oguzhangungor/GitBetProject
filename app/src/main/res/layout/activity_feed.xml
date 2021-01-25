@@ -97,6 +97,7 @@
         </LinearLayout>
     </LinearLayout>
 
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_bar"
         android:layout_width="match_parent"
@@ -106,4 +107,10 @@
         app:itemIconTint="#fff"
         app:itemTextColor="#fff"
         app:menu="@menu/feed_menu" />
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/checkbox"
+        />
 </RelativeLayout>

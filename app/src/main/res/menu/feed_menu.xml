@@ -4,7 +4,7 @@
     <item
         android:id="@+id/navigator_home"
         android:title="@string/navigator_menu_home"
-        android:icon="@drawable/home" />
+        android:icon="@drawable/homeactive" />
 
     <item
         android:id="@+id/navigator_topten"
@@ -12,7 +12,7 @@
         android:icon="@drawable/toptenicon" />
 
     <item
-        android:id="@+id/navigator_before"
+        android:id="@+id/navigator_result"
         android:title="@string/navigator_menu_results"
         android:icon="@drawable/resulticon" />
 
@@ -20,6 +20,6 @@
     <item
         android:id="@+id/navigator_profile"
         android:title="@string/navigator_menu_profile"
-        android:icon="@drawable/profile" />
+        android:icon="@drawable/profileactive" />
 
 </menu>

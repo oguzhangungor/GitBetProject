@@ -7,7 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="checkbox">#5a167a</color>
+    <color name="checkbox">#5A167A</color>
+    <color name="checkbox2">#1c542d</color>
     <color name="purple">#F5B8CA</color>
     <color name="yellow">#FAFF5C</color>
     <color name="yellow_dark">#EDF500</color>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ogungor.tabprojecttest">
+    package="com.ogungor.tabprojecttestlist">
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -12,9 +12,9 @@
         android:theme="@style/Theme.TabProjectTest">
 
 
-        <activity android:name=".loginsignup.LoginSignUpActivity">
+        <activity android:name="com.ogungor.tabprojecttestlist.loginsignup.LoginSignUpActivity">
         </activity>
-        <activity android:name=".splash.SplashActivity"
+        <activity android:name="com.ogungor.tabprojecttestlist.splash.SplashActivity"
             android:theme="@style/Theme.TabProjectTest.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +22,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".feed.FeedActivity">
+        <activity android:name="com.ogungor.tabprojecttestlist.feed.FeedActivity">
        </activity>
-        <activity android:name=".main.MainActivity">
+        <activity android:name="com.ogungor.tabprojecttestlist.main.MainActivity">
         </activity>
     </application>
 
