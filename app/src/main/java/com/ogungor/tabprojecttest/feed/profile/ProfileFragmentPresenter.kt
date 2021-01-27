@@ -7,9 +7,6 @@ class ProfileFragmentPresenter : ProfileFragmentContract.Presenter{
     private var view: ProfileFragmentContract.View?=null
     private var auth: FirebaseAuth? =null
 
-
-
-
     override fun create() {
         auth= FirebaseAuth.getInstance()
         view?.run {
@@ -17,7 +14,7 @@ class ProfileFragmentPresenter : ProfileFragmentContract.Presenter{
         }
     }
 
-    override fun setView(View: ProfileFragmentContract.View) {
+    override fun setView(view: ProfileFragmentContract.View?) {
         this.view=view
     }
 
@@ -26,7 +23,6 @@ class ProfileFragmentPresenter : ProfileFragmentContract.Presenter{
         view=null
     }
 
-
     override fun logOutUser() {
         view?.run {
             auth!!.signOut()
@@ -34,4 +30,6 @@ class ProfileFragmentPresenter : ProfileFragmentContract.Presenter{
         }
 
     }
+
+
 }

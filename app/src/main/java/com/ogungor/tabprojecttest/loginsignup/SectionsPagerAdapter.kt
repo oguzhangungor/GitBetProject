@@ -8,13 +8,12 @@ import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.loginsignup.signUpFragment.SignUpUserFragment
 import com.ogungor.tabprojecttest.loginsignup.loginFragment.LoginUserFragment
 
-private val TAB_TITLES = arrayOf(
-    R.string.tab_login_user,
-    R.string.tab_signup_user,
-)
-
 class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
     FragmentPagerAdapter(fm) {
+    private val TAB_TITLES = arrayOf(
+        R.string.tab_login_user,
+        R.string.tab_signup_user,
+    )
 
     override fun getItem(position: Int): Fragment {
         var fragment: Fragment? = null

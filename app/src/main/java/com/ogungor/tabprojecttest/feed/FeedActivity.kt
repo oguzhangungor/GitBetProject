@@ -16,7 +16,6 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View,
     private lateinit var viewPager: ViewPager
     private lateinit var tabs: BottomNavigationView
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         feedActivityPresenter = FeedActivityPresenter().apply {
@@ -25,7 +24,6 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View,
 
         }
     }
-
 
     override fun getLayout(): Int = R.layout.activity_feed
 
@@ -53,7 +51,6 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View,
             override fun onPageSelected(position: Int) {
                 val selectedFragment = sectionsPagerFeedAdapter.getItems()[position]
                 selectBottomNavigationViewMenuItem(selectedFragment.menuItemId)
-
             }
         })
     }
@@ -70,9 +67,11 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View,
     }
 
     private fun selectBottomNavigationViewMenuItem(@IdRes menuItemId: Int) {
-        tabs.setOnNavigationItemSelectedListener(null)
-        tabs.selectedItemId = menuItemId
-        tabs.setOnNavigationItemSelectedListener(this)
+        tabs.run {
+            setOnNavigationItemSelectedListener(null)
+            selectedItemId = menuItemId
+            setOnNavigationItemSelectedListener(this@FeedActivity)
+        }
     }
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {

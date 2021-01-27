@@ -5,7 +5,7 @@ interface ProfileFragmentContract {
     interface Presenter {
         fun create()
 
-        fun setView(View : ProfileFragmentContract.View)
+        fun setView(view : ProfileFragmentContract.View?)
 
         fun destroy()
 

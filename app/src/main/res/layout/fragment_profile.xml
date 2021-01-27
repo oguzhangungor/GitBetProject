@@ -30,11 +30,12 @@
         android:background="@drawable/passwordtextbackground"
         android:clickable="true"/>
 
-    <androidx.appcompat.widget.AppCompatImageButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/profile_logut_button"
         android:layout_width="wrap_content"
         android:layout_height="40sp"
         android:elevation="3dp"
+        android:text="Çıkış Yap"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/medium_size"
         android:background="@drawable/logot"

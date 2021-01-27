@@ -20,7 +20,7 @@ class ProfileFragment : Fragment() , ProfileFragmentContract.View{
     private lateinit var profileFragmentPresenter: ProfileFragmentContract.Presenter
     private var mail_adress:TextView?=null
     private lateinit var change_password:AppCompatButton
-    private var log_out:ImageButton?=null
+    private lateinit var log_out:AppCompatButton
 
     private var auth: FirebaseAuth? = FirebaseAuth.getInstance()
     private var currentUser: FirebaseUser?=auth?.currentUser
@@ -33,6 +33,7 @@ class ProfileFragment : Fragment() , ProfileFragmentContract.View{
         profileFragmentPresenter=ProfileFragmentPresenter().apply{
             setView(this@ProfileFragment)
 
+
         }
     }
 
@@ -40,7 +41,7 @@ class ProfileFragment : Fragment() , ProfileFragmentContract.View{
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var view= inflater.inflate(R.layout.fragment_profile, container, false)
+        val view= inflater.inflate(R.layout.fragment_profile, container, false)
         mail_adress=view.findViewById(R.id.profile_mail_adress_textView)
         change_password=view.findViewById(R.id.profile_change_password_button)
         log_out=view.findViewById(R.id.profile_logut_button)
@@ -56,7 +57,7 @@ class ProfileFragment : Fragment() , ProfileFragmentContract.View{
 
 
 
-    fun setMailAdrress() {
+     fun setMailAdrress( ) {
         mail_adress?.text=currentUser?.email.toString()
     }
 
