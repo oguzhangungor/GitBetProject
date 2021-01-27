@@ -34,9 +34,7 @@ class ResultRecyclerAdapter(private var matchList: ArrayList<MatchModel>) :
                 textViewLeague.text = it
             }
             currentMatch.date.let {
-                textViewDate.text = it
-                var text=R.string.result_date_text.toString()
-                text=it.toString()
+
 
             }
 

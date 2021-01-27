@@ -40,20 +40,19 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View,
             arrayListOf(
                 FeedScreen.HOME,
                 FeedScreen.TOPTEN,
-                FeedScreen.RESULT
+                FeedScreen.RESULT,
+                FeedScreen.PROFILE
             )
         )
 
         val defaultScreen = FeedScreen.HOME
         scrollToFragment(defaultScreen)
         selectBottomNavigationViewMenuItem(defaultScreen.menuItemId)
-        supportActionBar?.setTitle(defaultScreen.titleStringId)
 
         viewPager.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
             override fun onPageSelected(position: Int) {
                 val selectedFragment = sectionsPagerFeedAdapter.getItems()[position]
                 selectBottomNavigationViewMenuItem(selectedFragment.menuItemId)
-                supportActionBar?.setTitle(selectedFragment.titleStringId)
 
             }
         })
@@ -79,7 +78,6 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View,
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         getMainScreenForMenuItem(menuItem.itemId)?.let {
             scrollToFragment(it)
-            supportActionBar?.setTitle(it.titleStringId)
             return true
         }
         return false
