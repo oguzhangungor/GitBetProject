@@ -9,18 +9,19 @@ interface ProfileFragmentContract {
 
         fun destroy()
 
-        fun showCurrentUserMailAdress()
+        fun logOutUser()
+
     }
 
     interface View{
 
 
-         fun initUi()
 
-        fun setMailAdress(toString: String)
+        fun initUi()
+
+        fun initClickListeners()
 
 
-
-
+        fun intentLogOutToMainActivity()
     }
 }

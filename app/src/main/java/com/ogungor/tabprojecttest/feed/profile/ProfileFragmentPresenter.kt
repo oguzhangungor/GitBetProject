@@ -5,14 +5,14 @@ import com.google.firebase.auth.FirebaseUser
 
 class ProfileFragmentPresenter : ProfileFragmentContract.Presenter{
     private var view: ProfileFragmentContract.View?=null
-    private var auth: FirebaseAuth? = null
-    private var currentUser: FirebaseUser?=null
+    private var auth: FirebaseAuth? =null
+
 
 
 
     override fun create() {
         auth= FirebaseAuth.getInstance()
-        view?.apply {
+        view?.run {
             initUi()
         }
     }
@@ -22,12 +22,16 @@ class ProfileFragmentPresenter : ProfileFragmentContract.Presenter{
     }
 
     override fun destroy() {
+        auth=null
         view=null
     }
 
-    override fun showCurrentUserMailAdress() {
-        currentUser=auth?.currentUser
-        var user=currentUser?.email
-        view=ProfileFragment().setMailAdress(user.toString())
+
+    override fun logOutUser() {
+        view?.run {
+            auth!!.signOut()
+            intentLogOutToMainActivity()
+        }
+
     }
 }

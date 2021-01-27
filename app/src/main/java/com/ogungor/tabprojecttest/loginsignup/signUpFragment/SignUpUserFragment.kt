@@ -11,7 +11,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.R.layout
-import com.ogungor.tabprojecttest.util.extentions.launchMainToFeedsActivity
+import com.ogungor.tabprojecttest.util.extentions.launchMainToFeedActivity
 import com.ogungor.tabprojecttest.util.extentions.showShortToast
 
 class SignUpUserFragment : Fragment(), SignUpUserFragmentContract.View {
@@ -86,7 +86,7 @@ class SignUpUserFragment : Fragment(), SignUpUserFragmentContract.View {
 
     override fun intentToMainActivity() {
         activity?.run {
-            launchMainToFeedsActivity()
+            launchMainToFeedActivity()
             finish()
         }
     }

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".feed.profile.ProfileFragment"
     android:orientation="vertical"
     android:paddingTop="50dp"
@@ -14,9 +14,9 @@
         android:layout_height="wrap_content"
         android:background="@drawable/emailtextbackground"
         android:layout_gravity="center"
-        android:paddingLeft="35dp"
+        android:textStyle="bold"
         android:hint="@string/email_address"
-        android:gravity="center_vertical"
+        android:gravity="center"
         />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -27,16 +27,17 @@
         android:text="Şifre Değiştir"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/medium_size"
-        android:background="@drawable/passwordtextbackground"/>
+        android:background="@drawable/passwordtextbackground"
+        android:clickable="true"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/profile_logut_button"
         android:layout_width="wrap_content"
         android:layout_height="40sp"
         android:elevation="3dp"
-        android:text="Çıkış Yap"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/medium_size"
-        android:background="@drawable/logot"/>
+        android:background="@drawable/logot"
+        android:clickable="true"/>
 
 </LinearLayout>

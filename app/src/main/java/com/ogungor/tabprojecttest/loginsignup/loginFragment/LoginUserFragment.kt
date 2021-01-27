@@ -11,7 +11,7 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
 import com.ogungor.tabprojecttest.R
-import com.ogungor.tabprojecttest.util.extentions.launchMainToFeedsActivity
+import com.ogungor.tabprojecttest.util.extentions.launchMainToFeedActivity
 import com.ogungor.tabprojecttest.util.extentions.showShortToast
 
 class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
@@ -74,7 +74,7 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
 
     override fun intentToMainsActivity() {
         activity?.run {
-            launchMainToFeedsActivity()
+            launchMainToFeedActivity()
             finish()
         }
     }

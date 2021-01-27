@@ -1,5 +1,6 @@
 package com.ogungor.tabprojecttest.feed.profile
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,16 +8,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatButton
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.ogungor.tabprojecttest.R
+import com.ogungor.tabprojecttest.util.extentions.launchLogOutToMainActivity
 
 class ProfileFragment : Fragment() , ProfileFragmentContract.View{
     private lateinit var profileFragmentPresenter: ProfileFragmentContract.Presenter
-    private lateinit var mail_adress:TextView
-    private lateinit var change_password:Button
-    private lateinit var log_out:Button
-    private lateinit var auth: FirebaseAuth
+    private var mail_adress:TextView?=null
+    private lateinit var change_password:AppCompatButton
+    private var log_out:ImageButton?=null
+
+    private var auth: FirebaseAuth? = FirebaseAuth.getInstance()
+    private var currentUser: FirebaseUser?=auth?.currentUser
 
 
 
@@ -25,6 +32,7 @@ class ProfileFragment : Fragment() , ProfileFragmentContract.View{
         super.onAttach(context)
         profileFragmentPresenter=ProfileFragmentPresenter().apply{
             setView(this@ProfileFragment)
+
         }
     }
 
@@ -36,33 +44,34 @@ class ProfileFragment : Fragment() , ProfileFragmentContract.View{
         mail_adress=view.findViewById(R.id.profile_mail_adress_textView)
         change_password=view.findViewById(R.id.profile_change_password_button)
         log_out=view.findViewById(R.id.profile_logut_button)
-        profileFragmentPresenter.apply {
-            create()
-            showCurrentUserMailAdress()
-
-        }
+        setMailAdrress()
+        profileFragmentPresenter.create()
 
         return view
     }
 
     override fun initUi() {
-        initClickListener()
-    }
-
-    override fun setMailAdress(MailAdress: String) {
-        mail_adress.text=MailAdress
-    }
-
-    private fun initClickListener() {
-
-        log_out.setOnClickListener(object : View.OnClickListener{
-            override fun onClick(p0: View?) {
-                TODO("Not yet implemented")
-            }
-        })
+        initClickListeners()
     }
 
 
+
+    fun setMailAdrress() {
+        mail_adress?.text=currentUser?.email.toString()
+    }
+
+    override fun initClickListeners() {
+        log_out?.setOnClickListener {
+            profileFragmentPresenter. logOutUser()
+        }
+    }
+
+    override fun intentLogOutToMainActivity() {
+        activity?.run {
+            launchLogOutToMainActivity()
+            finish()
+        }
+    }
 
 
 }

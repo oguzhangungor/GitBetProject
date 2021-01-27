@@ -10,11 +10,10 @@ fun Activity.showShortToast(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
 
-fun Activity.launchMainToFeedsActivity() {
+fun Activity.launchMainToFeedActivity() {
     this.startActivity(Intent(this, FeedActivity::class.java))
 }
 
-
-fun Activity.launchMainToLoginSignUpActivity() {
+fun Activity.launchLogOutToMainActivity() {
     this.startActivity(Intent(this, LoginSignUpActivity::class.java))
 }

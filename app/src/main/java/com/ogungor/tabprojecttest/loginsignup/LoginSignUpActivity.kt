@@ -9,7 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.activity.BaseActivity
-import com.ogungor.tabprojecttest.util.extentions.launchMainToFeedsActivity
+import com.ogungor.tabprojecttest.util.extentions.launchMainToFeedActivity
 
 import com.ogungor.tabprojecttest.util.extentions.showShortToast
 
@@ -51,7 +51,7 @@ class LoginSignUpActivity : BaseActivity(), LoginSignUpActivityContract.View {
     }
 
     override fun intentToaMainActivity() {
-        launchMainToFeedsActivity()
+        launchMainToFeedActivity()
         finish()
     }
 
