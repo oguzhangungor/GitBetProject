@@ -2,10 +2,13 @@ package com.ogungor.tabprojecttest.feed.profile
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.ogungor.tabprojecttest.R
 
 class ProfileFragmentPresenter : ProfileFragmentContract.Presenter{
     private var view: ProfileFragmentContract.View?=null
-    private var auth: FirebaseAuth? =null
+    private  var auth: FirebaseAuth?=null
+    private var currentUser:FirebaseUser?=null
+    private  var currentUserMailAddress:String?=null
 
     override fun create() {
         auth= FirebaseAuth.getInstance()
@@ -19,7 +22,6 @@ class ProfileFragmentPresenter : ProfileFragmentContract.Presenter{
     }
 
     override fun destroy() {
-        auth=null
         view=null
     }
 
@@ -28,6 +30,22 @@ class ProfileFragmentPresenter : ProfileFragmentContract.Presenter{
             auth!!.signOut()
             intentLogOutToMainActivity()
         }
+
+    }
+
+    override fun getUserMailAddress(){
+        view?.run {
+            currentUser=auth?.currentUser
+            currentUserMailAddress=currentUser?.email
+             setUserMailAddress(currentUserMailAddress.toString())
+        }
+
+    }
+
+    override fun setChangePassFragmentViePage()
+    {
+       view?.infilateChange()
+
 
     }
 

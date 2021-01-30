@@ -2,7 +2,9 @@ package com.ogungor.tabprojecttest.feed
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.RelativeLayout
 import androidx.annotation.IdRes
+import androidx.core.view.isVisible
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ogungor.tabprojecttest.R
@@ -15,7 +17,6 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View,
     private lateinit var sectionsPagerFeedAdapter: SectionsPagerFeedAdapter
     private lateinit var viewPager: ViewPager
     private lateinit var tabs: BottomNavigationView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         feedActivityPresenter = FeedActivityPresenter().apply {
@@ -39,7 +40,7 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View,
                 FeedScreen.HOME,
                 FeedScreen.TOPTEN,
                 FeedScreen.RESULT,
-                FeedScreen.PROFILE
+                FeedScreen.PROFILE,
             )
         )
 
@@ -55,9 +56,7 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View,
         })
     }
 
-    private fun setItemClickRecycler() {
-        feedActivityPresenter.itemSelect()
-    }
+
 
     private fun scrollToFragment(mainScreen: FeedScreen) {
         val fragmentPosition = sectionsPagerFeedAdapter.getItems().indexOf(mainScreen)
@@ -65,6 +64,8 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View,
             viewPager.currentItem = fragmentPosition
         }
     }
+
+
 
     private fun selectBottomNavigationViewMenuItem(@IdRes menuItemId: Int) {
         tabs.run {

@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ogungor.tabprojecttest.R
@@ -18,6 +20,8 @@ class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View{
     private  lateinit var layoutManager: LinearLayoutManager
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: DailyRecyclerAdapter
+    private  var alert_text: TextView?=null
+
 
 
 
@@ -41,6 +45,8 @@ class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View{
         recyclerView.layoutManager= layoutManager
         adapter= DailyRecyclerAdapter(ArrayList<MatchModel>())
         recyclerView.adapter=adapter
+        alert_text=view.findViewById(R.id.alert_message_text)
+        alert_text?.isVisible=false
 
 
         return view

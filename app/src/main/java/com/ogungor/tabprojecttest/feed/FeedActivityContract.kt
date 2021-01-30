@@ -26,5 +26,6 @@ interface FeedActivityContract {
         fun initUi()
 
 
+
     }
 }

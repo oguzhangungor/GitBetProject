@@ -17,15 +17,21 @@ class FirebaseApi : NetworkService {
         const val RATE = "rate"
         const val OLD_RATE = "old_rate"
         const val DATE = "date"
-        const val LEAGUE="league"
-        const val START_TIME="start_time"
+        const val LEAGUE = "league"
+        const val START_TIME = "start_time"
+        const val SKOR = "skor"
+        const val RESULT = "result"
+
 
     }
 
     private val firebaseDB: FirebaseFirestore = FirebaseFirestore.getInstance()
 
-    override fun getDashboardList(apiResponseListener: ApiResponseListener<ArrayList<MatchModel>>,tableName:String) {
-        var FirebaseApiTable=tableName
+    override fun getDashboardList(
+        apiResponseListener: ApiResponseListener<ArrayList<MatchModel>>,
+        tableName: String
+    ) {
+        var FirebaseApiTable = tableName
         firebaseDB.collection(FirebaseApiTable).addSnapshotListener { snaphot, exception ->
             if (exception != null) {
                 apiResponseListener.onFail()
@@ -42,8 +48,9 @@ class FirebaseApi : NetworkService {
                                 oldRate = document.getString(OLD_RATE),
                                 date = document.getString(DATE),
                                 leauge = document.getString(LEAGUE),
-                                start_time = document.getString(START_TIME)
-
+                                start_time = document.getString(START_TIME),
+                                skor = document.getString(SKOR),
+                                result = document.getString(RESULT)
                             )
                         )
                     }

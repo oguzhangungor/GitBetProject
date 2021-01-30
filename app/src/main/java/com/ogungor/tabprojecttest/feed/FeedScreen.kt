@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.feed.daily.DailyFeedFragment
 import com.ogungor.tabprojecttest.feed.profile.ProfileFragment
+import com.ogungor.tabprojecttest.feed.profile.changepswrd.ChangePasswordFragment
 import com.ogungor.tabprojecttest.feed.result.ResultFeedFragment
 import com.ogungor.tabprojecttest.feed.topten.TopTenFeedFragment
 

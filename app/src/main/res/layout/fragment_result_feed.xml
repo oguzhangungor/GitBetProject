@@ -5,16 +5,52 @@
     android:layout_height="match_parent"
     tools:context=".feed.result.ResultFeedFragment"
     android:orientation="vertical">
-
-    <androidx.appcompat.widget.AppCompatTextView
+    <RelativeLayout
+        android:id="@+id/feed_relative"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Date"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:id="@+id/result_date_Text"
-        />
+        android:layout_height="32dp"
+        android:background="@color/checkbox"
+        android:gravity="center_vertical">
+
+
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:gravity="center"
+            android:text="Karşılaşma"
+            android:id="@+id/karsilasma_text"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/oran_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tahmin_textView"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:text="@string/result"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tahmin_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="96dp"
+            android:layout_toEndOf="@id/karsilasma_text"
+            android:gravity="center"
+            android:text="Tahmin"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/result_recycler_view"

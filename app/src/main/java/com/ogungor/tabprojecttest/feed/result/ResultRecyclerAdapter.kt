@@ -14,7 +14,7 @@ class ResultRecyclerAdapter(private var matchList: ArrayList<MatchModel>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BetHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.recycler_view_row, parent, false)
+        val view = inflater.inflate(R.layout.recycler_view_result_row, parent, false)
         return BetHolder(view)
     }
 
@@ -28,15 +28,21 @@ class ResultRecyclerAdapter(private var matchList: ArrayList<MatchModel>) :
                 textViewBet.text = it
             }
             currentMatch.rate?.let {
-                textViewRate.text = it
+                textViewRate.text = "/ $it"
             }
             currentMatch.leauge.let {
                 textViewLeague.text = it
             }
-            currentMatch.date.let {
-
-
+            currentMatch.result?.let{
+                when (it){
+                    "1"->  ResultViewIcon.setImageResource(R.drawable.loseicon)
+                    "2"->  ResultViewIcon.setImageResource(R.drawable.winicon)
+                }
             }
+            currentMatch.skor?.let {
+                textViewSkor.text=it
+            }
+
 
         }
 
@@ -57,33 +63,11 @@ class ResultRecyclerAdapter(private var matchList: ArrayList<MatchModel>) :
         var textViewBet: TextView = view.findViewById(R.id.bet_text)
         var textViewRate: TextView = view.findViewById(R.id.rate_text)
         var textViewLeague: TextView = view.findViewById(R.id.league_text)
-        var textViewDate: TextView = view.findViewById(R.id.date_text)
+        var textViewSkor: TextView = view.findViewById(R.id.result_text)
+        var ResultViewIcon: ImageView = view.findViewById(R.id.result_icon)
     }
 
-    fun strParseInt(str: String): Double {
 
-        var parseInt = str.toDouble()
-
-        return parseInt
-    }
-
-    fun oldRateControl(oldRate: String, rate: String): Int {
-
-        var controlCode: Int
-
-        if (oldRate !== "") {
-            var oldRateControl = strParseInt(oldRate)
-            var rateControl = strParseInt(rate)
-            controlCode = if (oldRateControl > rateControl) {
-                1
-            } else {
-                0
-            }
-            return controlCode
-        }
-        return 2
-
-    }
 
 
 }

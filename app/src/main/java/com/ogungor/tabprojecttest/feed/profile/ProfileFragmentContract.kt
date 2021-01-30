@@ -11,6 +11,10 @@ interface ProfileFragmentContract {
 
         fun logOutUser()
 
+        fun getUserMailAddress()
+
+        fun setChangePassFragmentViePage()
+
     }
 
     interface View{
@@ -23,5 +27,9 @@ interface ProfileFragmentContract {
 
 
         fun intentLogOutToMainActivity()
+
+        fun setUserMailAddress( UserMailAddress: String)
+
+        fun infilateChange()
     }
 }

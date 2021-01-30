@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ogungor.tabprojecttest.R
@@ -17,6 +18,7 @@ class TopTenFeedFragment : Fragment(),TopTenFeedFragmentContract.View {
     private  lateinit var layoutManager: LinearLayoutManager
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: TopTenRecyclerAdapter
+    private  var alert_text:TextView?=null
 
 
 
@@ -40,12 +42,14 @@ class TopTenFeedFragment : Fragment(),TopTenFeedFragmentContract.View {
         recyclerView.layoutManager= layoutManager
         adapter= TopTenRecyclerAdapter(ArrayList<MatchModel>())
         recyclerView.adapter=adapter
-
+        alert_text=view.findViewById(R.id.alert_message_text)
+        alert_text?.text=getString(R.string.topten_update_text)
 
         return view
     }
 
     override fun initUi() {
+
 
     }
 
