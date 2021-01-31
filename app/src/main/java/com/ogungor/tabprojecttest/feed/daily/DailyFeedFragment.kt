@@ -6,21 +6,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ogungor.tabprojecttest.R
+import com.ogungor.tabprojecttest.feed.FeedActivity
+import com.ogungor.tabprojecttest.feed.daily.commentdialog.CommentDialogFragment
 import com.ogungor.tabprojecttest.network.model.MatchModel
 
 
-class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View{
+class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View, DailyRecyclerAdapter.OnItemClickListener{
 
+    private lateinit var feedActivity: FeedActivity
     private lateinit var dailyFeedFragmentPresenter: DailyFeedFragmentContract.Presenter
     private  lateinit var layoutManager: LinearLayoutManager
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: DailyRecyclerAdapter
-    private  var alert_text: TextView?=null
 
 
 
@@ -43,10 +43,9 @@ class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View{
         recyclerView= view.findViewById(R.id.daily_recycler_view)
         layoutManager= LinearLayoutManager(context)
         recyclerView.layoutManager= layoutManager
-        adapter= DailyRecyclerAdapter(ArrayList<MatchModel>())
+        adapter= DailyRecyclerAdapter(ArrayList<MatchModel>(),this)
         recyclerView.adapter=adapter
-        alert_text=view.findViewById(R.id.alert_message_text)
-        alert_text?.isVisible=false
+
 
 
         return view
@@ -58,5 +57,14 @@ class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View{
 
     override fun showAllMatches(model: java.util.ArrayList<MatchModel>) {
         adapter.setList(model)
+    }
+
+    override fun onItemClick(position: Int) {
+        var fm=fragmentManager
+        var fragment=
+            CommentDialogFragment()
+        if (fm != null) {
+            fragment.show(fm,"dede")
+        }
     }
 }

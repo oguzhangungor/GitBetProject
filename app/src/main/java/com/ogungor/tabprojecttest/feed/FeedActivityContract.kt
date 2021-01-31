@@ -25,6 +25,8 @@ interface FeedActivityContract {
 
         fun initUi()
 
+        fun showDialog()
+
 
 
     }

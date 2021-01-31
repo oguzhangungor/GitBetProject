@@ -12,6 +12,7 @@ class DailyFeedFragmentPresenter : DailyFeedFragmentContract.Presenter {
 
 
     override fun create() {
+
         networkService = FirebaseApi()
         view?.apply {
             initUi()

@@ -2,9 +2,7 @@ package com.ogungor.tabprojecttest.feed
 
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.RelativeLayout
 import androidx.annotation.IdRes
-import androidx.core.view.isVisible
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ogungor.tabprojecttest.R
@@ -83,4 +81,7 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View,
         return false
     }
 
+    override fun showDialog() {
+
+    }
 }

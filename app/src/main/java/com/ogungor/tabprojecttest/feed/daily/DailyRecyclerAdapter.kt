@@ -3,13 +3,15 @@ package com.ogungor.tabprojecttest.feed.daily
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.network.model.MatchModel
 
-class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>) :
+class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
+                           private var listener: OnItemClickListener) :
     RecyclerView.Adapter<DailyRecyclerAdapter.BetHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BetHolder {
@@ -62,7 +64,7 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>) :
         notifyDataSetChanged()
     }
 
-    class BetHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class BetHolder(view: View) : RecyclerView.ViewHolder(view),View.OnClickListener {
         var textViewMatch: TextView = view.findViewById(R.id.match_text)
         var textViewBet: TextView = view.findViewById(R.id.bet_text)
         var textViewRate: TextView = view.findViewById(R.id.rate_text)
@@ -70,6 +72,23 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>) :
         var textViewDate: TextView = view.findViewById(R.id.date_text)
         var textViewStartTime: TextView = view.findViewById(R.id.start_time_text)
         var oldRateViewIcon: ImageView = view.findViewById(R.id.old_rate_icon)
+
+
+        override fun onClick(v: View?) {
+            var position:Int?=adapterPosition
+           if (position!=RecyclerView.NO_POSITION) {
+               listener.onItemClick(position!!)
+           }
+        }
+
+        init {
+            view.setOnClickListener(this)
+        }
+
+
+    }
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
     }
 
     fun strParseInt(str: String): Double {
