@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".feed.daily.commentdialog.CommentDialogFragment"
     android:gravity="center"
     android:orientation="vertical"
-    android:layout_gravity="center">
+    android:layout_gravity="center"
+    android:background="@drawable/feed_row_full_stroke"
+    android:padding="20dp">
+
+
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/team_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentLeft="true"
+        android:padding="1dp"
+        android:text="Takımlar"
+        android:textStyle="italic" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/comment_dialog_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/comment_dialog_text"
-        android:scrollbars="vertical"
-        android:padding="@dimen/medium_size"
+        android:layout_below="@+id/team_name_text"
+        android:layout_marginTop="-22dp"
         android:gravity="center"
-        android:textStyle="bold"
-        />
+        android:padding="@dimen/medium_size"
+        android:scrollbars="vertical"
+        android:textStyle="bold" />
 
 
-</LinearLayout>
+</RelativeLayout>

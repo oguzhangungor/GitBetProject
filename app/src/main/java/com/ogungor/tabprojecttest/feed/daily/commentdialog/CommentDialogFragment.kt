@@ -11,8 +11,9 @@ import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.ogungor.tabprojecttest.R
 
-class CommentDialogFragment(var comment:String) : DialogFragment() ,CommentDialogFragmentContract.View{
+class CommentDialogFragment(var comment:String,var teamList:String) : DialogFragment() ,CommentDialogFragmentContract.View{
     private lateinit var commentDialogTextView: TextView
+    private lateinit var teamsDialogTextView: TextView
     private lateinit var commentDialogFragmentPresenter: CommentDialogFragmentContract.Presenter
 
     override fun onAttach(context: Context) {
@@ -28,7 +29,9 @@ class CommentDialogFragment(var comment:String) : DialogFragment() ,CommentDialo
     ): View? {
        val view=inflater.inflate(R.layout.fragment_comment__dialog, container, false)
         commentDialogTextView=view.findViewById(R.id.comment_dialog_text)
+        teamsDialogTextView=view.findViewById(R.id.team_name_text)
         commentDialogTextView.text=comment
+        teamsDialogTextView.text=teamList
         commentDialogFragmentPresenter.create()
         return view
     }

@@ -3,7 +3,6 @@ package com.ogungor.tabprojecttest.feed.daily
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +14,7 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
     RecyclerView.Adapter<DailyRecyclerAdapter.BetHolder>() {
 
     private var commentList:ArrayList<String>?=ArrayList()
+    private var teamNameList:ArrayList<String>?=ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BetHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -54,6 +54,7 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
             }
             currentMatch.comment.let {
                 commentList?.add(it.toString())
+                teamNameList?.add(textViewMatch.text.toString())
             }
         }
 
@@ -82,7 +83,7 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
         override fun onClick(v: View?) {
             var position:Int?=adapterPosition
            if (position!=RecyclerView.NO_POSITION) {
-               listener.onItemClick(position!!,commentList!!)
+               listener.onItemClick(position!!,commentList!!,teamNameList!!)
            }
         }
 
@@ -93,7 +94,7 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
 
     }
     interface OnItemClickListener {
-        fun onItemClick(position: Int,CommentList:ArrayList<String>)
+        fun onItemClick(position: Int, commentList:ArrayList<String>, teamList:ArrayList<String>)
     }
 
     fun strParseInt(str: String): Double {

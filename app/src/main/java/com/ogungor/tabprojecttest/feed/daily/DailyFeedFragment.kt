@@ -59,10 +59,10 @@ class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View, DailyRecy
         adapter.setList(model)
     }
 
-    override fun onItemClick(position: Int,commentList:ArrayList<String>) {
+    override fun onItemClick(position: Int,commentList:ArrayList<String>,teamList:ArrayList<String>) {
         var fm=fragmentManager
         var fragment=
-            CommentDialogFragment(commentList[position])
+            CommentDialogFragment(commentList[position],teamList[position])
         if (fm != null) {
             fragment.show(fm,"dede")
         }
