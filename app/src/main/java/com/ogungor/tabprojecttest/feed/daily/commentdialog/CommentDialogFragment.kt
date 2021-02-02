@@ -11,7 +11,7 @@ import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.ogungor.tabprojecttest.R
 
-class CommentDialogFragment : DialogFragment() ,CommentDialogFragmentContract.View{
+class CommentDialogFragment(var comment:String) : DialogFragment() ,CommentDialogFragmentContract.View{
     private lateinit var commentDialogTextView: TextView
     private lateinit var commentDialogFragmentPresenter: CommentDialogFragmentContract.Presenter
 
@@ -28,6 +28,7 @@ class CommentDialogFragment : DialogFragment() ,CommentDialogFragmentContract.Vi
     ): View? {
        val view=inflater.inflate(R.layout.fragment_comment__dialog, container, false)
         commentDialogTextView=view.findViewById(R.id.comment_dialog_text)
+        commentDialogTextView.text=comment
         commentDialogFragmentPresenter.create()
         return view
     }

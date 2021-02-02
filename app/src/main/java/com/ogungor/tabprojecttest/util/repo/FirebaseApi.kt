@@ -21,6 +21,7 @@ class FirebaseApi : NetworkService {
         const val START_TIME = "start_time"
         const val SKOR = "skor"
         const val RESULT = "result"
+        const val COMMENT = "comment"
 
 
     }
@@ -50,7 +51,8 @@ class FirebaseApi : NetworkService {
                                 leauge = document.getString(LEAGUE),
                                 start_time = document.getString(START_TIME),
                                 skor = document.getString(SKOR),
-                                result = document.getString(RESULT)
+                                result = document.getString(RESULT),
+                                comment = document.getString(COMMENT)
                             )
                         )
                     }

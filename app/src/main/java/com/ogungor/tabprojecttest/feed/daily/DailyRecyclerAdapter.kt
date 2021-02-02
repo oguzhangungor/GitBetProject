@@ -14,6 +14,8 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
                            private var listener: OnItemClickListener) :
     RecyclerView.Adapter<DailyRecyclerAdapter.BetHolder>() {
 
+    private var commentList:ArrayList<String>?=ArrayList()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BetHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.recycler_view_row, parent, false)
@@ -50,6 +52,9 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
             currentMatch.start_time.let {
                 textViewStartTime.text = it
             }
+            currentMatch.comment.let {
+                commentList?.add(it.toString())
+            }
         }
 
     }
@@ -77,7 +82,7 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
         override fun onClick(v: View?) {
             var position:Int?=adapterPosition
            if (position!=RecyclerView.NO_POSITION) {
-               listener.onItemClick(position!!)
+               listener.onItemClick(position!!,commentList!!)
            }
         }
 
@@ -88,7 +93,7 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
 
     }
     interface OnItemClickListener {
-        fun onItemClick(position: Int)
+        fun onItemClick(position: Int,CommentList:ArrayList<String>)
     }
 
     fun strParseInt(str: String): Double {
