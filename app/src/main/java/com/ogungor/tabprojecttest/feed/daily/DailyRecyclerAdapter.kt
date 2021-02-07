@@ -13,9 +13,7 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
                            private var listener: OnItemClickListener) :
     RecyclerView.Adapter<DailyRecyclerAdapter.BetHolder>() {
 
-    private var commentList:ArrayList<String>?=ArrayList()
-    private var teamNameList:ArrayList<String>?=ArrayList()
-
+    private lateinit var modelList:ExampleList
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BetHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.recycler_view_row, parent, false)
@@ -24,6 +22,7 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
 
     override fun onBindViewHolder(holder: BetHolder, position: Int) {
         val currentMatch = matchList[position]
+
         holder.run {
             currentMatch.homeTeam?.let {
                 textViewMatch.text = "$it - ${currentMatch.awayTeam}"
@@ -53,8 +52,11 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
                 textViewStartTime.text = it
             }
             currentMatch.comment.let {
-                commentList?.add(it.toString())
-                teamNameList?.add(textViewMatch.text.toString())
+               /* modelList=ExampleList().apply {
+                    setList(position,it.toString(),textViewMatch.text.toString(),textViewBet.text.toString())}*/
+            }
+            holder.itemView.setOnClickListener {
+                listener.onItemClick(currentMatch)
             }
         }
 
@@ -70,7 +72,7 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
         notifyDataSetChanged()
     }
 
-    inner class BetHolder(view: View) : RecyclerView.ViewHolder(view),View.OnClickListener {
+    inner class BetHolder(view: View) : RecyclerView.ViewHolder(view) {
         var textViewMatch: TextView = view.findViewById(R.id.match_text)
         var textViewBet: TextView = view.findViewById(R.id.bet_text)
         var textViewRate: TextView = view.findViewById(R.id.rate_text)
@@ -80,21 +82,13 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
         var oldRateViewIcon: ImageView = view.findViewById(R.id.old_rate_icon)
 
 
-        override fun onClick(v: View?) {
-            var position:Int?=adapterPosition
-           if (position!=RecyclerView.NO_POSITION) {
-               listener.onItemClick(position!!,commentList!!,teamNameList!!)
-           }
-        }
 
-        init {
-            view.setOnClickListener(this)
-        }
+
 
 
     }
     interface OnItemClickListener {
-        fun onItemClick(position: Int, commentList:ArrayList<String>, teamList:ArrayList<String>)
+        fun onItemClick(position: MatchModel)
     }
 
     fun strParseInt(str: String): Double {

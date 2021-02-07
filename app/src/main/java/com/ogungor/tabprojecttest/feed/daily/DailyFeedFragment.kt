@@ -59,12 +59,14 @@ class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View, DailyRecy
         adapter.setList(model)
     }
 
-    override fun onItemClick(position: Int,commentList:ArrayList<String>,teamList:ArrayList<String>) {
+    override fun onItemClick(model: MatchModel) {
         var fm=fragmentManager
         var fragment=
-            CommentDialogFragment(commentList[position],teamList[position])
+            CommentDialogFragment(model.comment!!,model.bet!!,model.homeTeam!!,model.awayTeam!!)
         if (fm != null) {
             fragment.show(fm,"dede")
         }
     }
+
+
 }

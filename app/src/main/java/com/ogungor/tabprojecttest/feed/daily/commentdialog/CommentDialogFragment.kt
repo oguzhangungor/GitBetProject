@@ -11,9 +11,10 @@ import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.ogungor.tabprojecttest.R
 
-class CommentDialogFragment(var comment:String,var teamList:String) : DialogFragment() ,CommentDialogFragmentContract.View{
+class CommentDialogFragment(val comment:String,val bet:String,val homeTeam:String,val awayTeam:String) : DialogFragment() ,CommentDialogFragmentContract.View{
     private lateinit var commentDialogTextView: TextView
     private lateinit var teamsDialogTextView: TextView
+    private lateinit var betsDialogTextView: TextView
     private lateinit var commentDialogFragmentPresenter: CommentDialogFragmentContract.Presenter
 
     override fun onAttach(context: Context) {
@@ -30,8 +31,10 @@ class CommentDialogFragment(var comment:String,var teamList:String) : DialogFrag
        val view=inflater.inflate(R.layout.fragment_comment__dialog, container, false)
         commentDialogTextView=view.findViewById(R.id.comment_dialog_text)
         teamsDialogTextView=view.findViewById(R.id.team_name_text)
-        commentDialogTextView.text=comment
-        teamsDialogTextView.text=teamList
+        betsDialogTextView=view.findViewById(R.id.bet_name_text)
+        commentDialogTextView.text= comment
+        teamsDialogTextView.text="$homeTeam - $awayTeam"
+        betsDialogTextView.text=bet
         commentDialogFragmentPresenter.create()
         return view
     }

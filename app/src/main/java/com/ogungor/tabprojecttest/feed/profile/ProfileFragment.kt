@@ -14,6 +14,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.ogungor.tabprojecttest.R
@@ -28,6 +29,9 @@ class ProfileFragment : Fragment(), ProfileFragmentContract.View {
     private lateinit var change_password: AppCompatButton
     private lateinit var log_out: AppCompatButton
     private lateinit var feedFragmentView: FeedActivityContract.View
+
+    private lateinit var recyclerView: RecyclerView
+
 
 
 
@@ -86,8 +90,10 @@ class ProfileFragment : Fragment(), ProfileFragmentContract.View {
     }
 
     override fun infilateChange(){
-        var infalater = LayoutInflater.from(context)
-        var mylayout=infalater.inflate(R.layout.fragment_change_password,null)
+        /*val fragment=ChangePasswordFragment()
+        val transaction = fragmentManager?.beginTransaction()
+        transaction?.replace(R.id.view_pager_feed, fragment)
+        transaction?.commit()*/
         
     }
 

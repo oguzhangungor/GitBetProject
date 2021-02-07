@@ -15,10 +15,20 @@
         android:id="@+id/team_name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:padding="1dp"
-        android:text="Takımlar"
+        android:hint="takımlar"
+        android:background="@color/teambox"
+        android:textStyle="italic" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/bet_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:padding="1dp"
+        android:hint="BET"
+        android:background="@color/betbox"
         android:textStyle="italic" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -26,8 +36,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/team_name_text"
-        android:layout_marginTop="-22dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
+        android:background="@color/dialogbox"
         android:padding="@dimen/medium_size"
         android:scrollbars="vertical"
         android:textStyle="bold" />

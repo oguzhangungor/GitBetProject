@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".feed.profile.ProfileFragment"
     android:orientation="vertical"
+    android:id="@+id/profile_layout"
+
 
     android:layout_alignParentTop="true">
     <RelativeLayout

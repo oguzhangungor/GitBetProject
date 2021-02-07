@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ogungor.tabprojecttest.R
-import com.ogungor.tabprojecttest.feed.daily.DailyRecyclerAdapter
 import com.ogungor.tabprojecttest.network.model.MatchModel
 
 class ResultFeedFragment : Fragment(), ResultFeedFragmentContract.View {
