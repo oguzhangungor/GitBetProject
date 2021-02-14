@@ -24,7 +24,7 @@
 
         <activity android:name="com.ogungor.tabprojecttest.feed.FeedActivity">
        </activity>
-        <activity android:name="com.ogungor.tabprojecttest.main.MainActivity">
+        <activity android:name="com.ogungor.tabprojecttest.feed.profile.changepswrd.ChangePassword">
         </activity>
     </application>
 

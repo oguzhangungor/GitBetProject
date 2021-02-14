@@ -30,6 +30,6 @@ interface ProfileFragmentContract {
 
         fun setUserMailAddress( UserMailAddress: String)
 
-        fun infilateChange()
+        fun passwordChangeInit()
     }
 }

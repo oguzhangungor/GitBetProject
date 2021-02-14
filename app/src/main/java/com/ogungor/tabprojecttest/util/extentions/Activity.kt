@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.widget.Toast
 import com.ogungor.tabprojecttest.feed.FeedActivity
+import com.ogungor.tabprojecttest.feed.profile.changepswrd.ChangePassword
 import com.ogungor.tabprojecttest.loginsignup.LoginSignUpActivity
 
 fun Activity.showShortToast(message: String) {
@@ -16,4 +17,8 @@ fun Activity.launchMainToFeedActivity() {
 
 fun Activity.launchLogOutToMainActivity() {
     this.startActivity(Intent(this, LoginSignUpActivity::class.java))
+}
+
+fun Activity.launchProfileToChgPasswordActivity() {
+    this.startActivity(Intent(this, ChangePassword::class.java))
 }

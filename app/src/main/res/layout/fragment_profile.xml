@@ -6,8 +6,6 @@
     tools:context=".feed.profile.ProfileFragment"
     android:orientation="vertical"
     android:id="@+id/profile_layout"
-
-
     android:layout_alignParentTop="true">
     <RelativeLayout
         android:id="@+id/feed_relative"
@@ -15,8 +13,6 @@
         android:layout_height="32dp"
         android:background="@color/checkbox"
         android:gravity="center_vertical">
-
-
     </RelativeLayout>
 
 

@@ -66,6 +66,8 @@
         android:textColor="@color/checkbox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:clickable="true"
+        android:id="@+id/forget_password_textview"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

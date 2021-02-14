@@ -1,27 +1,19 @@
 package com.ogungor.tabprojecttest.feed.profile
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.inflate
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.ogungor.tabprojecttest.R
 import com.ogungor.tabprojecttest.feed.FeedActivity
 import com.ogungor.tabprojecttest.feed.FeedActivityContract
-import com.ogungor.tabprojecttest.feed.profile.changepswrd.ChangePasswordFragment
 import com.ogungor.tabprojecttest.util.extentions.launchLogOutToMainActivity
+import com.ogungor.tabprojecttest.util.extentions.launchProfileToChgPasswordActivity
 
 class ProfileFragment : Fragment(), ProfileFragmentContract.View {
     private lateinit var profileFragmentPresenter: ProfileFragmentContract.Presenter
@@ -89,11 +81,10 @@ class ProfileFragment : Fragment(), ProfileFragmentContract.View {
         }
     }
 
-    override fun infilateChange(){
-        /*val fragment=ChangePasswordFragment()
-        val transaction = fragmentManager?.beginTransaction()
-        transaction?.replace(R.id.view_pager_feed, fragment)
-        transaction?.commit()*/
+    override fun passwordChangeInit(){
+        activity?.run {
+            launchProfileToChgPasswordActivity()
+        }
         
     }
 

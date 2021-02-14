@@ -2,9 +2,12 @@ package com.ogungor.tabprojecttest.loginsignup.loginFragment
 
 import android.content.SharedPreferences
 import android.widget.CheckBox
+import androidx.fragment.app.FragmentManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.ogungor.tabprojecttest.enum.FirebaseErrorType
+import com.ogungor.tabprojecttest.feed.daily.commentdialog.CommentDialogFragment
+import com.ogungor.tabprojecttest.loginsignup.loginFragment.forgetpassword.ForgetPassword
 
 class LoginUserFragmentPresenter : LoginUserFragmentContract.Presenter {
 
@@ -86,4 +89,6 @@ class LoginUserFragmentPresenter : LoginUserFragmentContract.Presenter {
             }
         }
     }
+
+
 }

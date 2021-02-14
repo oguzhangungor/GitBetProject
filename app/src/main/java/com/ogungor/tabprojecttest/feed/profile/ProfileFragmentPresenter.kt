@@ -2,7 +2,6 @@ package com.ogungor.tabprojecttest.feed.profile
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.ogungor.tabprojecttest.R
 
 class ProfileFragmentPresenter : ProfileFragmentContract.Presenter{
     private var view: ProfileFragmentContract.View?=null
@@ -44,7 +43,7 @@ class ProfileFragmentPresenter : ProfileFragmentContract.Presenter{
 
     override fun setChangePassFragmentViePage()
     {
-       view?.infilateChange()
+       view?.passwordChangeInit()
 
 
     }

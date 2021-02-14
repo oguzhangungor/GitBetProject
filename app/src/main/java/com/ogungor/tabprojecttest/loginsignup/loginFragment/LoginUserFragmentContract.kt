@@ -27,6 +27,7 @@ interface LoginUserFragmentContract {
         fun checkBoxControl(rememberCheckBox: CheckBox): Boolean
 
 
+
     }
 
 

@@ -10,7 +10,10 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.TextView
 import com.ogungor.tabprojecttest.R
+import com.ogungor.tabprojecttest.feed.daily.commentdialog.CommentDialogFragment
+import com.ogungor.tabprojecttest.loginsignup.loginFragment.forgetpassword.ForgetPassword
 import com.ogungor.tabprojecttest.util.extentions.launchMainToFeedActivity
 import com.ogungor.tabprojecttest.util.extentions.showShortToast
 
@@ -18,6 +21,7 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
 
     private lateinit var loginUserFragmentPresenter: LoginUserFragmentContract.Presenter
     private lateinit var email: EditText
+    private lateinit var forgetPass: TextView
     private lateinit var password: EditText
     private lateinit var rememberCheckBox: CheckBox
     private  var sharedPref:SharedPreferences?=null
@@ -37,6 +41,7 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
         val view = inflater.inflate(R.layout.login_user_layout, container, false)
         sharedPref=activity?.getSharedPreferences(R.string.preference_file_key.toString(),Context.MODE_PRIVATE)
         email = view.findViewById(R.id.login_email_editText)!!
+        forgetPass = view.findViewById(R.id.forget_password_textview)
         password = view.findViewById(R.id.login_password_editText)
         loginUserButton = view.findViewById(R.id.login_user_button)
         rememberCheckBox=view.findViewById(R.id.rememberCheckBox)
@@ -61,6 +66,16 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
 
             )
         }}
+
+        forgetPass.setOnClickListener{
+            var fm=fragmentManager
+            var fragment=ForgetPassword()
+            if (fm != null) {
+                fragment.show(fm,"dede")
+                fragment.dialog
+            }
+
+        }
 
     }
 

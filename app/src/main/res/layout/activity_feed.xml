@@ -14,7 +14,7 @@
         <LinearLayout
             android:id="@+id/tabBg"
             android:layout_width="match_parent"
-            android:layout_height="196dp"
+            android:layout_height="194dp"
             android:background="@drawable/feedbg"
             android:orientation="vertical">
 
