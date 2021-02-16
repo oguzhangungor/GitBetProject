@@ -43,5 +43,8 @@
     <string name="new_password_text">Yeni Şifre</string>
     <string name="result">Sonuç</string>
 
+    <string name="send_mail_complete">Mail Gönderildi</string>
+    <string name="send_mail_failed">Sistemde Kağıtlı olmayan bir Mail Girdiniz</string>
+
 
 </resources>

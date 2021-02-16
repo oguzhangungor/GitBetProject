@@ -1,5 +1,6 @@
 package com.ogungor.tabprojecttest.loginsignup.signUpFragment
 
+import android.widget.CheckBox
 import java.lang.Exception
 
 interface SignUpUserFragmentContract {
@@ -12,7 +13,7 @@ interface SignUpUserFragmentContract {
 
         fun createView()
 
-        fun createUserClicked(email: String, password: String, passwordRepaat: String)
+        fun createUserClicked(checkBoxEnable: Boolean,email: String, password: String, passwordRepaat: String)
 
         fun createUser(email: String, password: String)
 

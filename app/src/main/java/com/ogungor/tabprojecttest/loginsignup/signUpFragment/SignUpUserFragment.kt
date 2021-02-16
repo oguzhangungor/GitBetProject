@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
 import com.ogungor.tabprojecttest.R
@@ -21,6 +22,7 @@ class SignUpUserFragment : Fragment(), SignUpUserFragmentContract.View {
     private lateinit var password: EditText
     private lateinit var passwordRepeat: EditText
     private var createUserButton: ImageButton? = null
+    private lateinit var userAgreementCheckbox:CheckBox
 
 
     override fun onAttach(context: Context) {
@@ -40,6 +42,7 @@ class SignUpUserFragment : Fragment(), SignUpUserFragmentContract.View {
         passwordRepeat = view.findViewById(R.id.password_repeat_editText)!!
         password = view.findViewById(R.id.create_password_editText)!!
         createUserButton = view.findViewById(R.id.create_user_button)
+        userAgreementCheckbox=view.findViewById(R.id.user_agreement_checkBox)
         createUserFragmentPresenter.createView()
         return view
     }
@@ -51,6 +54,7 @@ class SignUpUserFragment : Fragment(), SignUpUserFragmentContract.View {
     override fun initClickListeners() {
         createUserButton?.setOnClickListener {
             createUserFragmentPresenter.createUserClicked(
+                userAgreementCheckbox.isChecked,
                 email.text.toString(),
                 password.text.toString(),
                 passwordRepeat.text.toString()

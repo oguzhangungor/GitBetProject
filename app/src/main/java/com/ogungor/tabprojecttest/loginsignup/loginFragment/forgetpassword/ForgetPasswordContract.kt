@@ -9,11 +9,13 @@ interface ForgetPasswordContract {
         fun setView(view:ForgetPasswordContract.View)
 
         fun finish()
+        fun sendPasswordtoMail(mailAdress:String)
 
     }
 
     interface View {
         fun initUi()
 
+        fun showSendMailMessage(message:String)
     }
 }

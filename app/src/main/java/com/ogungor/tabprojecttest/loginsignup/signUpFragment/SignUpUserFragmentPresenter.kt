@@ -1,5 +1,6 @@
 package com.ogungor.tabprojecttest.loginsignup.signUpFragment
 
+import android.widget.CheckBox
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.ogungor.tabprojecttest.enum.FirebaseErrorType
@@ -26,18 +27,24 @@ class SignUpUserFragmentPresenter : SignUpUserFragmentContract.Presenter {
         }
     }
 
-    override fun createUserClicked(email: String, password: String, passwordRepaat: String) {
-        view?.let { view ->
-            if (email.isNotEmpty() && password.isNotEmpty() && passwordRepaat.isNotEmpty()) {
-                if (password == passwordRepaat) {
-                    createUser(email, password)
+    override fun createUserClicked(checkboxEnable:Boolean,email: String, password: String, passwordRepaat: String) {
+        if(checkboxEnable){
+            view?.let { view ->
+                if (email.isNotEmpty() && password.isNotEmpty() && passwordRepaat.isNotEmpty()) {
+                    if (password == passwordRepaat) {
+                        createUser(email, password)
+                    } else {
+                        view.showPasswordNotEqualMessage()
+                    }
                 } else {
-                    view.showPasswordNotEqualMessage()
+                    view.showEmptyAreaMessage()
                 }
-            } else {
-                view.showEmptyAreaMessage()
             }
+        }else
+        {
+            view?.showCreateUserFailureMessage("Sözleşmeyi Onaylamanız Gerekmektedir.")
         }
+
     }
 
     override fun createUser(email: String, password: String) {

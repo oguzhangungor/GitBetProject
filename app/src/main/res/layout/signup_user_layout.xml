@@ -60,13 +60,13 @@
 
         android:paddingLeft="@dimen/textbox_padding_left"
         android:textSize="@dimen/textbox_text_size"
-        app:layout_constraintBottom_toTopOf="@+id/rememberCheckBox"
+        app:layout_constraintBottom_toTopOf="@+id/user_agreement_checkBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/rememberCheckBox"
+        android:id="@+id/user_agreement_checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
