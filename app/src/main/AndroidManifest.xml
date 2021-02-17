@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ogungor.tabprojecttest">
+    package="com.ogungor.gitbetproject">
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -9,22 +9,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TabProjectTest">
+        android:theme="@style/Theme.GitBetProject">
 
 
-        <activity android:name="com.ogungor.tabprojecttest.loginsignup.LoginSignUpActivity">
+        <activity android:name="com.ogungor.gitbetproject.loginsignup.LoginSignUpActivity">
         </activity>
-        <activity android:name="com.ogungor.tabprojecttest.splash.SplashActivity"
-            android:theme="@style/Theme.TabProjectTest.Fullscreen">
+        <activity android:name="com.ogungor.gitbetproject.splash.SplashActivity"
+            android:theme="@style/Theme.GitBetProject.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name="com.ogungor.tabprojecttest.feed.FeedActivity">
+        <activity android:name="com.ogungor.gitbetproject.feed.FeedActivity">
        </activity>
-        <activity android:name="com.ogungor.tabprojecttest.feed.profile.changepswrd.ChangePassword">
+        <activity android:name="com.ogungor.gitbetproject.feed.profile.changepswrd.ChangePassword">
         </activity>
     </application>
 
