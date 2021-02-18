@@ -22,11 +22,6 @@ class ProfileFragment : Fragment(), ProfileFragmentContract.View {
     private lateinit var log_out: AppCompatButton
     private lateinit var feedFragmentView: FeedActivityContract.View
 
-    private lateinit var recyclerView: RecyclerView
-
-
-
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
         feedFragmentView=FeedActivity()
@@ -34,7 +29,6 @@ class ProfileFragment : Fragment(), ProfileFragmentContract.View {
             setView(this@ProfileFragment)
         }
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,16 +42,12 @@ class ProfileFragment : Fragment(), ProfileFragmentContract.View {
         profileFragmentPresenter.apply {
             create()
             getUserMailAddress()
-
         }
-
-
         return view
     }
 
     override fun initUi() {
         initClickListeners()
-
     }
 
     override fun setUserMailAddress(userMailAddress: String) {
@@ -68,7 +58,6 @@ class ProfileFragment : Fragment(), ProfileFragmentContract.View {
         log_out?.setOnClickListener {
             profileFragmentPresenter.logOutUser()
         }
-
         change_password.setOnClickListener{
            profileFragmentPresenter.setChangePassFragmentViePage()
         }
@@ -85,8 +74,5 @@ class ProfileFragment : Fragment(), ProfileFragmentContract.View {
         activity?.run {
             launchProfileToChgPasswordActivity()
         }
-        
     }
-
-
 }

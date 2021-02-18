@@ -4,8 +4,6 @@ class FeedActivityPresenter : FeedActivityContract.Presenter {
 
     private var view: FeedActivityContract.View? = null
 
-
-
     override fun setView(view: FeedActivityContract.View) {
         this.view = view
     }
@@ -15,8 +13,6 @@ class FeedActivityPresenter : FeedActivityContract.Presenter {
             initUi()
         }
     }
-
-
 
     override fun destroy() {
         view = null

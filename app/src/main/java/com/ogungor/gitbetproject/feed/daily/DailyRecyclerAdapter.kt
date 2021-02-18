@@ -13,7 +13,6 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
                            private var listener: OnItemClickListener) :
     RecyclerView.Adapter<DailyRecyclerAdapter.BetHolder>() {
 
-    private lateinit var modelList:ExampleList
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BetHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.recycler_view_row, parent, false)
@@ -51,15 +50,10 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
             currentMatch.start_time.let {
                 textViewStartTime.text = it
             }
-            currentMatch.comment.let {
-               /* modelList=ExampleList().apply {
-                    setList(position,it.toString(),textViewMatch.text.toString(),textViewBet.text.toString())}*/
-            }
             holder.itemView.setOnClickListener {
                 listener.onItemClick(currentMatch)
             }
         }
-
     }
 
 
@@ -80,28 +74,18 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
         var textViewDate: TextView = view.findViewById(R.id.date_text)
         var textViewStartTime: TextView = view.findViewById(R.id.start_time_text)
         var oldRateViewIcon: ImageView = view.findViewById(R.id.old_rate_icon)
-
-
-
-
-
-
-    }
+         }
     interface OnItemClickListener {
         fun onItemClick(position: MatchModel)
     }
 
     fun strParseInt(str: String): Double {
-
         var parseInt = str.toDouble()
-
         return parseInt
     }
 
     fun oldRateControl(oldRate: String, rate: String): Int {
-
         var controlCode: Int
-
         if (oldRate !== "") {
             var oldRateControl = strParseInt(oldRate)
             var rateControl = strParseInt(rate)
@@ -113,8 +97,5 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
             return controlCode
         }
         return 2
-
     }
-
-
 }

@@ -49,9 +49,7 @@ class TopTenRecyclerAdapter(private var matchList: ArrayList<MatchModel>) :
                 textViewStartTime.text = it
             }
         }
-
     }
-
 
     override fun getItemCount(): Int {
         return matchList.size
@@ -73,16 +71,12 @@ class TopTenRecyclerAdapter(private var matchList: ArrayList<MatchModel>) :
     }
 
     fun strParseInt(str: String): Double {
-
         var parseInt = str.toDouble()
-
         return parseInt
     }
 
     fun oldRateControl(oldRate: String, rate: String): Int {
-
         var controlCode: Int
-
         if (oldRate !== "") {
             var oldRateControl = strParseInt(oldRate)
             var rateControl = strParseInt(rate)
@@ -94,8 +88,5 @@ class TopTenRecyclerAdapter(private var matchList: ArrayList<MatchModel>) :
             return controlCode
         }
         return 2
-
     }
-
-
 }

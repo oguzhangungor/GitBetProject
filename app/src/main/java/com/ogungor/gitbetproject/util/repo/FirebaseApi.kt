@@ -21,8 +21,6 @@ class FirebaseApi : NetworkService {
         const val SKOR = "skor"
         const val RESULT = "result"
         const val COMMENT = "comment"
-
-
     }
 
     private val firebaseDB: FirebaseFirestore = FirebaseFirestore.getInstance()
@@ -60,5 +58,4 @@ class FirebaseApi : NetworkService {
             }
         }
     }
-
 }

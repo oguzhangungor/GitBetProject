@@ -4,7 +4,6 @@ interface ChangePasswordContract {
 
 
     interface Presenter {
-
         fun create()
 
         fun setView (view: ChangePasswordContract.View)
@@ -15,10 +14,10 @@ interface ChangePasswordContract {
     }
 
     interface View {
-
         fun initUi()
 
         fun showToast(message:String)
+
         fun logOutChangePassword()
     }
 }

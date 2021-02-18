@@ -1,21 +1,20 @@
 package com.ogungor.gitbetproject.feed.daily.commentdialog
 
 class CommentDialogFragmentPresenter : CommentDialogFragmentContract.Presenter {
-    private var view:CommentDialogFragmentContract.View?= null
+    private var view: CommentDialogFragmentContract.View? = null
 
     override fun create() {
-
         view?.run {
-        initUi()
-    }
+            initUi()
+        }
     }
 
     override fun setView(view: CommentDialogFragmentContract.View) {
-        this.view=view
+        this.view = view
     }
 
     override fun destroy() {
-        view=null
+        view = null
     }
 }
 

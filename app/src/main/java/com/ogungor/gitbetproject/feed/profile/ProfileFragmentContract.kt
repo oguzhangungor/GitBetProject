@@ -14,13 +14,9 @@ interface ProfileFragmentContract {
         fun getUserMailAddress()
 
         fun setChangePassFragmentViePage()
-
     }
 
     interface View{
-
-
-
         fun initUi()
 
         fun initClickListeners()

@@ -22,9 +22,6 @@ class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View, DailyRecy
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: DailyRecyclerAdapter
 
-
-
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
         dailyFeedFragmentPresenter=DailyFeedFragmentPresenter().apply {
@@ -32,7 +29,6 @@ class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View, DailyRecy
             create()
             getDataFromFireStore()
         }
-
     }
 
     override fun onCreateView(
@@ -45,14 +41,10 @@ class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View, DailyRecy
         recyclerView.layoutManager= layoutManager
         adapter= DailyRecyclerAdapter(ArrayList<MatchModel>(),this)
         recyclerView.adapter=adapter
-
-
-
         return view
     }
 
     override fun initUi() {
-
     }
 
     override fun showAllMatches(model: java.util.ArrayList<MatchModel>) {
@@ -61,12 +53,9 @@ class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View, DailyRecy
 
     override fun onItemClick(model: MatchModel) {
         var fm=fragmentManager
-        var fragment=
-            CommentDialogFragment(model.comment!!,model.bet!!,model.homeTeam!!,model.awayTeam!!)
+        var fragment=CommentDialogFragment(model.comment!!,model.bet!!,model.homeTeam!!,model.awayTeam!!)
         if (fm != null) {
             fragment.show(fm,"dede")
         }
     }
-
-
 }

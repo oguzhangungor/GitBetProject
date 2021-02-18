@@ -42,12 +42,9 @@ class ResultRecyclerAdapter(private var matchList: ArrayList<MatchModel>) :
             currentMatch.skor?.let {
                 textViewSkor.text=it
             }
-
-
         }
 
     }
-
 
     override fun getItemCount(): Int {
         return matchList.size
@@ -66,8 +63,4 @@ class ResultRecyclerAdapter(private var matchList: ArrayList<MatchModel>) :
         var textViewSkor: TextView = view.findViewById(R.id.result_text)
         var ResultViewIcon: ImageView = view.findViewById(R.id.result_icon)
     }
-
-
-
-
 }

@@ -13,22 +13,22 @@ class ForgetPasswordPresenter : ForgetPasswordContract.Presenter {
         }
     }
 
-    override fun sendPasswordtoMail(mailAddress: String) {
+    override fun sendPasswordToMail(mailAddress: String) {
         view?.run {
             auth.sendPasswordResetEmail(mailAddress).addOnSuccessListener {
-                showSendMailMessage("Mail Gönderilmiştir.")
+                showSendSuccessMessage()
             }
                 .addOnFailureListener {
-                    showSendMailMessage("Sistemde Kayıtlı Olmayan Bir Mail Girdiniz.")
+                    showSendFailedMessage()
                 }
         }
     }
 
-        override fun setView(view: ForgetPasswordContract.View) {
-            this.view = view
-        }
-
-        override fun finish() {
-            view = null
-        }
+    override fun setView(view: ForgetPasswordContract.View) {
+        this.view = view
     }
+
+    override fun finish() {
+        view = null
+    }
+}

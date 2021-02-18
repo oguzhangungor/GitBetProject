@@ -16,11 +16,9 @@ interface ResultFeedFragmentContract {
         fun getDataFromFireStore()
     }
 
-
     interface View{
 
         fun initUi()
-
 
         fun showAllMatches(model: ArrayList<MatchModel>)
     }

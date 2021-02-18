@@ -29,9 +29,11 @@ interface SignUpUserFragmentContract {
 
         fun showPasswordNotEqualMessage()
 
-        fun showCreateUserFailureMessage(message: String?)
+        fun showCreateUserFailureMessage(message:String?)
 
-        fun showCreateUserSuccessfullMessage()
+        fun showCreateUserAgreementMessage()
+
+        fun showCreateUserSuccessFullMessage()
 
         fun intentToMainActivity()
 

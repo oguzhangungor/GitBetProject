@@ -20,14 +20,12 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View,
         feedActivityPresenter = FeedActivityPresenter().apply {
             setView(this@FeedActivity)
             create()
-
         }
     }
 
     override fun getLayout(): Int = R.layout.activity_feed
 
     override fun initUi() {
-
         sectionsPagerFeedAdapter = SectionsPagerFeedAdapter(supportFragmentManager)
         viewPager = findViewById(R.id.view_pager_feed)
         viewPager.adapter = sectionsPagerFeedAdapter
@@ -41,11 +39,9 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View,
                 FeedScreen.PROFILE,
             )
         )
-
         val defaultScreen = FeedScreen.HOME
         scrollToFragment(defaultScreen)
         selectBottomNavigationViewMenuItem(defaultScreen.menuItemId)
-
         viewPager.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
             override fun onPageSelected(position: Int) {
                 val selectedFragment = sectionsPagerFeedAdapter.getItems()[position]
@@ -54,16 +50,12 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View,
         })
     }
 
-
-
     private fun scrollToFragment(mainScreen: FeedScreen) {
         val fragmentPosition = sectionsPagerFeedAdapter.getItems().indexOf(mainScreen)
         if (fragmentPosition != viewPager.currentItem) {
             viewPager.currentItem = fragmentPosition
         }
     }
-
-
 
     private fun selectBottomNavigationViewMenuItem(@IdRes menuItemId: Int) {
         tabs.run {
@@ -79,9 +71,5 @@ class FeedActivity : BaseActivity(), FeedActivityContract.View,
             return true
         }
         return false
-    }
-
-    override fun showDialog() {
-
     }
 }

@@ -10,9 +10,7 @@ class DailyFeedFragmentPresenter : DailyFeedFragmentContract.Presenter {
     private var view: DailyFeedFragmentContract.View?=null
     private var networkService: NetworkService? = null
 
-
     override fun create() {
-
         networkService = FirebaseApi()
         view?.apply {
             initUi()
@@ -24,7 +22,6 @@ class DailyFeedFragmentPresenter : DailyFeedFragmentContract.Presenter {
     }
 
     override fun destroy() {
-
    }
 
     override fun getDataFromFireStore() {
@@ -34,11 +31,8 @@ class DailyFeedFragmentPresenter : DailyFeedFragmentContract.Presenter {
                     view?.showAllMatches(model)
                 }
             }
-
             override fun onFail() {
             }
-
         },"MatchBets")
-
     }
 }

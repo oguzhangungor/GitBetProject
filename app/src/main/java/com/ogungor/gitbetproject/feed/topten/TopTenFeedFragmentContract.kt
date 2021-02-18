@@ -22,7 +22,4 @@ interface TopTenFeedFragmentContract {
 
         fun showAllMatches(model: ArrayList<MatchModel>)
     }
-
-
-
 }

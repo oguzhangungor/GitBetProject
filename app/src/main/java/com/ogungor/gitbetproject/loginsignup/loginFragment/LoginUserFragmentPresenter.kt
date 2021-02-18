@@ -11,8 +11,6 @@ class LoginUserFragmentPresenter : LoginUserFragmentContract.Presenter {
     private var auth: FirebaseAuth? = null
     private var view: LoginUserFragmentContract.View? = null
 
-
-
     override fun createView() {
         auth = FirebaseAuth.getInstance()
         view?.run {
@@ -41,8 +39,6 @@ class LoginUserFragmentPresenter : LoginUserFragmentContract.Presenter {
                 loginUser(email, password)
                     var checked=boolean
                     sharefEdit?.putBoolean("checked",checked)?.apply()
-
-
             } else {
                 showEmptyAreaMessage()
             }
@@ -65,7 +61,6 @@ class LoginUserFragmentPresenter : LoginUserFragmentContract.Presenter {
                     handlerError(exp)
                 }
         }
-
     }
 
     override fun handlerError(exp: Exception) {
@@ -86,6 +81,4 @@ class LoginUserFragmentPresenter : LoginUserFragmentContract.Presenter {
             }
         }
     }
-
-
 }

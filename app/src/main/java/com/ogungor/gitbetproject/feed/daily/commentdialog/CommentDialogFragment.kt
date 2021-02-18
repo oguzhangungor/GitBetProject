@@ -38,7 +38,5 @@ class CommentDialogFragment(val comment:String,val bet:String,val homeTeam:Strin
     }
 
     override fun initUi() {
-
     }
-
 }

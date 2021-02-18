@@ -25,9 +25,6 @@ interface LoginUserFragmentContract {
         fun handlerError(exp: Exception)
 
         fun checkBoxControl(rememberCheckBox: CheckBox): Boolean
-
-
-
     }
 
 
@@ -48,6 +45,5 @@ interface LoginUserFragmentContract {
         fun showInvalidPasswordMessage()
 
         fun showLoginUserFailureMessage()
-
     }
 }

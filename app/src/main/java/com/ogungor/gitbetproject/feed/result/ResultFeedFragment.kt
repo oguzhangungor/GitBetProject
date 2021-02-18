@@ -18,8 +18,6 @@ class ResultFeedFragment : Fragment(), ResultFeedFragmentContract.View {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ResultRecyclerAdapter
 
-
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
        resultFeedFragmentPresenter= ResultFeedFragmentPresenter().apply {
@@ -27,7 +25,6 @@ class ResultFeedFragment : Fragment(), ResultFeedFragmentContract.View {
             create()
             getDataFromFireStore()
         }
-
     }
 
     override fun onCreateView(
@@ -40,13 +37,10 @@ class ResultFeedFragment : Fragment(), ResultFeedFragmentContract.View {
         recyclerView.layoutManager= layoutManager
         adapter= ResultRecyclerAdapter(ArrayList<MatchModel>())
         recyclerView.adapter=adapter
-
-
         return view
     }
 
     override fun initUi() {
-
     }
 
     override fun showAllMatches(model: java.util.ArrayList<MatchModel>) {

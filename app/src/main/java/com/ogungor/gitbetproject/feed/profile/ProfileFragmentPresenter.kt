@@ -29,7 +29,6 @@ class ProfileFragmentPresenter : ProfileFragmentContract.Presenter{
             auth!!.signOut()
             intentLogOutToMainActivity()
         }
-
     }
 
     override fun getUserMailAddress(){
@@ -38,15 +37,10 @@ class ProfileFragmentPresenter : ProfileFragmentContract.Presenter{
             currentUserMailAddress=currentUser?.email
              setUserMailAddress(currentUserMailAddress.toString())
         }
-
     }
 
     override fun setChangePassFragmentViePage()
     {
        view?.passwordChangeInit()
-
-
     }
-
-
 }

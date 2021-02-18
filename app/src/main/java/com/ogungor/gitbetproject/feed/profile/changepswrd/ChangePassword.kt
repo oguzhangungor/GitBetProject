@@ -15,7 +15,6 @@ class ChangePassword : BaseActivity(), ChangePasswordContract.View {
     private lateinit var change_password_repeat_text: EditText
     private lateinit var change_password_confirm_button: Button
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         changePasswordFragmentPresenter = ChangePasswordPresenter().apply {
@@ -23,7 +22,6 @@ class ChangePassword : BaseActivity(), ChangePasswordContract.View {
             create()
         }
     }
-
 
     override fun initUi() {
         change_password_first_text = findViewById(R.id.change_password_first_text)
@@ -33,20 +31,16 @@ class ChangePassword : BaseActivity(), ChangePasswordContract.View {
     }
 
     private fun ChangePassWordClick() {
-
     change_password_confirm_button.setOnClickListener {
         changePasswordFragmentPresenter.changePasswordListener(
             change_password_first_text.text.toString(),
             change_password_repeat_text.text.toString()
         )
     }
-
     }
 
     override fun showToast(message:String){
         showShortToast(message)
-
-
     }
 
     override fun logOutChangePassword() {
@@ -54,5 +48,4 @@ class ChangePassword : BaseActivity(), ChangePasswordContract.View {
     }
 
     override fun getLayout(): Int = R.layout.activity_password_change
-
 }

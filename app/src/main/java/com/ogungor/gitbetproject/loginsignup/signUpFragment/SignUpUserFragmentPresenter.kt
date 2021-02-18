@@ -26,31 +26,34 @@ class SignUpUserFragmentPresenter : SignUpUserFragmentContract.Presenter {
         }
     }
 
-    override fun createUserClicked(checkboxEnable:Boolean,email: String, password: String, passwordRepaat: String) {
-        if(checkboxEnable){
-            view?.let { view ->
+    override fun createUserClicked(
+        checkboxEnable: Boolean,
+        email: String,
+        password: String,
+        passwordRepaat: String
+    ) {
+            view?.apply {
                 if (email.isNotEmpty() && password.isNotEmpty() && passwordRepaat.isNotEmpty()) {
                     if (password == passwordRepaat) {
-                        createUser(email, password)
+                        if (checkboxEnable) {
+                            createUser(email, password)
+                        }else {
+                                showCreateUserAgreementMessage()
+                            }
                     } else {
-                        view.showPasswordNotEqualMessage()
+                        showPasswordNotEqualMessage()
                     }
                 } else {
-                    view.showEmptyAreaMessage()
+                    showEmptyAreaMessage()
                 }
             }
-        }else
-        {
-            view?.showCreateUserFailureMessage("Sözleşmeyi Onaylamanız Gerekmektedir.")
         }
-
-    }
 
     override fun createUser(email: String, password: String) {
         view?.run {
             auth?.createUserWithEmailAndPassword(email, password)
                 ?.addOnSuccessListener {
-                    showCreateUserSuccessfullMessage()
+                    showCreateUserSuccessFullMessage()
                     intentToMainActivity()
                 }
                 ?.addOnFailureListener { exp ->

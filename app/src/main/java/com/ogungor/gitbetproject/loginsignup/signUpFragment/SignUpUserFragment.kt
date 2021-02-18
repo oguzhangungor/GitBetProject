@@ -24,7 +24,6 @@ class SignUpUserFragment : Fragment(), SignUpUserFragmentContract.View {
     private var createUserButton: ImageButton? = null
     private lateinit var userAgreementCheckbox:CheckBox
 
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
         createUserFragmentPresenter = SignUpUserFragmentPresenter().apply {
@@ -76,7 +75,11 @@ class SignUpUserFragment : Fragment(), SignUpUserFragmentContract.View {
         }
     }
 
-    override fun showCreateUserSuccessfullMessage() {
+    override fun showCreateUserAgreementMessage() {
+        activity?.showShortToast(getString(R.string.user_agreement_failed))
+    }
+
+    override fun showCreateUserSuccessFullMessage() {
         activity?.showShortToast(getString(R.string.create_complete))
     }
 

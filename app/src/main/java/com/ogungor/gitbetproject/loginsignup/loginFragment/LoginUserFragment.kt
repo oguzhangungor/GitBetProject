@@ -53,7 +53,6 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
     }
 
     override fun initClickListener() {
-
         loginUserButton?.setOnClickListener {
             loginUserFragmentPresenter.apply {
                 var boolean=checkBoxControl(rememberCheckBox)
@@ -65,7 +64,6 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
 
             )
         }}
-
         forgetPass.setOnClickListener{
             var fm=fragmentManager
             var fragment=ForgetPassword()
@@ -73,9 +71,7 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
                 fragment.show(fm,"dede")
                 fragment.dialog
             }
-
         }
-
     }
 
     override fun showCreateUserSuccessfulMessage() {

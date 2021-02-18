@@ -6,8 +6,8 @@ import com.ogungor.gitbetproject.network.model.MatchModel
 import com.ogungor.gitbetproject.util.repo.FirebaseApi
 
 class ResultFeedFragmentPresenter : ResultFeedFragmentContract.Presenter{
-        private var view: ResultFeedFragmentContract.View?=null
-        private var networkService: NetworkService? = null
+    private var view: ResultFeedFragmentContract.View?=null
+    private var networkService: NetworkService? = null
 
     override fun create() {
         networkService=FirebaseApi()
@@ -24,8 +24,6 @@ class ResultFeedFragmentPresenter : ResultFeedFragmentContract.Presenter{
         view=null
     }
 
-
-
     override fun getDataFromFireStore() {
         networkService?.getDashboardList(object : ApiResponseListener<ArrayList<MatchModel>> {
             override fun onSuccess(model: ArrayList<MatchModel>) {
@@ -33,11 +31,8 @@ class ResultFeedFragmentPresenter : ResultFeedFragmentContract.Presenter{
                     view?.showAllMatches(model)
                 }
             }
-
             override fun onFail() {
             }
-
         }, "Result")
-
     }
 }

@@ -5,7 +5,6 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 
 class SectionsPagerFeedAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
-
     private val screens = arrayListOf<FeedScreen>()
 
     fun setItems(screens: List<FeedScreen>) {

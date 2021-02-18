@@ -8,12 +8,10 @@ interface CommentDialogFragmentContract {
         fun setView(view:CommentDialogFragmentContract.View)
 
         fun destroy()
-
     }
 
 
     interface View{
         fun initUi()
-
     }
 }

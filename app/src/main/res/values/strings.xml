@@ -44,6 +44,8 @@
 
     <string name="send_mail_complete">Mail Gönderildi</string>
     <string name="send_mail_failed">Sistemde Kağıtlı olmayan bir Mail Girdiniz</string>
+    
+    <string name="user_agreement_failed">Sözleşmeyi Onaylamanız Gerekmektedir</string>
 
 
 </resources>

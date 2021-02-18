@@ -6,9 +6,8 @@ import com.ogungor.gitbetproject.network.model.MatchModel
 import com.ogungor.gitbetproject.util.repo.FirebaseApi
 
 class TopTenFeedFragmentPresenter : TopTenFeedFragmentContract.Presenter {
-    private var view: TopTenFeedFragmentContract.View?=null
+    private var view: TopTenFeedFragmentContract.View? = null
     private var networkService: NetworkService? = null
-
 
     override fun create() {
         networkService = FirebaseApi()
@@ -18,11 +17,10 @@ class TopTenFeedFragmentPresenter : TopTenFeedFragmentContract.Presenter {
     }
 
     override fun setView(view: TopTenFeedFragmentContract.View) {
-        this.view=view
+        this.view = view
     }
 
     override fun destroy() {
-
     }
 
     override fun getDataFromFireStore() {
@@ -32,11 +30,8 @@ class TopTenFeedFragmentPresenter : TopTenFeedFragmentContract.Presenter {
                     view?.showAllMatches(model)
                 }
             }
-
             override fun onFail() {
             }
-
         }, "TopTen")
-
     }
 }

@@ -18,9 +18,7 @@ class TopTenFeedFragment : Fragment(),TopTenFeedFragmentContract.View {
     private  lateinit var layoutManager: LinearLayoutManager
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: TopTenRecyclerAdapter
-    private  var alert_text:TextView?=null
-
-
+    private  var alertText:TextView?=null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -29,7 +27,6 @@ class TopTenFeedFragment : Fragment(),TopTenFeedFragmentContract.View {
             create()
             getDataFromFireStore()
         }
-
     }
 
     override fun onCreateView(
@@ -42,15 +39,12 @@ class TopTenFeedFragment : Fragment(),TopTenFeedFragmentContract.View {
         recyclerView.layoutManager= layoutManager
         adapter= TopTenRecyclerAdapter(ArrayList<MatchModel>())
         recyclerView.adapter=adapter
-        alert_text=view.findViewById(R.id.alert_message_text)
-        alert_text?.text=getString(R.string.topten_update_text)
-
+        alertText=view.findViewById(R.id.alert_message_text)
+        alertText?.text=getString(R.string.topten_update_text)
         return view
     }
 
     override fun initUi() {
-
-
     }
 
     override fun showAllMatches(model: java.util.ArrayList<MatchModel>) {

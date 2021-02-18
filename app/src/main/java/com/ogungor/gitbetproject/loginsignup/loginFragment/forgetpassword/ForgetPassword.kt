@@ -16,12 +16,10 @@ class ForgetPassword : DialogFragment(), ForgetPasswordContract.View {
     private lateinit var userMailAddressEditText: EditText
     private lateinit var sendMailAddressButton: Button
 
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
         forgetPasswordPresenter = ForgetPasswordPresenter().apply {
             setView(this@ForgetPassword)
-
         }
     }
 
@@ -41,22 +39,21 @@ class ForgetPassword : DialogFragment(), ForgetPasswordContract.View {
         dialog!!.window?.setLayout(1000, 900)
     }
 
-
     override fun initUi() {
         sendInitClickListener()
-
     }
 
-
-    fun sendInitClickListener() {
+    override fun sendInitClickListener() {
         sendMailAddressButton.setOnClickListener {
-            forgetPasswordPresenter.sendPasswordtoMail(userMailAddressEditText.text.toString())
+            forgetPasswordPresenter.sendPasswordToMail(userMailAddressEditText.text.toString())
         }
     }
 
-    override fun showSendMailMessage(message:String) {
-        activity?.showShortToast(message)
+    override fun showSendSuccessMessage() {
+        activity?.showShortToast(getString(R.string.send_mail_complete))
     }
 
-
+    override fun showSendFailedMessage() {
+        activity?.showShortToast(getString(R.string.send_mail_failed))
+    }
 }

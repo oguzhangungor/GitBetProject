@@ -6,7 +6,6 @@ import java.util.ArrayList
 interface DailyFeedFragmentContract {
 
     interface Presenter{
-
         fun create()
 
         fun setView(view:DailyFeedFragmentContract.View)
@@ -17,12 +16,8 @@ interface DailyFeedFragmentContract {
     }
 
     interface View {
-
         fun initUi()
 
         fun showAllMatches(model: ArrayList<MatchModel>)
     }
-
-
-
 }

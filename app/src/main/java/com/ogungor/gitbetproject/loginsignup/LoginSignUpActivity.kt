@@ -58,6 +58,4 @@ class LoginSignUpActivity : BaseActivity(), LoginSignUpActivityContract.View {
     override fun showLoginMessage() {
         showShortToast(getString(R.string.welcome)+" ${auth.currentUser?.email.toString()}")
     }
-
-
 }
