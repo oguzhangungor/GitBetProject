@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="48dp"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:weightSum="4">
 
     <LinearLayout
         android:id="@+id/time_layout"
-        android:layout_width="64dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="match_parent"
         android:background="@drawable/feed_row_stroke"
+        android:padding="16dp"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -17,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:hint="Tarih"
+            tools:text="Tarih"
             android:textSize="@dimen/small_text_size" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -31,7 +35,8 @@
 
     <LinearLayout
         android:id="@+id/team_layout"
-        android:layout_width="211dp"
+        android:layout_width="0dp"
+        android:layout_weight="2"
         android:layout_height="match_parent"
         android:layout_toEndOf="@+id/time_layout"
         android:background="@drawable/feed_row_stroke"
@@ -58,12 +63,10 @@
 
     <RelativeLayout
         android:id="@+id/bet_rate_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/team_layout"
         android:background="@drawable/feed_row_stroke"
-
         android:orientation="horizontal">
 
         <LinearLayout
@@ -118,8 +121,5 @@
               android:id="@+id/old_rate_icon"/>
         </LinearLayout>
 
-
     </RelativeLayout>
-
-
-</RelativeLayout>
+</LinearLayout>

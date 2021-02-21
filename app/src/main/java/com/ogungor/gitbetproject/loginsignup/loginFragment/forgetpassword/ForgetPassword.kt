@@ -36,8 +36,9 @@ class ForgetPassword : DialogFragment(), ForgetPasswordContract.View {
 
     override fun onResume() {
         super.onResume()
-        dialog!!.window?.setLayout(1000, 900)
     }
+
+    override fun getTheme(): Int= android.R.style.Theme_Material_Light_Dialog_Alert
 
     override fun initUi() {
         sendInitClickListener()

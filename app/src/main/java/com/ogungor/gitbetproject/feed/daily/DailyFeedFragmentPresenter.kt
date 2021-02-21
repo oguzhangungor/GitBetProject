@@ -15,6 +15,7 @@ class DailyFeedFragmentPresenter : DailyFeedFragmentContract.Presenter {
         view?.apply {
             initUi()
         }
+        getDataFromFireStore()
     }
 
     override fun setView(view: DailyFeedFragmentContract.View) {
