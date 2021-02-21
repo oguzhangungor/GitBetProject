@@ -26,8 +26,6 @@ class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View, DailyRecy
         super.onAttach(context)
         dailyFeedFragmentPresenter=DailyFeedFragmentPresenter().apply {
             setView(this@DailyFeedFragment)
-            create()
-            getDataFromFireStore()
         }
     }
 
@@ -36,15 +34,17 @@ class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View, DailyRecy
         savedInstanceState: Bundle?
     ): View? {
         val view=inflater.inflate(R.layout.fragment_daily_feed, container, false)
-        recyclerView= view.findViewById(R.id.daily_recycler_view)
-        layoutManager= LinearLayoutManager(context)
-        recyclerView.layoutManager= layoutManager
-        adapter= DailyRecyclerAdapter(ArrayList<MatchModel>(),this)
-        recyclerView.adapter=adapter
+
+        dailyFeedFragmentPresenter.create()
         return view
     }
 
     override fun initUi() {
+        recyclerView= view!!.findViewById(R.id.daily_recycler_view)
+        layoutManager= LinearLayoutManager(context)
+        recyclerView.layoutManager= layoutManager
+        adapter= DailyRecyclerAdapter(ArrayList<MatchModel>(),this)
+        recyclerView.adapter=adapter
     }
 
     override fun showAllMatches(model: java.util.ArrayList<MatchModel>) {
@@ -52,8 +52,8 @@ class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View, DailyRecy
     }
 
     override fun onItemClick(model: MatchModel) {
-        var fm=fragmentManager
-        var fragment=CommentDialogFragment(model.comment!!,model.bet!!,model.homeTeam!!,model.awayTeam!!)
+        val fm=fragmentManager
+        val fragment=CommentDialogFragment(model.comment!!,model.bet!!,model.homeTeam!!,model.awayTeam!!)
         if (fm != null) {
             fragment.show(fm,"dede")
         }
