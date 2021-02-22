@@ -41,7 +41,7 @@ class SignUpUserFragmentPresenter : SignUpUserFragmentContract.Presenter {
             }
         }else
         {
-            view?.showCreateUserFailureMessage("Sözleşmeyi Onaylamanız Gerekmektedir.")
+            view?.showCreateUserContractFailureMessage()
         }
 
     }
@@ -75,7 +75,7 @@ class SignUpUserFragmentPresenter : SignUpUserFragmentContract.Presenter {
                     }
                 }
                 else -> {
-                    showCreateUserFailureMessage(exp.message)
+                    showCreateUserFailureMessage(exp.message!!)
                 }
             }
         }

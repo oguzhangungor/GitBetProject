@@ -70,10 +70,19 @@ class SignUpUserFragment : Fragment(), SignUpUserFragmentContract.View {
         activity?.showShortToast(getString(R.string.empty_area))
     }
 
-    override fun showCreateUserFailureMessage(message: String?) {
-        message?.let {
+    override fun showCreateUserFailureMessage(message:String) {
+        message.let{
             activity?.showShortToast(it)
         }
+
+
+
+    }
+
+    override fun showCreateUserContractFailureMessage() {
+
+        activity?.showShortToast(getString(R.string.aggement_mail_failed))
+
     }
 
     override fun showCreateUserSuccessfullMessage() {

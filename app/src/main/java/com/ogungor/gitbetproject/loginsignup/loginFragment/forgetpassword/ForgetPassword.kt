@@ -29,17 +29,14 @@ class ForgetPassword : DialogFragment(), ForgetPasswordContract.View {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.forgetpass_layout, container, false)
+        val view = inflater.inflate(R.layout.forget_password_layout, container, false)
         userMailAddressEditText = view.findViewById(R.id.mail_address_text_forget)
         sendMailAddressButton = view.findViewById(R.id.confirm_button_forget)
         forgetPasswordPresenter.create()
         return view
     }
 
-    override fun onResume() {
-        super.onResume()
-        dialog!!.window?.setLayout(1000, 900)
-    }
+    override fun getTheme(): Int =android.R.style.Theme_Material_Light_Dialog
 
 
     override fun initUi() {

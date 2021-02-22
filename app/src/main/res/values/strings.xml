@@ -10,14 +10,14 @@
     <string name="password_repeat">Parola Tekrarla</string>
     <string name="remember">Beni Hatırla</string>
     <string name="password_forget">Şifremi Unuttum!</string>
-    <string name="contract_read">Son Kullanıcı Lisans Sözleşmesini Okudum Onaylıyorum.</string>
+    <string name="contract_read">Son Kullanıcı Lisans sözleşmesini okudum onaylıyorum.</string>
 
-    <string name="empty_area">Boş Alan Bırakmayınızsss</string>
-    <string name="login_password_error_message">Girdiğiniz Parola Hatalı</string>
-    <string name="email_not_registered">Girmiş Olduğunuz E-Mail Adresi Sisteme Kayıtlı Değildir</string>
+    <string name="empty_area">Boş alan bırakmayınız</string>
+    <string name="login_password_error_message">Girdiğiniz parola hatalı</string>
+    <string name="email_not_registered">Girmiş olduğunuz E-Mail adresi sisteme kayıtlı değildir</string>
     <string name="email_error_message">Lütfen geçerli bir email giriniz</string>
-    <string name="create_password_error_message">Lütfen Daha Güçlü Bir Parola Giriniz</string>
-    <string name="create_password_repeat_error_message">Girdiğiniz Parolalar Eşleşmiyor</string>
+    <string name="create_password_error_message">Lütfen daha güçlü bir parola giriniz</string>
+    <string name="create_password_repeat_error_message">Girdiğiniz parolalar eşleşmiyor</string>
 
     <string name="welcome">Hoşgeldiniz</string>
     <string name="create_complete">Kayıt Başarılı</string>
@@ -42,8 +42,10 @@
     <string name="new_password_text">Yeni Şifre</string>
     <string name="result">Sonuç</string>
 
-    <string name="send_mail_complete">Mail Gönderildi</string>
-    <string name="send_mail_failed">Sistemde Kağıtlı olmayan bir Mail Girdiniz</string>
+    <string name="send_mail_complete">Mail Gönderildi.</string>
+    <string name="send_mail_failed">Sistemde kayıtlı olmayan bir Mail girdiniz</string>
+    <string name="aggement_mail_failed">Sözleşmeyi Onaylamanız Gerekmektedir.</string>
+    <string name="forget_password_button_text">Sıfırlama Maili Gönder</string>
 
 
 </resources>

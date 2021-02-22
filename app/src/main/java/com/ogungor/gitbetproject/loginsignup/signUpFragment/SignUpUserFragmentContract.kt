@@ -29,7 +29,10 @@ interface SignUpUserFragmentContract {
 
         fun showPasswordNotEqualMessage()
 
-        fun showCreateUserFailureMessage(message: String?)
+        fun showCreateUserFailureMessage(message: String)
+
+        fun showCreateUserContractFailureMessage()
+
 
         fun showCreateUserSuccessfullMessage()
 

@@ -3,7 +3,9 @@
 
         <item>
             <shape>
-                <corners android:radius="25px"/>
+                <corners android:radius="@dimen/medium_size"/>
+                <gradient android:startColor="@color/checkbox" android:endColor="@color/checkbox"/>
+                <stroke android:width="1px" android:color="#000000"  />
             </shape>
         </item>
 
