@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.GitBetProject" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/checkbox</item>
 
     </style>
 

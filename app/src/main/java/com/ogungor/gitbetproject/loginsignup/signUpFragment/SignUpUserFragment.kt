@@ -10,10 +10,14 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.TextView
+import androidx.fragment.app.FragmentActivity
 import com.ogungor.gitbetproject.R
 import com.ogungor.gitbetproject.R.layout
+import com.ogungor.gitbetproject.util.extentions.launchMainToAgreementActivity
 import com.ogungor.gitbetproject.util.extentions.launchMainToFeedActivity
 import com.ogungor.gitbetproject.util.extentions.showShortToast
+import org.w3c.dom.Text
 
 class SignUpUserFragment : Fragment(), SignUpUserFragmentContract.View {
 
@@ -21,6 +25,7 @@ class SignUpUserFragment : Fragment(), SignUpUserFragmentContract.View {
     private lateinit var email: EditText
     private lateinit var password: EditText
     private lateinit var passwordRepeat: EditText
+    private lateinit var userAgreementLinkText:TextView
     private var createUserButton: ImageButton? = null
     private lateinit var userAgreementCheckbox:CheckBox
 
@@ -37,16 +42,18 @@ class SignUpUserFragment : Fragment(), SignUpUserFragmentContract.View {
         savedInstanceState: Bundle?
     ): View {
         val view = inflater.inflate(layout.signup_user_layout, container, false)
-        email = view.findViewById(R.id.create_mail_address_editText)!!
-        passwordRepeat = view.findViewById(R.id.password_repeat_editText)!!
-        password = view.findViewById(R.id.create_password_editText)!!
-        createUserButton = view.findViewById(R.id.create_user_button)
-        userAgreementCheckbox=view.findViewById(R.id.user_agreement_checkBox)
+        email = view?.findViewById(R.id.create_mail_address_editText)!!
+        passwordRepeat = view?.findViewById(R.id.password_repeat_editText)!!
+        password = view?.findViewById(R.id.create_password_editText)!!
+        createUserButton = view?.findViewById(R.id.create_user_button)
+        userAgreementCheckbox= view?.findViewById(R.id.user_agreement_checkBox)!!
+        userAgreementLinkText=view?.findViewById(R.id.aggrement_link_text)!!
         createUserFragmentPresenter.createView()
         return view
     }
 
     override fun initUi() {
+
         initClickListeners()
     }
 
@@ -58,6 +65,10 @@ class SignUpUserFragment : Fragment(), SignUpUserFragmentContract.View {
                 password.text.toString(),
                 passwordRepeat.text.toString()
             )
+        }
+
+        userAgreementLinkText.setOnClickListener{
+            activity?.launchMainToAgreementActivity()
         }
     }
 
@@ -103,3 +114,4 @@ class SignUpUserFragment : Fragment(), SignUpUserFragmentContract.View {
         createUserFragmentPresenter.destroy()
     }
 }
+

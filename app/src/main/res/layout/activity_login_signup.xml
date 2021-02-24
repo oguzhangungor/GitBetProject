@@ -1,65 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/first_layout"
+    >
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/tabBg"
         android:layout_width="match_parent"
-        android:layout_height="282dp"
+        android:layout_height="match_parent"
         android:background="@drawable/createfragmentbg"
-        android:orientation="vertical">
+        android:padding="1dp"
+        >
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="194dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="129dp"
-                android:layout_gravity="center_vertical"
-                android:foregroundGravity="center_horizontal"
-                android:src="@drawable/mainlogo" />
-        </FrameLayout>
 
         <ImageView
-            android:layout_width="204dp"
-            android:layout_height="22dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginLeft="@dimen/small_size"
-            android:layout_marginBottom="@dimen/medium_size"
-            android:src="@drawable/gitbethosgeldiniz" />
+            android:src="@drawable/gitbethosgeldiniz"
+            android:id="@+id/gitbethosgeldiniz"
+            android:layout_marginTop="@dimen/medium_size"
+            app:layout_constraintTop_toBottomOf="@+id/feed_lgo"
+            app:layout_constraintLeft_toLeftOf="@id/tabs"/>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
+            app:layout_constraintTop_toBottomOf="@+id/gitbethosgeldiniz"
             android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/small_size"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/small_size"
-            android:layout_marginRight="@dimen/small_size"
             android:background="@drawable/login_custom_bg"
-            android:elevation="@dimen/elevation_size" />
+            android:elevation="@dimen/elevation_size"
+            app:tabIndicatorColor="@color/checkbox" />
+
+        <ImageView
+            android:id="@+id/feed_lgo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mainlogo"
+            app:layout_constraintBottom_toTopOf="@id/tabs"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <FrameLayout
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager_login"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".loginsignup.LoginSignUpActivity">
+        android:layout_height="358dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/small_size"
+        android:layout_marginRight="@dimen/small_size"
+        android:layout_marginBottom="@dimen/large_size"
+        android:background="@drawable/view_custom_bg"
+        android:elevation="@dimen/elevation_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabBg" />
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/view_pager_login"
-            android:layout_width="match_parent"
-            android:layout_height="320dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="@dimen/small_size"
-            android:layout_marginRight="@dimen/small_size"
-            android:background="@drawable/view_custom_bg"
-            android:elevation="@dimen/elevation_size" />
-    </FrameLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,33 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:id="@+id/chang_pass_layout"
     android:gravity="center"
+    android:padding="@dimen/large_size"
+    android:layout_gravity="center"
     >
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/forget_fragment_title_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/large_text_size"
+        android:text="@string/forget_password_fragment_title"
+        android:layout_marginBottom="@dimen/large_size"
+        android:textColor="@color/checkbox"
+        />
 
     <androidx.appcompat.widget.AppCompatEditText
+        android:layout_below="@id/forget_fragment_title_textview"
         android:id="@+id/mail_address_text_forget"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/small_size"
-        android:background="@drawable/passwordtextbackground"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/forget_text_design"
         android:gravity="center_vertical"
+        android:textSize="@dimen/xlarge_text_size"
         android:hint="@string/new_password_text"
         android:paddingLeft="30dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/confirm_button_forget"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/mail_address_text_forget"
         android:layout_alignStart="@+id/mail_address_text_forget"
         android:layout_alignEnd="@+id/mail_address_text_forget"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="16dp"
-        android:elevation="3dp"
-        android:text="Sıfırlama Maili Gönder" />
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="@dimen/large_size"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/forget_button_design"
+        android:textColor="@color/white"
+        android:text="Sıfırlama Maili Gönder"
+        android:textSize="@dimen/medium_text_size"
+        android:layout_marginBottom="@dimen/medium_size"/>
 
 </RelativeLayout>

@@ -71,9 +71,31 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
         android:buttonTint="@color/checkbox"
-        android:text="@string/contract_read"
         android:textSize="@dimen/checkbox_text_size"
         app:layout_constraintBottom_toTopOf="@id/create_user_button"
         app:layout_constraintLeft_toLeftOf="@id/password_repeat_editText" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/aggrement_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:text="okudum kabul ediyorum."
+        app:layout_constraintLeft_toRightOf="@id/aggrement_link_text"
+        app:layout_constraintTop_toTopOf="@id/aggrement_link_text"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/aggrement_link_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Üyelik Sözleşmesi"
+        android:textColor="@color/checkbox"
+        android:textStyle="italic"
+        app:layout_constraintLeft_toRightOf="@id/user_agreement_checkBox"
+        app:layout_constraintTop_toTopOf="@id/user_agreement_checkBox"
+        android:layout_marginTop="6dp"
+ />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
