@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="48dp"
-    android:orientation="horizontal">
+    android:weightSum="4"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    android:orientation="horizontal"
+    >
 
     <LinearLayout
         android:id="@+id/time_layout"
-        android:layout_width="64dp"
+        android:layout_width="0dp"
+        android:layout_weight="0.7"
         android:layout_height="match_parent"
         android:background="@drawable/feed_row_stroke"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="1dp"
+
+        >
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/date_text"
@@ -18,7 +25,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
             android:hint="Tarih"
-            android:textSize="@dimen/small_text_size" />
+            android:textSize="@dimen/small_text_size"
+            />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/start_time_text"
@@ -31,13 +39,23 @@
 
     <LinearLayout
         android:id="@+id/team_layout"
-        android:layout_width="211dp"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:weightSum="6"
         android:layout_height="match_parent"
-        android:layout_toEndOf="@+id/time_layout"
         android:background="@drawable/feed_row_stroke"
         android:gravity="center_vertical"
-        android:orientation="vertical"
-        android:paddingLeft="8dp">
+        android:orientation="horizontal"
+        android:paddingStart="5dp"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            >
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/match_text"
@@ -54,23 +72,35 @@
             android:layout_height="wrap_content"
             android:hint="Lig"
             android:textSize="@dimen/small_text_size" />
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="wrap_content"
+            android:id="@+id/comment_button"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginEnd="@dimen/small_size"
+
+
+            />
+
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/bet_rate_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1.3"
+        android:weightSum="3"
         android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/team_layout"
         android:background="@drawable/feed_row_stroke"
-
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
 
         <LinearLayout
             android:id="@+id/bet_layout"
-            android:layout_width="54dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
             android:background="@drawable/feed_row_stroke"
             android:gravity="center">
 
@@ -78,7 +108,7 @@
                 android:id="@+id/bet_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_gravity="center"
                 android:hint="Bahis"
                 android:textSize="@dimen/medium_text_size"
                 android:textStyle="bold" />
@@ -86,9 +116,10 @@
 
         <LinearLayout
             android:id="@+id/rate_layout"
-            android:layout_width="46dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
-            android:layout_toRightOf="@id/bet_layout"
+            android:padding="4dp"
             android:background="@drawable/feed_row_stroke"
             android:gravity="center">
 
@@ -104,22 +135,24 @@
 
         <LinearLayout
             android:id="@+id/icon_layout"
-            android:layout_width="32dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_toRightOf="@id/rate_layout"
             android:background="@drawable/feed_row_stroke"
-            android:gravity="center">
+            android:gravity="center"
+            android:padding="4dp"
+            >
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:src="@drawable/upicon"
               android:id="@+id/old_rate_icon"/>
         </LinearLayout>
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
 
-</RelativeLayout>
+</LinearLayout>

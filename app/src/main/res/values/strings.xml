@@ -45,11 +45,12 @@
     <string name="send_mail_complete">Mail Gönderildi</string>
     <string name="send_mail_failed">Sistemde Kağıtlı olmayan bir Mail Girdiniz</string>
 
-    <string name="user_agreement_failed">Sözleşmeyi Onaylamanız Gerekmektedir</string>
+    <string name="user_contract_failed">Sözleşmeyi Onaylamanız Gerekmektedir</string>
+    <string name="user_contract_title">Üyelik Sözleşmesi</string>
     <string name="forget_password_fragment_title">Şifremi Unuttum Sayfası</string>
 
 
-    <string name="user_aggrement_text"><b>SANAL ORTAM BAYİ ÜYELİK SÖZLEŞMESİ</b>
+    <string name="user_contract_text"><b>SANAL ORTAM BAYİ ÜYELİK SÖZLEŞMESİ</b>
         <p><b>1.TARAFLAR</b></p>
 
         1.1 İşbu üyelik Sözleşmesi (Sözleşme olarak anılacaktır.) D Elektronik Şans Oyunları ve Yayıncılık A.Ş. (“Sanal Ortam Bayi” olarak anılacaktır.) ile adresi ve ad/soyadı “Üye Bilgileri” sahasında beyan edilen kişi (“Üye” olarak anılacaktır.) arasında aşağıdaki hüküm ve şartlar kapsamında akdedilmiştir.
@@ -59,14 +60,10 @@
 
         <p><b>Banka</b>: Bankacılık sistemi içinde var olan herhangi bir bankayı,</p>
 
-    <p><b>Bilet</b>: Üyenin işaretlediği kupon karşılığında üyeye gönderilen ve oynanan kuponun onayı olarak saklanması gereken numarayı da ihtiva eden elektronik bilgiyi veya üyenin satın aldığı piyango biletinin elektronik ortamdaki içeriğini,
-</p>
-        <p><b>Hesabım Menüsü</b>: Sanal Ortam Bayi oyun kanallarından erişim sağlanan, üyenin Sanal Ortam Bayi nezdindeki üye hesabına gerçekleştirdiği para transferlerinin hesap hareketlerini görebildiği, banka transfer isteklerini gerçekleştirebildiği, oynadığı oyun bilgilerini takip edebildiği ve sair izin verilen işlemleri yapabildiği kişisel alanı,
-</p>
-        <p><b>Kişisel Veri</b>: Kimliği belirli veya belirlenebilir gerçek kişiye ilişkin her türlü bilgiyi
-    </p>
+    <p><b>Bilet</b>: Üyenin işaretlediği kupon karşılığında üyeye gönderilen ve oynanan kuponun onayı olarak saklanması gereken numarayı da ihtiva eden elektronik bilgiyi veya üyenin satın aldığı piyango biletinin elektronik ortamdaki içeriğini,</p>
+        <p><b>Hesabım Menüsü</b>: Sanal Ortam Bayi oyun kanallarından erişim sağlanan, üyenin Sanal Ortam Bayi nezdindeki üye hesabına gerçekleştirdiği para transferlerinin hesap hareketlerini görebildiği, banka transfer isteklerini gerçekleştirebildiği, oynadığı oyun bilgilerini takip edebildiği ve sair izin verilen işlemleri yapabildiği kişisel alanı,</p>
+        <p><b>Kişisel Veri</b>: Kimliği belirli veya belirlenebilir gerçek kişiye ilişkin her türlü bilgiyi</p>
         <p><b> Kupon</b>: Sabit ihtimalli ve müşterek bahis oyunlarının Sanal Ortam Bayi alt yapısı üzerinden oynanabilmesi için üyeye sunulan elektronik bilgiyi,</p>
-
     </string>
 
 </resources>

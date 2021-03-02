@@ -11,13 +11,11 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.fragment.app.FragmentActivity
 import com.ogungor.gitbetproject.R
 import com.ogungor.gitbetproject.R.layout
 import com.ogungor.gitbetproject.util.extentions.launchMainToAgreementActivity
 import com.ogungor.gitbetproject.util.extentions.launchMainToFeedActivity
 import com.ogungor.gitbetproject.util.extentions.showShortToast
-import org.w3c.dom.Text
 
 class SignUpUserFragment : Fragment(), SignUpUserFragmentContract.View {
 
@@ -87,7 +85,7 @@ class SignUpUserFragment : Fragment(), SignUpUserFragmentContract.View {
     }
 
     override fun showCreateUserAgreementMessage() {
-        activity?.showShortToast(getString(R.string.user_agreement_failed))
+        activity?.showShortToast(getString(R.string.user_contract_failed))
     }
 
     override fun showCreateUserSuccessFullMessage() {

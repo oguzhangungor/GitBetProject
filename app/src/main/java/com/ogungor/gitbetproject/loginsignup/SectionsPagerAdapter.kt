@@ -16,7 +16,9 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
     )
 
     override fun getItem(position: Int): Fragment {
+
         var fragment: Fragment? = null
+
         when (position) {
             0 -> {
                 fragment = LoginUserFragment()

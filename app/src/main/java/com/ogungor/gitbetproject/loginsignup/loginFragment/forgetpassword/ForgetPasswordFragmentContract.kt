@@ -1,11 +1,11 @@
 package com.ogungor.gitbetproject.loginsignup.loginFragment.forgetpassword
 
-interface ForgetPasswordContract {
+interface ForgetPasswordFragmentContract {
 
     interface Presenter {
         fun create()
 
-        fun setView(view:ForgetPasswordContract.View)
+        fun setView(view:ForgetPasswordFragmentContract.View)
 
         fun finish()
 

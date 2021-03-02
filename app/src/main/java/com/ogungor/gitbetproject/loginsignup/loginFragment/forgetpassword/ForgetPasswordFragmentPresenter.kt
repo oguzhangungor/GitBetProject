@@ -2,8 +2,8 @@ package com.ogungor.gitbetproject.loginsignup.loginFragment.forgetpassword
 
 import com.google.firebase.auth.FirebaseAuth
 
-class ForgetPasswordPresenter : ForgetPasswordContract.Presenter {
-    private var view: ForgetPasswordContract.View? = null
+class ForgetPasswordFragmentPresenter : ForgetPasswordFragmentContract.Presenter {
+    private var view: ForgetPasswordFragmentContract.View? = null
     private lateinit var auth: FirebaseAuth
 
     override fun create() {
@@ -24,7 +24,7 @@ class ForgetPasswordPresenter : ForgetPasswordContract.Presenter {
         }
     }
 
-    override fun setView(view: ForgetPasswordContract.View) {
+    override fun setView(view: ForgetPasswordFragmentContract.View) {
         this.view = view
     }
 

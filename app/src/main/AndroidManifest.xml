@@ -27,7 +27,7 @@
         <activity android:name="com.ogungor.gitbetproject.feed.profile.changepswrd.ChangePassword">
         </activity>
 
-        <activity android:name=".loginsignup.signUpFragment.useracggrement.UserContract"/>
+        <activity android:name=".loginsignup.signUpFragment.useracggrement.UserContractActivity"/>
     </application>
 
 </manifest>

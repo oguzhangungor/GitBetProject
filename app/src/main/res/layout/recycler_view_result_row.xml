@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="48dp"
+    android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:paddingLeft="4dp">
+    android:weightSum="7"
+    android:layout_marginStart="3dp"
+    android:layout_marginEnd="2dp"
+    android:layout_marginBottom="1dp"
+    >
 
 
     <LinearLayout
         android:id="@+id/team_layout"
-        android:layout_width="240dp"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_weight="4"
         android:background="@drawable/feed_row_stroke"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        android:paddingLeft="8dp">
+        android:padding="4dp"
+        >
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/match_text"
@@ -32,78 +38,74 @@
             android:textSize="@dimen/small_text_size" />
     </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/bet_rate_layout"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/bet_layout"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/team_layout"
+        android:layout_alignParentStart="true"
+        android:layout_weight="1"
         android:background="@drawable/feed_row_stroke"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="4dp"
+        >
 
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:id="@+id/bet_layout"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:background="@drawable/feed_row_stroke"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bet_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
             android:gravity="center"
-            android:orientation="vertical">
+            android:hint="Bahis"
+            android:textSize="@dimen/medium_text_size"
+            android:textStyle="bold" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/bet_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:hint="Bahis"
-                android:textSize="@dimen/medium_text_size"
-                android:textStyle="bold"
-                android:layout_marginBottom="1dp"/>
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/rate_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:hint="Oran"
-                android:textSize="@dimen/medium_text_size"
-/>        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rate_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Oran"
+            android:textSize="@dimen/medium_text_size" />
+    </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/rate_layout"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:layout_toRightOf="@id/bet_layout"
-            android:background="@drawable/feed_row_stroke"
-            android:gravity="center">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="@drawable/feed_row_stroke"
+        android:padding="4dp"
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/result_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:hint="Oran"
-                android:textSize="@dimen/medium_text_size"
-                android:textStyle="bold" />
-        </LinearLayout>
+        >
 
-        <LinearLayout
-            android:id="@+id/icon_layout"
-            android:layout_width="32dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_toRightOf="@id/rate_layout"
-            android:background="@drawable/feed_row_stroke"
-            android:gravity="center">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/result_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Oran"
+            android:textSize="@dimen/medium_text_size"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-              android:id="@+id/result_icon"/>
-        </LinearLayout>
-
-    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="@drawable/feed_row_stroke"
+        android:padding="4dp"
 
 
-</RelativeLayout>
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/result_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+    </LinearLayout>
+
+
+</LinearLayout>

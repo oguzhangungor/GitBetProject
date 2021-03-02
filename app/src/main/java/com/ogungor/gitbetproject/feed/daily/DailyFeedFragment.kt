@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ogungor.gitbetproject.R
@@ -16,7 +17,7 @@ import com.ogungor.gitbetproject.network.model.MatchModel
 
 class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View, DailyRecyclerAdapter.OnItemClickListener{
 
-    private lateinit var feedActivity: FeedActivity
+    private lateinit var commentButton:ImageButton
     private lateinit var dailyFeedFragmentPresenter: DailyFeedFragmentContract.Presenter
     private  lateinit var layoutManager: LinearLayoutManager
     private lateinit var recyclerView: RecyclerView
@@ -45,6 +46,7 @@ class DailyFeedFragment : Fragment() , DailyFeedFragmentContract.View, DailyRecy
     }
 
     override fun initUi() {
+
     }
 
     override fun showAllMatches(model: java.util.ArrayList<MatchModel>) {

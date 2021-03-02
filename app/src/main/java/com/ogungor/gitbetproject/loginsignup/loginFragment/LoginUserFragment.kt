@@ -12,7 +12,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import com.ogungor.gitbetproject.R
-import com.ogungor.gitbetproject.loginsignup.loginFragment.forgetpassword.ForgetPassword
+import com.ogungor.gitbetproject.loginsignup.loginFragment.forgetpassword.ForgetPasswordFragment
 import com.ogungor.gitbetproject.util.extentions.launchMainToFeedActivity
 import com.ogungor.gitbetproject.util.extentions.showShortToast
 
@@ -66,7 +66,7 @@ class LoginUserFragment : Fragment(), LoginUserFragmentContract.View {
         }}
         forgetPass.setOnClickListener{
             var fm=fragmentManager
-            var fragment=ForgetPassword()
+            var fragment=ForgetPasswordFragment()
             if (fm != null) {
                 fragment.show(fm,"dede")
                 fragment.dialog

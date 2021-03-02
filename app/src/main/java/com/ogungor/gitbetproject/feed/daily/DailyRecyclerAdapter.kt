@@ -3,6 +3,7 @@ package com.ogungor.gitbetproject.feed.daily
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -15,7 +16,7 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BetHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.recycler_view_row, parent, false)
+        val view = inflater.inflate(R.layout.recycler_view_daily_row, parent, false)
         return BetHolder(view)
     }
 
@@ -50,7 +51,20 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
             currentMatch.start_time.let {
                 textViewStartTime.text = it
             }
-            holder.itemView.setOnClickListener {
+
+            currentMatch.comment.let {
+                if(it!=="")
+                {
+                    commentButton.setImageResource(R.drawable.comment_icon)
+                }
+                else{
+                    commentButton.setImageResource(R.drawable.white_comment)
+                    commentButton.isEnabled=false
+
+                }
+            }
+
+            commentButton.setOnClickListener {
                 listener.onItemClick(currentMatch)
             }
         }
@@ -67,6 +81,7 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
     }
 
     inner class BetHolder(view: View) : RecyclerView.ViewHolder(view) {
+        var commentButton:ImageButton=view.findViewById(R.id.comment_button)
         var textViewMatch: TextView = view.findViewById(R.id.match_text)
         var textViewBet: TextView = view.findViewById(R.id.bet_text)
         var textViewRate: TextView = view.findViewById(R.id.rate_text)
@@ -76,7 +91,7 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
         var oldRateViewIcon: ImageView = view.findViewById(R.id.old_rate_icon)
          }
     interface OnItemClickListener {
-        fun onItemClick(position: MatchModel)
+        fun onItemClick(model: MatchModel)
     }
 
     fun strParseInt(str: String): Double {

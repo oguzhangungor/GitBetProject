@@ -11,15 +11,15 @@ import androidx.fragment.app.DialogFragment
 import com.ogungor.gitbetproject.R
 import com.ogungor.gitbetproject.util.extentions.showShortToast
 
-class ForgetPassword : DialogFragment(), ForgetPasswordContract.View {
-    private lateinit var forgetPasswordPresenter: ForgetPasswordContract.Presenter
+class ForgetPasswordFragment : DialogFragment(), ForgetPasswordFragmentContract.View {
+    private lateinit var forgetPasswordPresenter: ForgetPasswordFragmentContract.Presenter
     private lateinit var userMailAddressEditText: EditText
     private lateinit var sendMailAddressButton: Button
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        forgetPasswordPresenter = ForgetPasswordPresenter().apply {
-            setView(this@ForgetPassword)
+        forgetPasswordPresenter = ForgetPasswordFragmentPresenter().apply {
+            setView(this@ForgetPasswordFragment)
         }
     }
 
