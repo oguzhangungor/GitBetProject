@@ -10,7 +10,8 @@
         android:weightSum="7"
         android:layout_height="wrap_content"
         android:background="@color/checkbox"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:padding="2dp">
 
 
         <androidx.appcompat.widget.AppCompatTextView

@@ -10,7 +10,8 @@
     <RelativeLayout
         android:id="@+id/feed_relative"
         android:layout_width="match_parent"
-        android:layout_height="32dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/medium_size"
         android:background="@color/checkbox"
         android:gravity="center_vertical">
     </RelativeLayout>
