@@ -46,6 +46,7 @@
     <string name="send_mail_failed">Sistemde kayıtlı olmayan bir Mail girdiniz</string>
     <string name="aggement_mail_failed">Sözleşmeyi Onaylamanız Gerekmektedir.</string>
     <string name="forget_password_button_text">Sıfırlama Maili Gönder</string>
+    <string name="forget_dialog_title_text">Şifre Sıfırlama Ekranı</string>
 
 
 </resources>
