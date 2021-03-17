@@ -29,6 +29,7 @@
             android:src="@drawable/gitbethosgeldiniz"
             android:id="@+id/gitbethosgeldiniz"
             android:layout_marginTop="@dimen/medium_size"
+            android:layout_marginLeft="@dimen/small_size"
             app:layout_constraintTop_toBottomOf="@+id/feed_lgo"
             app:layout_constraintLeft_toLeftOf="@id/tabs"/>
 
@@ -40,7 +41,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/login_custom_bg"
             android:elevation="@dimen/elevation_size"
-            app:tabIndicatorColor="@color/checkbox" />
+            app:tabIndicatorColor="@color/checkbox"
+            app:tabMaxWidth="0dp"/>
 
         <ImageView
             android:id="@+id/feed_lgo"
@@ -61,6 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="358dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/xsmall_size"
         android:layout_marginLeft="@dimen/small_size"
         android:layout_marginRight="@dimen/small_size"
         android:layout_marginBottom="@dimen/large_size"
@@ -71,4 +74,5 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

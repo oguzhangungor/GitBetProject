@@ -21,5 +21,9 @@ interface TopTenFeedFragmentContract {
         fun initUi()
 
         fun showAllMatches(model: ArrayList<MatchModel>)
+
+        fun showProgress()
+
+        fun hideProgress()
     }
 }

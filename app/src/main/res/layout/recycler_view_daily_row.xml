@@ -37,21 +37,20 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/team_layout"
         android:layout_width="0dp"
         android:layout_weight="1.9"
         android:weightSum="6"
         android:layout_height="match_parent"
         android:background="@drawable/feed_row_stroke"
-        android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="5dp"
+        android:padding="2dp"
 
         >
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="4.8"
             android:orientation="vertical"
             android:gravity="center_vertical"
@@ -77,13 +76,17 @@
             android:layout_width="wrap_content"
             android:id="@+id/comment_button"
             android:layout_height="wrap_content"
+            android:src="@drawable/white_comment"
             android:background="@color/white"
-            android:layout_marginEnd="@dimen/small_size"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="4dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
 
 
             />
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/bet_rate_layout"

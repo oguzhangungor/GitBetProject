@@ -14,4 +14,7 @@
     <color name="purple">#F5B8CA</color>
     <color name="yellow">#FAFF5C</color>
     <color name="yellow_dark">#EDF500</color>
+
+    <color name="loading_bg_color">#50ffffff</color>
+
 </resources>

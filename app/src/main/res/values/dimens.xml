@@ -19,6 +19,7 @@
 
 
 
+    <dimen name="xsmall_size">2dp</dimen>
 
     <dimen name="small_size">8dp</dimen>
     <dimen name="medium_size">16dp</dimen>
@@ -27,4 +28,14 @@
     <dimen name="textbox_padding_left">40dp</dimen>
 
     <dimen name="elevation_size">5dp</dimen>
+
+
+    <dimen name="loading_card_view_item_size">110dp</dimen>
+    <dimen name="loading_lottie_view_item_size">84dp</dimen>
+
+    <dimen name="loading_card_view_radius">64dp</dimen>
+
+    <dimen name="lottie_view_elevation">8dp</dimen>
+
+
 </resources>

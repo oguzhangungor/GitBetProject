@@ -41,6 +41,7 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
                 } else if (controlCodeState == 0) {
                     oldRateViewIcon.setImageResource(R.drawable.downicon)
                 }
+                textViewRate.text = it
             }
             currentMatch.leauge.let {
                 textViewLeague.text = it

@@ -27,8 +27,10 @@ class TopTenFeedFragmentPresenter : TopTenFeedFragmentContract.Presenter {
         networkService?.getDashboardList(object : ApiResponseListener<ArrayList<MatchModel>> {
             override fun onSuccess(model: ArrayList<MatchModel>) {
                 if (model.isNotEmpty()) {
-                    view?.showAllMatches(model)
-                }
+                    view?.run{
+                        showAllMatches(model)
+                        hideProgress()
+                    }                }
             }
             override fun onFail() {
             }
