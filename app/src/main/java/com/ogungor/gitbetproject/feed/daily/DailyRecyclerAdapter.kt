@@ -38,10 +38,12 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
                 var controlCodeState = oldRateControl(it, textViewRate.text.toString())
                 if (controlCodeState == 1) {
                     oldRateViewIcon.setImageResource(R.drawable.upicon)
+                    textViewRate.text = it
                 } else if (controlCodeState == 0) {
                     oldRateViewIcon.setImageResource(R.drawable.downicon)
+                    textViewRate.text = it
                 }
-                textViewRate.text = it
+
             }
             currentMatch.leauge.let {
                 textViewLeague.text = it

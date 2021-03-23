@@ -65,5 +65,9 @@
         <p><b>Kişisel Veri</b>: Kimliği belirli veya belirlenebilir gerçek kişiye ilişkin her türlü bilgiyi</p>
         <p><b> Kupon</b>: Sabit ihtimalli ve müşterek bahis oyunlarının Sanal Ortam Bayi alt yapısı üzerinden oynanabilmesi için üyeye sunulan elektronik bilgiyi,</p>
     </string>
+    <string name="title_team">Karşılaşma</string>
+    <string name="title_bet">Tahmin</string>
+    <string name="title_time">Saat</string>
+    <string name="title_rate">Oran</string>
 
 </resources>

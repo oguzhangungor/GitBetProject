@@ -29,7 +29,6 @@ class TopTenFeedFragmentPresenter : TopTenFeedFragmentContract.Presenter {
                 if (model.isNotEmpty()) {
                     view?.run{
                         showAllMatches(model)
-                        hideProgress()
                     }                }
             }
             override fun onFail() {

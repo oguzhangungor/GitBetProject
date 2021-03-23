@@ -19,8 +19,6 @@ class TopTenFeedFragment : Fragment(),TopTenFeedFragmentContract.View {
     private lateinit var topTenFeedFragmentPresenter: TopTenFeedFragmentContract.Presenter
     private  lateinit var layoutManager: LinearLayoutManager
     private lateinit var recyclerView: RecyclerView
-    private  lateinit var progressBar: RelativeLayout
-    private lateinit var lottieView: LottieAnimationView
     private lateinit var adapter: TopTenRecyclerAdapter
     private  var alertText:TextView?=null
 
@@ -39,8 +37,6 @@ class TopTenFeedFragment : Fragment(),TopTenFeedFragmentContract.View {
     ): View? {
         val view=inflater.inflate(R.layout.fragment_top_ten_feed, container, false)
         recyclerView= view.findViewById(R.id.topten_recycler_view)
-        progressBar =  view.findViewById(R.id.progressBar)
-        lottieView =  view.findViewById(R.id.lottieView)
         layoutManager= LinearLayoutManager(context)
         recyclerView.layoutManager= layoutManager
         adapter= TopTenRecyclerAdapter(ArrayList<MatchModel>())
@@ -53,16 +49,6 @@ class TopTenFeedFragment : Fragment(),TopTenFeedFragmentContract.View {
     override fun initUi() {
     }
 
-    override fun showProgress() {
-
-        lottieView.playAnimation()
-        progressBar.visibility = View.VISIBLE
-    }
-
-    override fun hideProgress() {
-        lottieView.pauseAnimation()
-        progressBar.visibility = View.GONE
-    }
 
     override fun showAllMatches(model: java.util.ArrayList<MatchModel>) {
         adapter.setList(model)

@@ -5,17 +5,22 @@
     android:layout_height="match_parent"
     tools:context=".feed.profile.ProfileFragment"
     android:orientation="vertical"
-    android:id="@+id/profile_layout"
-    android:layout_alignParentTop="true">
+    android:id="@+id/profile_layout">
     <RelativeLayout
         android:id="@+id/feed_relative"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/medium_size"
         android:background="@color/checkbox"
-        android:gravity="center_vertical">
-    </RelativeLayout>
+        android:padding="2dp">
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="GitBet"
+            android:textStyle="italic"
+            android:theme="@style/textTheme"/>
+    </RelativeLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/profile_mail_adress_textView"

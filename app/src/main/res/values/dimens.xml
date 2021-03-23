@@ -23,6 +23,7 @@
 
     <dimen name="small_size">8dp</dimen>
     <dimen name="medium_size">16dp</dimen>
+    <dimen name="xmedium_size">19.5dp</dimen>
     <dimen name="large_size">24dp</dimen>
 
     <dimen name="textbox_padding_left">40dp</dimen>

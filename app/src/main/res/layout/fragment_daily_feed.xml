@@ -24,7 +24,7 @@
             android:layout_weight="1.3"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Saat"
+            android:text="@string/title_time"
             android:id="@+id/saat_textView"
             android:theme="@style/textTheme"
             android:textColor="@color/white"
@@ -38,8 +38,7 @@
             android:layout_height="wrap_content"
             android:theme="@style/textTheme"
             android:gravity="center"
-            android:text="Karşılaşma"
-
+            android:text="@string/title_team"
             android:id="@+id/karsilasma_text"
             android:textColor="@color/white"
             android:textStyle="bold" />
@@ -51,7 +50,7 @@
             android:layout_height="wrap_content"
             android:theme="@style/textTheme"
             android:gravity="center"
-            android:text="Tahmin"
+            android:text="@string/title_bet"
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -61,7 +60,7 @@
             android:layout_height="wrap_content"
             android:theme="@style/textTheme"
             android:gravity="center"
-            android:text="Oran"
+            android:text="@string/title_rate"
             android:textStyle="bold" />
 
 

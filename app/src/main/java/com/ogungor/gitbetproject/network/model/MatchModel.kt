@@ -15,5 +15,6 @@ data class MatchModel(
     var start_time:String?,
     var result:String?,
     var skor:String?,
-    var comment:String?
+    var comment:String?,
+    var percent:String?
 ) : Parcelable

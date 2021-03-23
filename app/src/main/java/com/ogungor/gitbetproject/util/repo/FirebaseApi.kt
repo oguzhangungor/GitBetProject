@@ -9,7 +9,6 @@ import kotlin.collections.ArrayList
 class FirebaseApi : NetworkService {
 
     companion object {
-        const val MATCH_BETS = "MatchBets"
         const val HOME_TEAM = "home_team"
         const val AWAY_TEAM = "away_team"
         const val BET = "bet"
@@ -21,6 +20,7 @@ class FirebaseApi : NetworkService {
         const val SKOR = "skor"
         const val RESULT = "result"
         const val COMMENT = "comment"
+        const val PERCENT = "percent"
     }
 
     private val firebaseDB: FirebaseFirestore = FirebaseFirestore.getInstance()
@@ -49,7 +49,8 @@ class FirebaseApi : NetworkService {
                                 start_time = document.getString(START_TIME),
                                 skor = document.getString(SKOR),
                                 result = document.getString(RESULT),
-                                comment = document.getString(COMMENT)
+                                comment = document.getString(COMMENT),
+                                percent=document.getString(PERCENT)
                             )
                         )
                     }

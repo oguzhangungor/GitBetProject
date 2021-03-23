@@ -11,7 +11,8 @@
         android:layout_height="wrap_content"
         android:background="@color/checkbox"
         android:gravity="center_vertical"
-        android:padding="2dp">
+        android:padding="2dp"
+        >
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -19,10 +20,10 @@
             android:layout_weight="4"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Karşılaşma"
+            android:text="@string/title_team"
             android:id="@+id/karsilasma_text"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+            android:theme="@style/textTheme"
+            />
 
 
 
@@ -33,9 +34,9 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/karsilasma_text"
             android:gravity="center"
-            android:text="Tahmin"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+            android:text="@string/title_bet"
+            android:theme="@style/textTheme"
+            />
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/oran_textView"
             android:layout_width="0dp"
@@ -44,8 +45,8 @@
             android:layout_toEndOf="@id/tahmin_textView"
             android:gravity="center"
             android:text="@string/result"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+            android:theme="@style/textTheme"
+            />
 
 
 

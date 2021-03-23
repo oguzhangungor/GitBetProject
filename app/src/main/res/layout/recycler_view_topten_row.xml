@@ -69,14 +69,15 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/small_text_size" />
         </LinearLayout>
-        <androidx.appcompat.widget.AppCompatImageButton
+
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
-            android:id="@+id/comment_button"
+            android:id="@+id/percent_textview"
             android:layout_height="wrap_content"
-            android:src="@drawable/white_comment"
-            android:background="@color/white"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="4dp"
+            android:gravity="center"
+            android:textSize="@dimen/small_text_size"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
 
