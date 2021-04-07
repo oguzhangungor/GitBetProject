@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_weight="0.7"
         android:layout_height="match_parent"
-        android:background="@drawable/feed_row_stroke"
+        android:background="@xml/feed_row_stroke"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="1dp"
@@ -42,7 +42,7 @@
         android:layout_weight="1.9"
         android:weightSum="6"
         android:layout_height="match_parent"
-        android:background="@drawable/feed_row_stroke"
+        android:background="@xml/feed_row_stroke"
         android:orientation="horizontal"
         android:padding="2dp"
 
@@ -91,7 +91,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1.4"
-        android:background="@drawable/feed_row_stroke"
+        android:background="@xml/feed_row_stroke"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:weightSum="3">
@@ -101,7 +101,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.3"
-            android:background="@drawable/feed_row_stroke"
+            android:background="@xml/feed_row_stroke"
             android:gravity="center">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -118,7 +118,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.1"
-            android:background="@drawable/feed_row_stroke"
+            android:background="@xml/feed_row_stroke"
             android:gravity="center"
             android:padding="4dp">
 
@@ -136,7 +136,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.6"
-            android:background="@drawable/feed_row_stroke"
+            android:background="@xml/feed_row_stroke"
             android:gravity="center"
             android:padding="4dp">
 

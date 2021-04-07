@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_marginTop="@dimen/small_size"
             android:layout_height="wrap_content"
-            android:background="@drawable/login_custom_bg"
+            android:background="@xml/login_custom_bg"
             android:elevation="@dimen/elevation_size"
             app:tabIndicatorColor="@color/checkbox"
             app:tabMaxWidth="0dp"/>
@@ -67,7 +67,7 @@
         android:layout_marginLeft="@dimen/small_size"
         android:layout_marginRight="@dimen/small_size"
         android:layout_marginBottom="@dimen/large_size"
-        android:background="@drawable/view_custom_bg"
+        android:background="@xml/view_custom_bg"
         android:elevation="@dimen/elevation_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tabBg" />

@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:background="@drawable/feed_row_full_stroke"
+    android:background="@xml/feed_row_full_stroke"
     android:padding="20dp">
 
 

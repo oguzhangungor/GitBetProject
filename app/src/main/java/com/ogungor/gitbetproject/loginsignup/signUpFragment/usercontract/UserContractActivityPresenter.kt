@@ -1,4 +1,4 @@
-package com.ogungor.gitbetproject.loginsignup.signUpFragment.useracggrement
+package com.ogungor.gitbetproject.loginsignup.signUpFragment.usercontract
 
 class UserContractActivityPresenter : UserContractActivityContract.Presenter {
     private var view:UserContractActivityContract.View?=null

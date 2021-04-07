@@ -6,7 +6,7 @@ import android.widget.Toast
 import com.ogungor.gitbetproject.feed.FeedActivity
 import com.ogungor.gitbetproject.feed.profile.changepswrd.ChangePassword
 import com.ogungor.gitbetproject.loginsignup.LoginSignUpActivity
-import com.ogungor.gitbetproject.loginsignup.signUpFragment.useracggrement.UserContractActivity
+import com.ogungor.gitbetproject.loginsignup.signUpFragment.usercontract.UserContractActivity
 
 fun Activity.showShortToast(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

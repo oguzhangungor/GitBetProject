@@ -14,7 +14,7 @@ class TopTenRecyclerAdapter(private var matchList: ArrayList<MatchModel>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BetHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.recycler_view_daily_row, parent, false)
+        val view = inflater.inflate(R.layout.recycler_view_topten_row, parent, false)
         return BetHolder(view)
     }
 
@@ -30,14 +30,17 @@ class TopTenRecyclerAdapter(private var matchList: ArrayList<MatchModel>) :
             currentMatch.rate?.let {
                 textViewRate.text = it
             }
-            currentMatch.oldRate?.let {
+            currentMatch.newRate?.let {
 
                 var controlCodeState = oldRateControl(it, textViewRate.text.toString())
                 if (controlCodeState == 1) {
                     oldRateViewIcon.setImageResource(R.drawable.upicon)
+                    textViewRate.text = it
                 } else if (controlCodeState == 0) {
                     oldRateViewIcon.setImageResource(R.drawable.downicon)
+                    textViewRate.text = it
                 }
+                
             }
             currentMatch.leauge.let {
                 textViewLeague.text = it
@@ -48,6 +51,12 @@ class TopTenRecyclerAdapter(private var matchList: ArrayList<MatchModel>) :
             currentMatch.start_time.let {
                 textViewStartTime.text = it
             }
+
+            currentMatch.percent.let {
+                textViewPercent.text = "% $it"
+            }
+
+
         }
     }
 
@@ -67,6 +76,7 @@ class TopTenRecyclerAdapter(private var matchList: ArrayList<MatchModel>) :
         var textViewLeague: TextView = view.findViewById(R.id.league_text)
         var textViewDate: TextView = view.findViewById(R.id.date_text)
         var textViewStartTime: TextView = view.findViewById(R.id.start_time_text)
+        var textViewPercent: TextView = view.findViewById(R.id.percent_textview)
         var oldRateViewIcon: ImageView = view.findViewById(R.id.old_rate_icon)
     }
 

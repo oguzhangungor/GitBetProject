@@ -33,17 +33,16 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
             currentMatch.rate?.let {
                 textViewRate.text = it
             }
-            currentMatch.oldRate?.let {
+            currentMatch.newRate?.let {
 
                 var controlCodeState = oldRateControl(it, textViewRate.text.toString())
                 if (controlCodeState == 1) {
-                    oldRateViewIcon.setImageResource(R.drawable.upicon)
+                    newRateViewIcon.setImageResource(R.drawable.upicon)
                     textViewRate.text = it
                 } else if (controlCodeState == 0) {
-                    oldRateViewIcon.setImageResource(R.drawable.downicon)
+                    newRateViewIcon.setImageResource(R.drawable.downicon)
                     textViewRate.text = it
                 }
-
             }
             currentMatch.leauge.let {
                 textViewLeague.text = it
@@ -91,7 +90,7 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
         var textViewLeague: TextView = view.findViewById(R.id.league_text)
         var textViewDate: TextView = view.findViewById(R.id.date_text)
         var textViewStartTime: TextView = view.findViewById(R.id.start_time_text)
-        var oldRateViewIcon: ImageView = view.findViewById(R.id.old_rate_icon)
+        var newRateViewIcon: ImageView = view.findViewById(R.id.old_rate_icon)
          }
     interface OnItemClickListener {
         fun onItemClick(model: MatchModel)
@@ -105,9 +104,9 @@ class DailyRecyclerAdapter(private var matchList: ArrayList<MatchModel>,
     fun oldRateControl(oldRate: String, rate: String): Int {
         var controlCode: Int
         if (oldRate !== "") {
-            var oldRateControl = strParseInt(oldRate)
+            var newRateControl = strParseInt(oldRate)
             var rateControl = strParseInt(rate)
-            controlCode = if (oldRateControl > rateControl) {
+            controlCode = if (newRateControl > rateControl) {
                 1
             } else {
                 0

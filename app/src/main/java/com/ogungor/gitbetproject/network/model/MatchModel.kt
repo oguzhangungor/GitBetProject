@@ -9,7 +9,7 @@ data class MatchModel(
     var awayTeam: String?,
     var bet: String?,
     var rate: String?,
-    var oldRate: String?,
+    var newRate: String?,
     var leauge: String?,
     var date:String?,
     var start_time:String?,
